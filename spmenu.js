@@ -1,5 +1,5 @@
 
-const spmenu = new Menu("Spectate", "Spectate Menu", new Point(30, 500)); // Мы не выключаем чат, чтобы видеть переписку тех, за кем следим, поэтому двигаем саму табличку вниз
+const spmenu = new Menu("Spectate", "Spectate Menu", new Point(30, 500)); // We do not turn off the chat to see the correspondence of those we follow, so we move the sign itself down
 spmenu.Close();
 spmenu.AddItem(new UIMenuListItem("Spectate", "Cambiar jugador por ID",  new ItemsCollection(["Previous", "Next"])));
 spmenu.AddItem(new UIMenuItem("Refresh", "Actualización de seguimiento del jugador actual"));

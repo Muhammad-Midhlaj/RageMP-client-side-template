@@ -118,7 +118,7 @@ mp.events.add('tpage', (id) => {
                     elements.push([`${element.Item1}`, element.Item2, price.toFixed()]);
                 });
                 setTimeout(function () { mp.gui.emmit(`add(${JSON.stringify(elements)})`); }, 150);
-            } else mp.events.call('notify', 1, 4, "Этот раздел недоступен для данного авто.", 3000);
+            } else mp.events.call('notify', 1, 4, "This section is not available for this car.", 3000);
         }
         else if (categoryIds[id] <= 18) {
             var prices = [];
@@ -153,7 +153,7 @@ mp.events.add('tpage', (id) => {
     if (toDisable.includes(id))
     {
         mp.events.call('tpage', "home");
-        mp.events.call('notify', 1, 4, "Этот раздел недоступен для Вашего транспорта.", 3000);
+        mp.events.call('notify', 1, 4, "This section is not available for your transport.", 3000);
     }
     
     setTimeout(function () { mp.events.call('tupd'); }, 150);
@@ -258,7 +258,7 @@ mp.events.add('tclk', (id) => {
     }
 
     if (setted)
-        mp.events.call('notify', 1, 9, "У Вас уже установлена данная модификация", 3000);
+        mp.events.call('notify', 1, 9, "You already have this modification installed", 3000);
     else {
         mp.gui.emmit('window.pages.updateDynamicPage("")');
         opened = false;
@@ -267,7 +267,7 @@ mp.events.add('tclk', (id) => {
         if (lscPage === "paint_menu_one" || lscPage === "paint_menu_two" || lscPage === "paint_menu_three")
             mp.events.call("hideColorp");
 
-        var title = (lscPage === "paint_menu_one" || lscPage === "paint_menu_two" || lscPage === "paint_menu_three") ? "Вы действительно хотите покрасить машину в данный цвет?" : "Вы действительно хотите установить данную модификацию?";
+        var title = (lscPage === "paint_menu_one" || lscPage === "paint_menu_two" || lscPage === "paint_menu_three") ? "Are you sure you want to paint the car this color?" : "Are you sure you want to install this modification?";
         mp.events.call('openDialog', 'tuningbuy', title);
     }
 })
@@ -316,7 +316,7 @@ mp.events.add('tunbuy', (state) => {
 			else if(lscPage === "paint_menu_two") paintType = 1;
 			else if(lscPage === "paint_menu_three") paintType = 2;
 			if(paintType == 2 && isBike) {
-				mp.events.call('notify', 1, 4, "Этот раздел недоступен для мотоциклов.", 3000);
+				mp.events.call('notify', 1, 4, "This section is not available for motorcycles.", 3000);
                 mp.gui.emmit('window.pages.updateDynamicPage("tuning_lsc")');
 				opened = true;
 			}
@@ -500,7 +500,7 @@ mp.events.add('tuningSeatsCheck', function () {
     var veh = global.localplayer.vehicle;
     for (var i = 0; i < 7; i++)
         if (veh.getPedInSeat(i) !== 0) {
-            mp.events.call('notify', 4, 9, 'Попросите выйти всех пассажиров', 3000);
+            mp.events.call('notify', 4, 9, 'Ask all passengers to get off', 3000);
             return;
         }
     mp.events.callRemote('tuningSeatsCheck');

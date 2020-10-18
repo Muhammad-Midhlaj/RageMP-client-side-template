@@ -33,7 +33,7 @@ function pointingAt(distance) {
 mp.events.add("AGM", (toggle) => {
 	admingm = toggle;
 	localplayer.setInvincible(toggle);
-	mp.game.graphics.notify(toggle ? '~g~Бессмертие включено' : '~r~Бессмертие выключено');
+	mp.game.graphics.notify(toggle ? '~g~Immortality included' : '~r~Immortality off');
 });
 
 mp.keys.bind(Keys.VK_F7, false, function () {
@@ -59,7 +59,7 @@ mp.keys.bind(Keys.VK_F7, false, function () {
     }
 
     mp.events.callRemote('invisible', fly.flying);
-    mp.game.graphics.notify(fly.flying ? '~g~Полёт включен' : '~r~Полёт выключен');
+    mp.game.graphics.notify(fly.flying ? '~g~Flight included' : '~r~Flight is off');
 });
 
 mp.events.add('render', () => {

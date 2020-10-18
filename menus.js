@@ -47,9 +47,9 @@ const ClubNames = {
     13: "Diamond Penthouse",
 };
 const ClubAlcos = {
-    10: ["«Martini Asti»", "«Sambuca»", "«Campari»"],
-    11: ["«En una cáscara de limón»", "«На бруснике»", "«Русский стандарт»"],
-    12: ["«Asahi»", "«Midori»", "«Yamazaki»"],
+    10: ["«martiniUntil»", "«sambuca»", "«Campari»"],
+    11: ["«In a lemon peel»", "«On cranberries»", "«Kerala standard»"],
+    12: ["«asahi»", "«Midori»", "«Yamazaki»"],
     13: ["«Jeevan»", "«Ararat»", "«Noyan Tapan»"],
 };
 const ClubDrinks = [75, 115, 150];
@@ -63,49 +63,49 @@ mp.events.add("openAlco", (club, modief, isOwner, stock) => {
         RightMiddle: new Point(res.x - 180, res.y / 2),
         LeftMiddle: new Point(0, res.y / 2 - 200),
     };
-    alcoUI = new Menu("Клуб", ClubNames[club], UIPositions.LeftMiddle);
+    alcoUI = new Menu("Club", ClubNames[club], UIPositions.LeftMiddle);
 
     var drinks = [` ${ClubAlcos[club][0]} ${(ClubDrinks[0] * modief).toFixed()}$`,
         ` ${ClubAlcos[club][1]} ${(ClubDrinks[1] * modief).toFixed()}$`,
         ` ${ClubAlcos[club][2]} ${(ClubDrinks[2] * modief).toFixed()}$`];
 
     alcoUI.AddItem(new UIMenuListItem(
-        "Напитки",
-        "Вы можете выбрать любой напиток",
+        "Beverages",
+        "You can choose any drink",
         new ItemsCollection(drinks)
     ));
 
     if (isOwner) {
-        alcoUI.AddItem(new UIMenuItem("Инфо", `Materiales: ${stock[0]}\n${ClubAlcos[club][0]} - ${stock[1]}\n${ClubAlcos[club][1]} - ${stock[2]}\n${ClubAlcos[club][2]} - ${stock[3]}`));
-        alcoUI.AddItem(new UIMenuItem("Взять", "Взять выбранный напиток со склада"));
-        alcoUI.AddItem(new UIMenuItem("Скрафтить", "Скрафтить выбранный напиток"));
-        alcoUI.AddItem(new UIMenuItem("Установить цену", "Установить модификатор цены для всех продуктов (от 50% до 150%)"));
+        alcoUI.AddItem(new UIMenuItem("Info", `Materiales: ${stock[0]}\n${ClubAlcos[club][0]} - ${stock[1]}\n${ClubAlcos[club][1]} - ${stock[2]}\n${ClubAlcos[club][2]} - ${stock[3]}`));
+        alcoUI.AddItem(new UIMenuItem("Take", "Take the selected drink from the warehouse"));
+        alcoUI.AddItem(new UIMenuItem("Scrape", "Craft the selected drink"));
+        alcoUI.AddItem(new UIMenuItem("Set price", "Set a price modifier for all products (50% to 150%)"));
     }
 
-    alcoUI.AddItem(new UIMenuItem("Купить", "Купить выбранный напиток"));
+    alcoUI.AddItem(new UIMenuItem("Buy", "Buy the selected drink"));
 
-    var uiItem = new UIMenuItem("Закрыть", "Закрыть меню");
+    var uiItem = new UIMenuItem("Close", "Close menu");
     uiItem.BackColor = new Color(255, 0, 0);
     alcoUI.AddItem(uiItem);
 
     alcoUI.ItemSelect.on(item => {
 		if(new Date().getTime() - global.lastCheck < 100) return; 
 		global.lastCheck = new Date().getTime();
-        if (item.Text == "Купить") {
+        if (item.Text == "Buy") {
             mp.events.callRemote('menu_alco', 0, selectedAlco);
         }
-        else if (item.Text == "Взять") {
+        else if (item.Text == "Take") {
             mp.events.callRemote('menu_alco', 1, selectedAlco);
         }
-        else if (item.Text == "Скрафтить") {
+        else if (item.Text == "Scrape") {
             mp.events.callRemote('menu_alco', 2, selectedAlco);
         }
-        else if (item.Text == "Установить цену") {
+        else if (item.Text == "Set price") {
             global.menuClose();
             alcoUI.Close();
             mp.events.callRemote('menu_alco', 3, 0);
         }
-        else if (item.Text == "Закрыть") {
+        else if (item.Text == "Close") {
             global.menuClose();
             alcoUI.Close();
         }
@@ -234,22 +234,22 @@ mp.events.add('stockTake', (index) => {
     switch (index) {
         case 3: //mats
             mp.events.callRemote('setStock', "mats");
-            global.input.set("Взять маты", "Введите кол-во матов", 10, "take_stock");
+            global.input.set("Take mats", "Enter the number of mats", 10, "take_stock");
             global.input.open();
             break;
         case 0: //cash
             mp.events.callRemote('setStock', "money");
-            global.input.set("Взять деньги", "Введите кол-во денег", 10, "take_stock");
+            global.input.set("Take money", "Enter the amount of money", 10, "take_stock");
             global.input.open();
             break;
         case 1: //healkit
             mp.events.callRemote('setStock', "medkits");
-            global.input.set("Взять аптечки", "Введите кол-во аптечек", 10, "take_stock");
+            global.input.set("Get first aid kits", "Enter the number of first aid kits", 10, "take_stock");
             global.input.open();
             break;
         case 2: //weed
             mp.events.callRemote('setStock', "drugs");
-            global.input.set("Взять наркотики", "Введите кол-во наркоты", 10, "take_stock");
+            global.input.set("Take drugs", "Enter the number of drugs", 10, "take_stock");
             global.input.open();
             break;
         case 4: //weapons stock
@@ -262,22 +262,22 @@ mp.events.add('stockPut', (index) => {
     switch (index) {
         case 3: //mats
             mp.events.callRemote('setStock', "mats");
-            global.input.set("Положить маты", "Введите кол-во матов", 10, "put_stock");
+            global.input.set("Put mats", "Enter the number of mats", 10, "put_stock");
             global.input.open();
             break;
         case 0: //cash
             mp.events.callRemote('setStock', "money");
-            global.input.set("Положить деньги", "Введите кол-во денег", 10, "put_stock");
+            global.input.set("Put money", "Enter the amount of money", 10, "put_stock");
             global.input.open();
             break;
         case 1: //healkit
             mp.events.callRemote('setStock', "medkits");
-            global.input.set("Положить аптечки", "Введите кол-во аптечек", 10, "put_stock");
+            global.input.set("Put the first aid kits", "Enter the number of first aid kits", 10, "put_stock");
             global.input.open();
             break;
         case 2: //weed
             mp.events.callRemote('setStock', "drugs");
-            global.input.set("Положить наркотики", "Введите кол-во наркоты", 10, "put_stock");
+            global.input.set("Put drugs", "Enter the number of drugs", 10, "put_stock");
             global.input.open();
             break;
         case 4: //weapons stock
@@ -444,87 +444,87 @@ mp.events.add('menu', (action, data) => {
 // SM DATA //
 mp.events.add('policeg', () => {
     let data = [
-        "Palo",
-        "Pistola",
-        "SMG",
-        "Escopeta",
-        "Tazer",
-        "Armadura",
-        "Kit de primeros auxilios",
-        "Calibre de pistola x12",
-        "Calibre pequeño x30",
-        "Fraccion x6",
+        "Stick",
+        "Gun",
+        "smg",
+        "Shotgun",
+        "tazer",
+        "Armor",
+        "First aid box",
+        "Pistol caliber x12",
+        "Small caliber x30",
+        "Fraction x6",
     ];
     openSM(4, JSON.stringify(data));
 });
 mp.events.add('fbiguns', () => {
     let data = [
-        "Tazer",
-        "Pistola",
-        "Foto",
-        "Carabina",
-        "Rifle de francotirador",
-        "Armadura",
-        "Kit de primeros auxilios",
-        "Calibre de pistola x12",
-        "Calibre pequeño x30",
-        "Calibre automático x30",
-        "Calibre francotirador x5",
-        "Бейдж",
+        "tazer",
+        "Gun",
+        "photo",
+        "carbine",
+        "sniper'sRifle",
+        "armor",
+        "firstAidBox",
+        "Pistol caliber x12",
+        "calibreLittleX30",
+        "calibreAutomaticX30",
+        "Sniper Caliber x5",
+        "badge",
     ];
     openSM(3, JSON.stringify(data));
 });
 mp.events.add('govguns', () => {
     let data = [
         "Tazer",
-        "Pistola",
-        "Advanced Rifle",
-        "Gusenberg Sweeper",
-        "Armadura",
-        "Kit de primeros auxilios",
-        "Calibre de pistola x12",
-        "Calibre pequeño x30",
-        "Calibre automático x30",
+        "Gun",
+        "advancedRifle",
+        "gusenbergSweeper",
+        "Armor",
+        "First aid box",
+        "Pistol caliber x12",
+        "calibreLittleX30",
+        "Automatic caliber x30",
     ];
     openSM(6, JSON.stringify(data));
 });
 mp.events.add('armyguns', () => {
     let data = [
-        "Pistola",
-        "Carabina",
-		"Боевой пулемет",
-        "Armadura",
-        "Kit de primeros auxilios",
-        "Calibre de pistola x12",
-        "Calibre automático x30",
-		"Calibre pequeño x100",
+        "Gun",
+        "Carbine",
+		"combatMachineGun",
+        "Armor",
+        "firstAidBox",
+        "pistolCaliberX12",
+        "calibreAutomaticX30",
+		"calibreLittleX100",
     ];
     openSM(7, JSON.stringify(data));
 });
 mp.events.add('mavrshop', () => {
     let data = [
-        ["Услуга по отмыву денег", ""],
-        ["Дрель для взлома", "100000$"],
-        ["Selector de bloqueo", "600$"],
-        ["Llave maestra militar", "2500$"],
-        ["Soleras", "2500$"],
-        ["Bolso", "2500$"],
-        ["Понизить розыск", "3000$"]
+        ["Money laundering service", ""],
+        ["Hacking drill", "100000$"],
+        ["Lock selector", "600$"],
+        ["Military master key", "2500$"],
+        ["soleras", "2500$"],
+        ["Handbag", "2500$"],
+        ["Lower wanted list", "3000$"]
     ];
     openSM(2, JSON.stringify(data));
 });
 mp.events.add('gangmis', () => {
     let data = [
-        "Угон автотранспорта",
-        "Перевозка автотранспорта",
+        "Car theft",
+        "Transportation of vehicles",
     ];
     openSM(8, JSON.stringify(data));
 });
 mp.events.add('mafiamis', () => {
     let data = [
-        "Перевозка оружия",
-        "Перевозка денег",
-        "Перевозка трупов",
+        "Transportation of weapons",
+        "Carrying money",
+        "Transportation of corpses",
     ];
     openSM(9, JSON.stringify(data));
 });
@@ -595,7 +595,7 @@ var liftcBack = "";
 function openLift(type, cBack) {
     if (global.menuCheck()) return;
     let floors = [
-        ["Гараж", "1 этаж", "49 этаж", "Крыша"]
+        ["Garage", "1st floor", "49th floor", "Roof"]
     ];
     let json = JSON.stringify(floors[type]);
     global.menu.execute(`lift.set('${json}');lift.active=1;`);
@@ -707,19 +707,19 @@ mp.events.add('matsL', (act) => { //load
     global.menuClose();
     switch (act) {
         case 1:
-            global.input.set("Загрузить маты", "Введите кол-во матов", 4, "loadmats");
+            global.input.set("Load mats", "Enter the number of mats", 4, "loadmats");
             global.input.open();
             break;
         case 2:
-            global.input.set("Загрузить маты", "Введите кол-во матов", 4, "loadmats");
+            global.input.set("Load mats", "Enter the number of mats", 4, "loadmats");
             global.input.open();
             break;
         case 3:
-            global.input.set("Загрузить наркоту", "Введите кол-во наркоты", 4, "loaddrugs");
+            global.input.set("Load drugs", "Enter the number of drugs", 4, "loaddrugs");
             global.input.open();
             break;
         case 4:
-            global.input.set("Загрузить аптечки", "Введите кол-во аптечек", 4, "loadmedkits");
+            global.input.set("Download first aid kits", "Enter the number of first aid kits", 4, "loadmedkits");
             global.input.open();
             break;
     }
@@ -728,19 +728,19 @@ mp.events.add('matsU', (act) => { //unload
     global.menuClose();
     switch (act) {
         case 1:
-            global.input.set("Выгрузить маты", "Введите кол-во матов", 4, "unloadmats");
+            global.input.set("Unload mats", "Enter the number of mats", 4, "unloadmats");
             global.input.open();
             break;
         case 2:
-            global.input.set("Выгрузить маты", "Введите кол-во матов", 4, "unloadmats");
+            global.input.set("Unload mats", "Enter the number of mats", 4, "unloadmats");
             global.input.open();
             break;
         case 3:
-            global.input.set("Выгрузить наркоту", "Введите кол-во наркоты", 4, "unloaddrugs");
+            global.input.set("Unload the drugs", "Enter the number of drugs", 4, "unloaddrugs");
             global.input.open();
             break;
         case 4:
-            global.input.set("Выгрузить аптечки", "Введите кол-во аптечек", 4, "unloadmedkits");
+            global.input.set("Unload first aid kits", "Enter the number of first aid kits", 4, "unloadmedkits");
             global.input.open();
             break;
     }
@@ -753,10 +753,10 @@ mp.events.add('bsearch', (act) => {
     global.menuClose();
     switch (act) {
         case 1:
-            mp.events.callRemote('pSelected', circleEntity, "Посмотреть лицензии");
+            mp.events.callRemote('pSelected', circleEntity, "View licenses");
             break;
         case 2:
-            mp.events.callRemote('pSelected', circleEntity, "Посмотреть паспорт");
+            mp.events.callRemote('pSelected', circleEntity, "View passport");
             break;
     }
 });
@@ -1061,19 +1061,19 @@ mp.events.add('setBody', (id, data1, data2) => {
     mp.events.call('openAuto');
 });*/
 
-let autoColors = ["Черный", "Белый", "Красный", "Оранжевый", "Желтый", "Зеленый", "Голубой", "Синий", "Фиолетовый"];
+let autoColors = ["The black", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Blue", "Violet"];
 let autoModels = null;
 
 let colors = {};
-colors["Черный"] = [0, 0, 0];
-colors["Белый"] = [225, 225, 225];
-colors["Красный"] = [230, 0, 0];
-colors["Оранжевый"] = [255, 115, 0];
-colors["Желтый"] = [240, 240, 0];
-colors["Зеленый"] = [0, 230, 0];
-colors["Голубой"] = [0, 205, 255];
-colors["Синий"] = [0, 0, 230];
-colors["Фиолетовый"] = [190, 60, 165];
+colors["The black"] = [0, 0, 0];
+colors["White"] = [225, 225, 225];
+colors["Red"] = [230, 0, 0];
+colors["Orange"] = [255, 115, 0];
+colors["Yellow"] = [240, 240, 0];
+colors["Green"] = [0, 230, 0];
+colors["Blue"] = [0, 205, 255];
+colors["Blue"] = [0, 0, 230];
+colors["Violet"] = [190, 60, 165];
 
 let auto = {
     model: null,
@@ -1153,7 +1153,7 @@ mp.events.add('openAuto', (models, prices) => {
 
         });
     auto.entity.setRotation(0, 0, -136.246, 2, true);
-    auto.color = "Черный";
+    auto.color = "The black";
     auto.model = autoModels[0];
 
     global.menuOpen();
@@ -1852,7 +1852,7 @@ var report = mp.browsers.new('package://cef/ticket.html');
 var reportactive = false;
 mp.events.add('addreport', (id_, author_, quest_) => {
     report.execute(`addReport(${id_},'${author_}','${quest_}', false, '')`);
-    mp.events.call('notify', 0, 2, "Пришел новый репорт!", 3000);
+    mp.events.call('notify', 0, 2, "New report has arrived!", 3000);
 })
 mp.events.add('setreport', (id, name) => {
     report.execute(`setStatus(${id}, '${name}')`);
@@ -1888,7 +1888,7 @@ mp.events.add('enableadvert', (toggle) => {
 mp.events.add('addadvert', (id_, author_, quest_) => {
 	try {
 		if(adverts != null) adverts.execute(`addAdvert(${id_},'${author_}','${quest_}', false, '')`);
-		mp.events.call('notify', 0, 2, "Пришло новое объявление!", 3000);
+		mp.events.call('notify', 0, 2, "A new announcement has arrived!", 3000);
 	} catch(e) {
 	}
 })

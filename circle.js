@@ -22,7 +22,7 @@ mp.events.add('circleCallback', (index) => {
     } else {
         CloseCircle(false);
         switch (circleTitle) {
-            case "Машина":
+            case "Car":
                 switch (index) {
                     case 0:
                     case 1:
@@ -33,18 +33,18 @@ mp.events.add('circleCallback', (index) => {
                         return;
                 }
                 return;
-            case "Игрок":
+            case "Player":
                 if (entity == null) return;
                 switch (index) {
                     case 0:
-                        mp.events.callRemote('pSelected', entity, "Передать деньги");
+                        mp.events.callRemote('pSelected', entity, "Give money");
                         return;
                     case 1:
-                        mp.events.callRemote('pSelected', entity, "Предложить обмен");
+                        mp.events.callRemote('pSelected', entity, "Offer an exchange");
                         return;
                     case 2:
                         if (pFraction === 0 || pFraction === 15) return;
-                        OpenCircle("Фракция", pFraction);
+                        OpenCircle("Fraction", pFraction);
                         return;
                     case 3:
                         //mp.gui.chat.push(">>" + entity);
@@ -55,56 +55,56 @@ mp.events.add('circleCallback', (index) => {
                         mp.events.callRemote('licenses', entity);
                         return;
                     case 5:
-                        mp.events.callRemote('pSelected', entity, "Вылечить");
+                        mp.events.callRemote('pSelected', entity, "Cure");
                         return;
                     case 6:
-                        OpenCircle("Дом", 0);
+                        OpenCircle("House", 0);
                         return;
                     case 7:
-                        mp.events.callRemote('pSelected', entity, "Пожать руку");
+                        mp.events.callRemote('pSelected', entity, "To shake the hand");
                         return;
                 }
                 return;
-            case "Дом":
+            case "House":
                 switch (index) {
                     case 0:
-                        mp.events.callRemote('pSelected', entity, "Продать машину");
+                        mp.events.callRemote('pSelected', entity, "Sell ​​a car");
                         return;
                     case 1:
-                        mp.events.callRemote('pSelected', entity, "Продать дом");
+                        mp.events.callRemote('pSelected', entity, "Sell ​​a house");
                         return;
                     case 2:
-                        mp.events.callRemote('pSelected', entity, "Заселить в дом");
+                        mp.events.callRemote('pSelected', entity, "Move into the house");
                         return;
                     case 3:
-                        mp.events.callRemote('pSelected', entity, "Пригласить в дом");
+                        mp.events.callRemote('pSelected', entity, "Invite to the house");
                         return;
                 }
                 return;
-				            case "Мебель":
+				            case "Furniture":
                 if (entity == null) return;
                 switch (index) {
                     case 0:
-                        mp.events.callRemote('furnSelected', entity._furnid, "Открыть инвентарь");
+                        mp.events.callRemote('furnSelected', entity._furnid, "Open inventory");
                         return;
                     case 1:
-                        mp.events.callRemote('furnSelected', entity._furnid, "Открыть/Закрыть");
+                        mp.events.callRemote('furnSelected', entity._furnid, "Open close");
                         return;
                     case 2:
-                        mp.events.callRemote('furnSelected', entity._furnid, "Переставить");
+                        mp.events.callRemote('furnSelected', entity._furnid, "Rearrange");
                         return;
                     case 3:
-                        mp.events.callRemote('furnSelected', entity._furnid, "Убрать");
+                        mp.events.callRemote('furnSelected', entity._furnid, "Remove");
                         return;
                 }
                 return;
-            case "Фракция":
+            case "Fraction":
                 if (entity == null) return;
                 circleEntity = entity;
                 if (fractionActions[pFraction] == undefined) return;
                 mp.events.callRemote('pSelected', entity, fractionActions[pFraction][index]);
                 return;
-            case "Категории":
+            case "Categories":
                 if (index == 7) {
 					if(!localplayer.isFalling()) mp.events.callRemote('aSelected', -1, -1);
                     return;
@@ -118,32 +118,32 @@ mp.events.add('circleCallback', (index) => {
                     case 5:
 					case 6:
                         aCategory = index;
-                        OpenCircle("Анимации", index);
+                        OpenCircle("Animations", index);
                         return;
                 }
                 return;
-            case "Анимации":
+            case "Animations":
 				if(aCategory == 1 && index == 7) {
 					aCategory = 10;
-                    OpenCircle("Анимации", 10);
+                    OpenCircle("Animations", 10);
 				} else if(aCategory == 4 && index == 7) {
 					aCategory = 13;
-                    OpenCircle("Анимации", 13);
+                    OpenCircle("Animations", 13);
 				} else if(aCategory == 5 && index == 7) {
 					aCategory = 7;
-                    OpenCircle("Анимации", 7);
+                    OpenCircle("Animations", 7);
 				} else if(aCategory == 6 && index == 7) {
 					aCategory = 12;
-                    OpenCircle("Анимации", 12);
+                    OpenCircle("Animations", 12);
 				} else if(aCategory == 7 && index == 7) {
 					aCategory = 8;
-                    OpenCircle("Анимации", 8);
+                    OpenCircle("Animations", 8);
 				} else if(aCategory == 8 && index == 7) {
 					aCategory = 9;
-                    OpenCircle("Анимации", 9);
+                    OpenCircle("Animations", 9);
 				} else if(aCategory == 10 && index == 7) {
 					aCategory = 11;
-                    OpenCircle("Анимации", 11);
+                    OpenCircle("Animations", 11);
 				} else mp.events.callRemote('aSelected', aCategory, index);
                 return;
         }
@@ -155,20 +155,20 @@ var aCategory = -1;
 // // //
 var pFraction = 0;
 var fractionActions = [];
-fractionActions[1] = ["Ограбить", "Украсть оружие", "Bolso"];
-fractionActions[2] = ["Ограбить", "Украсть оружие", "Bolso"];
-fractionActions[3] = ["Ограбить", "Украсть оружие", "Bolso"];
-fractionActions[4] = ["Ограбить", "Украсть оружие", "Bolso"];
-fractionActions[5] = ["Ограбить", "Украсть оружие", "Bolso"];
-fractionActions[6] = ["Вести за собой"];
-fractionActions[7] = ["Вести за собой", "Обыскать", "Изъять оружие", "Изъять нелегал", "Сорвать маску", "Выписать штраф"];
-fractionActions[8] = ["Продать аптечку", "Предложить лечение"];
-fractionActions[9] = ["Вести за собой", "Обыскать", "Изъять оружие", "Изъять нелегал", "Сорвать маску"];
-fractionActions[10] = ["Вести за собой", "Bolso", "Ограбить", "Украсть оружие"];
-fractionActions[11] = ["Вести за собой", "Bolso", "Ограбить", "Украсть оружие"];
-fractionActions[12] = ["Вести за собой", "Bolso", "Ограбить", "Украсть оружие"];
-fractionActions[13] = ["Вести за собой", "Bolso", "Ограбить", "Украсть оружие"];
-fractionActions[14] = ["Вести за собой"];
+fractionActions[1] = ["Rob", "Steal a weapon", "Handbag"];
+fractionActions[2] = ["Rob", "Steal a weapon", "Handbag"];
+fractionActions[3] = ["Rob", "Steal a weapon", "Handbag"];
+fractionActions[4] = ["Rob", "Steal a weapon", "Handbag"];
+fractionActions[5] = ["Rob", "Steal a weapon", "Handbag"];
+fractionActions[6] = ["To lead"];
+fractionActions[7] = ["To lead", "Search", "Withdraw weapon", "Withdraw illegal", "Rip off the mask", "Write out a fine"];
+fractionActions[8] = ["Sell ​​first aid kit", "Suggest treatment"];
+fractionActions[9] = ["To lead", "Search", "Withdraw weapon", "Withdraw illegal", "Rip off the mask"];
+fractionActions[10] = ["To lead", "handbag", "Rob", "Steal a weapon"];
+fractionActions[11] = ["Вcarry along", "Handbag", "Rob", "Steal a weapon"];
+fractionActions[12] = ["To lead", "Handbag", "Rob", "Steal a weapon"];
+fractionActions[13] = ["To lead", "Handbag", "Rob", "Steal a weapon"];
+fractionActions[14] = ["To lead"];
 mp.events.add('fractionChange', (fraction) => {
     pFraction = fraction;
 });

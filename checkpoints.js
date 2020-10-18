@@ -40,7 +40,7 @@ mp.events.add('createWorkBlip', function (position) {
         workBlip.destroy();
     workBlip = mp.blips.new(0, position,
         {
-            name: "Чекпоинт",
+            name: "Checkpoint",
             scale: 1,
             color: 49,
             alpha: 255,
@@ -62,7 +62,7 @@ mp.events.add('createGarageBlip', function (position) {
         garageBlip.destroy();
     garageBlip = mp.blips.new(357, position,
         {
-            name: "Гараж",
+            name: "Garage",
             scale: 0.8,
             color: 45,
             alpha: 255,

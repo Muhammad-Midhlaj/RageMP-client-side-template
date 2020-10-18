@@ -25,165 +25,165 @@ mp.events.add('ChatPyBed', (id, variation) => {
 		global.pedtimer = true;
 		switch(id) {
 			case 0:
-				global.pedtext = "Слушай, если не влом - помоги моей тётке у дома.";
-				mp.gui.chat.push("!{Red}[Bony] !{White}Слушай, если не влом - помоги моей тётке у дома.");
+				global.pedtext = "Listen, if not broke - help my aunt at the house.";
+				mp.gui.chat.push("!{Red}[Bony] !{White}Listen, if not broke - help my aunt at the house.");
 				global.pedsaying = needped[0];
 				break;
 			case 1:	
-				global.pedtext = "К сожалению, я занят и не смогу помочь ей сам...";
-				mp.gui.chat.push("!{Red}[Bony] !{White}К сожалению, я занят и не смогу помочь ей сам...");
+				global.pedtext = "К Unfortunately, I'm busy and can't help her myself ...";
+				mp.gui.chat.push("!{Red}[Bony] !{White}К Unfortunately, I'm busy and can't help her myself ...");
 				global.pedsaying = needped[0];
 				break;
 			case 2:	
-				global.pedtext = "Спасибо, что нашел на меня время, мне нужна твоя помощь.";
-				global.pedtext2 = "Собери и принеси мне парочку тыкв, они сзади дома.";
-				mp.gui.chat.push("!{Yellow}[Emma] !{White}Спасибо, что нашел на меня время, мне нужна твоя помощь. Собери и принеси мне парочку тыкв, они сзади дома.");
+				global.pedtext = "Thanks for taking the time with me, I need your help.";
+				global.pedtext2 = "Collect and bring me a couple of pumpkins, they are in the back of the house.";
+				mp.gui.chat.push("!{Yellow}[Emma] !{White}Thanks for taking the time with me, I need your help. Collect and bring me a couple of pumpkins, they are in the back of the house.");
 				global.pedsaying = needped[1];
 				break;
 			case 3:	
-				global.pedtext = "Спасибо, что нашла на меня время, дорогая моя!";
-				global.pedtext2 = "Собери и принеси мне парочку капуст, они сзади дома.";
-				mp.gui.chat.push("!{Yellow}[Emma] !{White}Спасибо, что нашла на меня время, дорогая моя! Собери и принеси мне парочку капуст, они сзади дома.");
+				global.pedtext = "Thank you for taking the time with me, my dear!";
+				global.pedtext2 = "Collect and bring me a couple of cabbages, they are in the back of the house.";
+				mp.gui.chat.push("!{Yellow}[Emma] !{White}Thank you for taking the time with me, my dear! Collect and bring me a couple of cabbages, they are in the back of the house.");
 				global.pedsaying = needped[1];
 				break;
 			case 4:	
-				global.pedtext = "С таким количеством тыкв и делать нечего!";
-				mp.gui.chat.push("!{Yellow}[Emma] !{White}С таким количеством тыкв и делать нечего!");
+				global.pedtext = "С so many pumpkins and there is nothing to do!";
+				mp.gui.chat.push("!{Yellow}[Emma] !{White}С so many pumpkins and there is nothing to do!");
 				global.pedsaying = needped[1];
 				break;
 			case 5:	
-				global.pedtext = "Твоей капусты даже на салат не хватит!";
-				mp.gui.chat.push("!{Yellow}[Emma] !{White}Твоей капусты даже на салат не хватит!");
+				global.pedtext = "Your cabbage isn't even enough for a salad!";
+				mp.gui.chat.push("!{Yellow}[Emma] !{White}Your cabbage isn't even enough for a salad!");
 				global.pedsaying = needped[1];
 				break;
 			case 6:	
-				mp.gui.chat.push("!{Gray}[Подсказка] Наверное, этого ей хватит.");
+				mp.gui.chat.push("!{Gray}[prompt] Perhaps that will be enough for her.");
 				global.pedtimer = false;
 				break;
 			case 7:	
-				global.pedtext = "Ой, как ты быстро, а я и не ожидала, спасибо!";
-				global.pedtext2 = "Держи пару монет в знак благодарности. Слушай...";
-				mp.gui.chat.push("!{Yellow}[Emma] !{White}Ой, как ты быстро, а я и не ожидала, спасибо! Держи пару монет в знак благодарности. Слушай...");
+				global.pedtext = "Oh, how fast you are, and I didn't expect it, thanks!";
+				global.pedtext2 = "Keep a couple of gratitude coins. Listen ...";
+				mp.gui.chat.push("!{Yellow}[Emma] !{White}Oh, how fast you are, and I didn't expect it, thanks! Keep a couple of gratitude coins. Listen ...");
 				global.pedsaying = needped[1];
 				setTimeout(function() { global.pedtimer = false; mp.events.call("ChatPyBed", 8); }, 6100);
 				break;
 			case 8:	
-				global.pedtext = "У знакомого есть работка, живёт в Грейпсид, тут близко.";
-				global.pedtext2 = "Я передала тебе бумажку с его местонахождением, глянь.";
-				mp.gui.chat.push("!{Yellow}[Emma] !{White}У знакомого есть работка, живёт в Грейпсид, тут близко. Я передала тебе бумажку с его местонахождением, глянь.");
+				global.pedtext = "A friend has a job, lives in Grapeseed, close here.";
+				global.pedtext2 = "I gave you a piece of paper with his location, look.";
+				mp.gui.chat.push("!{Yellow}[Emma] !{White}A friend has a job, lives in Grapeseed, close here. I gave you a piece of paper with his location, look.");
 				global.pedsaying = needped[1];
 				mp.events.call("createWaypoint", 1924.431, 4922.007);
 				break;
 			case 9:	
-				global.pedtext = "Огроменное тебе спасибо!";
-				global.pedtext2 = "Держи, это от меня, так сказать - благодарность!";
-				mp.gui.chat.push("!{Red}[Bony] !{White}Огроменное тебе спасибо! Держи, это от меня, так сказать - благодарность!");
+				global.pedtext = "Thank you so much!";
+				global.pedtext2 = "Keep it from me, so to speak - thanks!";
+				mp.gui.chat.push("!{Red}[Bony] !{White}Thank you so much! Keep it from me, so to speak - thanks!");
 				global.pedsaying = needped[0];
 				break;
 			case 10:	
-				global.pedtext = "О, привет! А Эмма говорила о тебе!";
-				global.pedtext2 = "Я так понимаю, тебе нужна работка, да?";
-				mp.gui.chat.push("!{Orange}[Frank] !{White}О, привет! А Эмма говорила о тебе! Я так понимаю, тебе нужна работка, да?");
+				global.pedtext = "Oh, hi! And Emma was talking about you!";
+				global.pedtext2 = "I understand you need a job, right?";
+				mp.gui.chat.push("!{Orange}[Frank] !{White}Oh, hi! And Emma was talking about you! I understand you need a job, right?");
 				global.pedsaying = needped[2];
 				if(variation == 0) setTimeout(function() { global.pedtimer = false; mp.events.call("ChatPyBed", 11); }, 6100);
 				else if(variation == 1) setTimeout(function() { global.pedtimer = false; mp.events.call("ChatPyBed", 12); }, 6100);
 				break;
 			case 11:	
-				global.pedtext = "Хотел попросить включить водяной насос, но";
-				global.pedtext2 = "пошел дождь, тебе повезло, держи монетку.";
-				mp.gui.chat.push("!{Orange}[Frank] !{White}Хотел попросить включить водяной насос, но пошел дождь, тебе повезло, держи монетку.");
+				global.pedtext = "I wanted to ask to turn on the water pump, but";
+				global.pedtext2 = "it's raining, you're in luck, hold a coin.";
+				mp.gui.chat.push("!{Orange}[Frank] !{White}I wanted to ask you to turn on the water pump, but it started raining, you're in luck, hold a coin.");
 				global.pedsaying = needped[2];
 				break;
 			case 12:	
-				global.pedtext = "Мне как раз нужно включить водяной насос!";
-				global.pedtext2 = "Сбегай, пожалуйста, включи его.";
-				mp.gui.chat.push("!{Orange}[Frank] !{White}Мне как раз нужно включить водяной насос! Сбегай, пожалуйста, включи его.");
+				global.pedtext = "I just need to turn on the water pump!";
+				global.pedtext2 = "Run, please, turn it on.";
+				mp.gui.chat.push("!{Orange}[Frank] !{White}I just need to turn on the water pump! Run, please, turn it on.");
 				global.pedsaying = needped[2];
 				mp.events.call("createWaypoint", 2043.343, 4853.748);
 				break;
 			case 13:	
-				global.pedtext = "Отлично, теперь растениям не страшна жара!";
-				global.pedtext2 = "Если ты захочешь еще подзаработать - обращайся.";
-				mp.gui.chat.push("!{Orange}[Frank] !{White}Отлично, теперь растениям не страшна жара! Если ты захочешь еще работки - обращайся.");
+				global.pedtext = "Great, now the plants are not afraid of the heat!";
+				global.pedtext2 = "If you want to earn extra money, please contact.";
+				mp.gui.chat.push("!{Orange}[Frank] !{White}Great, now the plants are not afraid of the heat! If you want more work, please contact.");
 				global.pedsaying = needped[2];
 				break;
 			case 14:	
-				global.pedtext = "Вижу, тебе нетерпится получить еще денег? Ха-ха.";
-				global.pedtext2 = "Лааадно, у меня там трактор в гараже, привези его сюда.";
-				mp.gui.chat.push("!{Orange}[Frank] !{White}Вижу, тебе нетерпится получить еще денег? Ха-ха. Лааадно, у меня там трактор в гараже, привези его сюда.");
+				global.pedtext = "I see you're impatient to get more money? Haha.";
+				global.pedtext2 = "Laaadno, I have a tractor in the garage, bring it here.";
+				mp.gui.chat.push("!{Orange}[Frank] !{White}I see you're impatient to get more money? Haha. Laaadno, I have a tractor in the garage, bring it here.");
 				global.pedsaying = needped[2];
 				mp.events.call("createWaypoint", 1981.87, 5174.382);
 				break;
 			case 15:	
-				global.pedtext = "Эх, вот бы трактор сюда, а то поля-то ждут...";
-				mp.gui.chat.push("!{Orange}[Frank] !{White}Эх, вот бы трактор сюда, а то поля-то ждут...");
+				global.pedtext = "Oh, if only the tractor is here, otherwise the fields are waiting ...";
+				mp.gui.chat.push("!{Orange}[Frank] !{White}Oh, if only the tractor is here, otherwise the fields are waiting ...");
 				global.pedsaying = needped[2];
 				mp.events.call("createWaypoint", 1981.87, 5174.382);
 				break;
 			case 16:	
-				global.pedtext = "О, наконец-то! Надеюсь, трактор не поцарапал?";
-				global.pedtext2 = "Да ладно, я шучу! Ха-ха-ха. Денюжка твоя.";
-				mp.gui.chat.push("!{Orange}[Frank] !{White}О, наконец-то! Надеюсь, трактор не поцарапал? Да ладно, я шучу! Ха-ха-ха. Денюжка твоя.");
+				global.pedtext = "Oh, finally! I hope the tractor hasn't been scratched?";
+				global.pedtext2 = "Come on, I'm kidding! Ha ha ha. The money is yours.";
+				mp.gui.chat.push("!{Orange}[Frank] !{White}Oh, finally! I hope the tractor hasn't been scratched? Come on, I'm kidding! Ha ha ha. The money is yours.");
 				global.pedsaying = needped[2];
 				break;
 			case 17:	
-				global.pedtext = "Прости, пока пусто. Поищи работку в городе.";
-				global.pedtext2 = "В будущем, у меня будет много дел для тебя.";
-				mp.gui.chat.push("!{Orange}[Frank] !{White}Прости, мне пока нечего тебе дать...");
+				global.pedtext = "Sorry, while it's empty. Look for a job in the city.";
+				global.pedtext2 = "In the future, I will have a lot to do for you.";
+				mp.gui.chat.push("!{Orange}[Frank] !{White}Sorry, I have nothing to give you yet ...");
 				global.pedsaying = needped[2];
 				break;
 			case 18:	
-				global.pedtext = "Слушай, мне очень неловко тебя об этом просить,";
-				global.pedtext2 = "но, пожалуйста, сделай для меня одолжение...";
-				mp.gui.chat.push("!{Orange}[Frank] !{White}Слушай, мне очень неловко тебя об этом просить, но, пожалуйста, сделай для меня одолжение...");
+				global.pedtext = "Look, I'm really embarrassed to ask you this";
+				global.pedtext2 = "but please do me a favor ...";
+				mp.gui.chat.push("!{Orange}[Frank] !{White}Look, I'm really embarrassed to ask you this, but please do me a favor ...");
 				global.pedsaying = needped[2];
 				setTimeout(function() { global.pedtimer = false; mp.events.call("ChatPyBed", 19); }, 6100);
 				break;
 			case 19:	
-				global.pedtext = "Сбегай в ближайший 24/7 и купи мне SIM-карту,";
-				global.pedtext2 = "буду очень тебе благодарен!";
-				mp.gui.chat.push("!{Orange}[Frank] !{White}Сбегай в ближайший 24/7 и купи мне SIM-карту, буду очень тебе благодарен!");
+				global.pedtext = "Run to the next 24/7 and buy me a SIM card,";
+				global.pedtext2 = "I will be very grateful to you!";
+				mp.gui.chat.push("!{Orange}[Frank] !{White}Run to the next 24/7 and buy me a SIM card, I will be very grateful to you!");
 				global.pedsaying = needped[2];
 				mp.events.call("createWaypoint", 1699.871, 4928.831);
 				break;
 			case 20:	
-				global.pedtext = "Я понимаю, что это странная просьба, но,";
-				global.pedtext2 = "пожалуйста, купи мне SIM-карту.";
-				mp.gui.chat.push("!{Orange}[Frank] !{White}Я понимаю, что это странная просьба, но, пожалуйста, купи мне SIM-карту.");
+				global.pedtext = "I understand that this is a strange request, but,";
+				global.pedtext2 = "please buy me a SIM card.";
+				mp.gui.chat.push("!{Orange}[Frank] !{White}I understand that this is a strange request, but please buy me a SIM card.");
 				global.pedsaying = needped[2];
 				mp.events.call("createWaypoint", 1699.871, 4928.831);
 				break;
 			case 21:	
-				global.pedtext = "Блин, супер, спасибо! Сколько я тебе должен за неё?";
-				global.pedtext2 = "Хотя, чего мелочится, держи 500$. А еще...";
-				mp.gui.chat.push("!{Orange}[Frank] !{White}Блин, супер, спасибо! Сколько я тебе должен за неё? Хотя, чего мелочится, держи 500$. А еще...");
+				global.pedtext = "Damn, super, thanks! How much do I owe you for it?";
+				global.pedtext2 = "Although, what is small, keep $500. And also ...";
+				mp.gui.chat.push("!{Orange}[Frank] !{White}Damn, super, thanks! How much do I owe you for it? Although, what is small, keep $ 500. And also ...");
 				global.pedsaying = needped[2];
 				setTimeout(function() { global.pedtimer = false; mp.events.call("ChatPyBed", 22); }, 6100);
 				break;
 			case 22:	
-				global.pedtext = "Я понимаю, что уже надоел тебе, но найди мою";
-				global.pedtext2 = "кошку, она должна быть у дома напротив меня и";
-				mp.gui.chat.push("!{Orange}[Frank] !{White}Я понимаю, что уже надоел тебе, но найди мою кошку, она должна быть у дома напротив меня и");
+				global.pedtext = "I understand that you are already tired of you, but find mine";
+				global.pedtext2 = "cat, she should be at home opposite me and";
+				mp.gui.chat.push("!{Orange}[Frank] !{White}I understand that you are already tired of you, but find my cat, she should be at the house opposite me and");
 				global.pedsaying = needped[2];
 				setTimeout(function() { global.pedtimer = false; mp.events.call("ChatPyBed", 23); }, 6100);
 				break;
 			case 23:	
-				global.pedtext = "не беспокойся, что там здание UNION G.S.,";
-				global.pedtext2 = "компания пару лет как не работает, охраны No.";
-				mp.gui.chat.push("!{Orange}[Frank] !{White}не беспокойся, что там здание UNION G.S., компания пару лет как не работает, охраны No.");
+				global.pedtext = "don't worry that there is a UNION G.S.,";
+				global.pedtext2 = "the company has not been working for a couple of years, security No.";
+				mp.gui.chat.push("!{Orange}[Frank] !{White}don't worry that there is a UNION G.S. building there, the company has not been working for a couple of years, security No.");
 				global.pedsaying = needped[2];
 				mp.events.call("createWaypoint", 2015.733, 4967.312);
 				break;
 			case 24:	
-				global.pedtext = "Пожалуйста, найди кошку, я переживаю за неё!";
-				mp.gui.chat.push("!{Orange}[Frank] !{White}Пожалуйста, найди кошку, я переживаю за неё!");
+				global.pedtext = "Please find a cat, I'm worried about her!";
+				mp.gui.chat.push("!{Orange}[Frank] !{White}Please find a cat, I'm worried about her!");
 				global.pedsaying = needped[2];
 				mp.events.call("createWaypoint", 2015.733, 4967.312);
 				break;
 			case 25:	
-				global.pedtext = "Спасибо тебе! Еще раз извини и держи 100$.";
-				global.pedtext2 = "Чтобы добраться в город - беги к таксопарку.";
-				mp.gui.chat.push("!{Orange}[Frank] !{White}Спасибо тебе! Еще раз извини и держи 100$. Чтобы добраться в город - беги к таксопарку.");
+				global.pedtext = "Thank you! Sorry again and keep $ 100.";
+				global.pedtext2 = "To get to the city, run to the taxi company.";
+				mp.gui.chat.push("!{Orange}[Frank] !{White}Thank you! Sorry again and keep $ 100. To get to the city, run to the taxi company.");
 				global.pedsaying = needped[2];
 				mp.events.call("createWaypoint", 1802.69, 4588.494);
 				break;

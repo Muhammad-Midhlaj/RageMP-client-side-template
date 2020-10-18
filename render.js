@@ -104,16 +104,16 @@ mp.keys.bind(0x47, false, function () { // G key
             }
             else {
                 mp.gui.cursor.visible = true;
-                OpenCircle('Мебель', 0);
+                OpenCircle('Furniture', 0);
             }
             break;
         case "player":
             mp.gui.cursor.visible = true;
-            OpenCircle('Игрок', 0);
+            OpenCircle('Player', 0);
             break;
         case "vehicle":
             mp.gui.cursor.visible = true;
-            OpenCircle('Машина', 0);
+            OpenCircle('Car', 0);
             break;
     }
     lastCheck = new Date().getTime();
@@ -134,14 +134,14 @@ mp.keys.bind(0x71, false, function () { // F2 key
         }
         else {
             mp.gui.cursor.visible = true;
-            OpenCircle('Мебель', 0);
+            OpenCircle('Furniture', 0);
             entity = nearestObject;
         }
     }
     else if (nearestObject && mp.players.exists(nearestObject)) {
         entity = nearestObject;
         mp.gui.cursor.visible = true;
-        OpenCircle('Игрок', 0);
+        OpenCircle('Player', 0);
     }
 
     lastCheck = new Date().getTime();

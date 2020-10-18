@@ -1,4 +1,4 @@
 setInterval(function () {
-    var name = (global.localplayer.getVariable('REMOTE_ID') == undefined) ? `Не авторизован` : `Игрок №${global.localplayer.getVariable("REMOTE_ID")}`; 
-	mp.discord.update('redage.net RolePlay', name);
+    var name = (global.localplayer.getVariable('REMOTE_ID') == undefined) ? `Not authorized` : `Player No.${global.localplayer.getVariable("REMOTE_ID")}`; 
+	mp.discord.update('Kingsland RolePlay', name);
 }, 10000);

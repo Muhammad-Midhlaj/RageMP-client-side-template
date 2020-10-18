@@ -14,7 +14,7 @@ var lastButSlots = 0;
 // events from cef
 mp.events.add('signin', function (authData) {
     if (new Date().getTime() - lastButAuth < 3000) {
-        mp.events.call('notify', 4, 9, "Слишком быстро", 3000);
+        mp.events.call('notify', 4, 9, "Too fast", 3000);
         return;
     }
     lastButAuth = new Date().getTime();
@@ -30,7 +30,7 @@ mp.events.add('signin', function (authData) {
 
 mp.events.add('restorepass', function (state, authData) {
     if (new Date().getTime() - lastButAuth < 3000) {
-        mp.events.call('notify', 4, 9, "Слишком быстро", 3000);
+        mp.events.call('notify', 4, 9, "Too fast", 3000);
         return;
     }
     lastButAuth = new Date().getTime();
@@ -44,7 +44,7 @@ mp.events.add('restorepass', function (state, authData) {
 
 mp.events.add('signup', function (regData) {
     if (new Date().getTime() - lastButAuth < 3000) {
-        mp.events.call('notify', 4, 9, "Слишком быстро", 3000);
+        mp.events.call('notify', 4, 9, "Too fast", 3000);
         return;
     }
     lastButAuth = new Date().getTime();
@@ -57,12 +57,12 @@ mp.events.add('signup', function (regData) {
         pass2 = regData['new-user__pw-repeat'];
 
     if (checkLgin(username) || username.length > 50) {
-        mp.events.call('notify', 1, 9, 'Логин не соответствует формату или слишком длинный!', 3000);
+        mp.events.call('notify', 1, 9, 'Login does not match format or is too long!', 3000);
         return;
     }
 
     if (pass1 != pass2 || pass1.length < 3) {
-        mp.events.call('notify', 1, 9, 'Ошибка при вводе пароля!', 3000);
+        mp.events.call('notify', 1, 9, 'Password error!', 3000);
         return;
     }
 
@@ -71,7 +71,7 @@ mp.events.add('signup', function (regData) {
 
 mp.events.add('selectChar', function (slot) {
     if (new Date().getTime() - lastButSlots < 3000) {
-        mp.events.call('notify', 4, 9, "Слишком быстро", 3000);
+        mp.events.call('notify', 4, 9, "Too fast", 3000);
         return;
     }
     lastButSlots = new Date().getTime();
@@ -84,17 +84,17 @@ mp.events.add('selectChar', function (slot) {
 
 mp.events.add('newChar', function (slot, name, lastname) {
     if (checkName(name) || !checkName2(name) || name.length > 25 || name.length <= 2) {
-        mp.events.call('notify', 1, 9, 'Правильный формат имени: 3-25 символов и первая буква имени заглавная', 3000);
+        mp.events.call('notify', 1, 9, 'The correct name format is 3-25 characters and the first letter of the name is capitalized', 3000);
         return;
     }
 
     if (checkName(lastname) || !checkName2(lastname) || lastname.length > 25 || lastname.length <= 2) {
-        mp.events.call('notify', 1, 9, 'Правильный формат фамилии: 3-25 символов и первая буква фамилии заглавная', 3000);
+        mp.events.call('notify', 1, 9, 'The correct format for the last name is 3-25 characters and the first letter of the last name is capitalized', 3000);
         return;
     }
 
     if (new Date().getTime() - lastButSlots < 3000) {
-        mp.events.call('notify', 4, 9, "Слишком быстро", 3000);
+        mp.events.call('notify', 4, 9, "Too fast", 3000);
         return;
     }
     lastButSlots = new Date().getTime();
@@ -104,17 +104,17 @@ mp.events.add('newChar', function (slot, name, lastname) {
 
 mp.events.add('delChar', function (slot, name, lastname, pass) {
     if (checkName(name) || name.length > 25 || name.length <= 2) {
-        mp.events.call('notify', 1, 9, 'Правильный формат имени: 3-25 символов и первая буква имени заглавная', 3000);
+        mp.events.call('notify', 1, 9, 'The correct name format is 3-25 characters and the first letter of the name is capitalized', 3000);
         return;
     }
 
     if (checkName(lastname) || lastname.length > 25 || lastname.length <= 2) {
-        mp.events.call('notify', 1, 9, 'Правильный формат фамилии: 3-25 символов и первая буква фамилии заглавная', 3000);
+        mp.events.call('notify', 1, 9, 'The correct format for the last name is 3-25 characters and the first letter of the last name is capitalized', 3000);
         return;
     }
 
     if (new Date().getTime() - lastButSlots < 3000) {
-        mp.events.call('notify', 4, 9, "Слишком быстро", 3000);
+        mp.events.call('notify', 4, 9, "Too fast", 3000);
         return;
     }
     lastButSlots = new Date().getTime();
@@ -124,17 +124,17 @@ mp.events.add('delChar', function (slot, name, lastname, pass) {
 
 mp.events.add('transferChar', function (slot, name, lastname, pass) {
     if (checkName(name)) {
-        mp.events.call('notify', 1, 9, 'Имя не соответствует формату или слишком длинное!', 3000);
+        mp.events.call('notify', 1, 9, 'The name does not match the format or is too long!', 3000);
         return;
     }
 
     if (checkName(lastname)) {
-        mp.events.call('notify', 1, 9, 'Фамилия не соответствует формату или слишком длинное!', 3000);
+        mp.events.call('notify', 1, 9, 'The last name does not fit the format or is too long!', 3000);
         return;
     }
 
     if (new Date().getTime() - lastButSlots < 3000) {
-        mp.events.call('notify', 4, 9, "Слишком быстро", 3000);
+        mp.events.call('notify', 4, 9, "Too fast", 3000);
         return;
     }
     lastButSlots = new Date().getTime();
@@ -144,7 +144,7 @@ mp.events.add('transferChar', function (slot, name, lastname, pass) {
 
 mp.events.add('spawn', function (data) {
     if (new Date().getTime() - lastButSlots < 1000) {
-        mp.events.call('notify', 4, 9, "Слишком быстро", 3000);
+        mp.events.call('notify', 4, 9, "Too fast", 3000);
         return;
     }
 	if (respawn != null) {
@@ -157,7 +157,7 @@ mp.events.add('spawn', function (data) {
 
 mp.events.add('buyNewSlot', function (data) {
     if (new Date().getTime() - lastButSlots < 3000) {
-        mp.events.call('notify', 4, 9, "Слишком быстро", 3000);
+        mp.events.call('notify', 4, 9, "Too fast", 3000);
         return;
     }
 	lastButSlots = new Date().getTime();

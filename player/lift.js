@@ -4,7 +4,7 @@ var liftcBack = "";
 function openLift(type, cBack) {
     if (global.menuCheck()) return;
     let floors = [
-        ["Гараж", "1 этаж", "49 этаж", "Крыша"]
+        ["Garage", "1st floor", "49th floor", "Roof"]
     ];
     let json = JSON.stringify(floors[type]);
     mp.gui.emmit(`window.hud.updateComponent("lift", true)`);

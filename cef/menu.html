@@ -427,23 +427,23 @@
         <div @click="close" class="exit"></div>
         <div class="items" v-if="isBarber">
             <!--Barber Shop-->
-            <bodylist id="hair" name="Прическа" color="true"></bodylist>
-            <bodylist id="beard" name="Борода" color="true"></bodylist>
-            <bodylist id="eyebrows" name="Брови" color="true"></bodylist>
-            <bodylist id="chesthair" name="Грудь" color="true"></bodylist>
-            <bodylist id="lenses" name="Линзы"></bodylist>
-            <bodylist id="lipstick" name="Помада" color="true"></bodylist>
-            <bodylist id="blush" name="Румянец" color="true"></bodylist>
-            <bodylist id="makeup" name="Тени"></bodylist>
+            <bodylist id="hair" name="Hairstyle" color="true"></bodylist>
+            <bodylist id="beard" name="Beard" color="true"></bodylist>
+            <bodylist id="eyebrows" name="Eyebrows" color="true"></bodylist>
+            <bodylist id="chesthair" name="Chest" color="true"></bodylist>
+            <bodylist id="lenses" name="Lenses"></bodylist>
+            <bodylist id="lipstick" name="Pomade" color="true"></bodylist>
+            <bodylist id="blush" name="Blush" color="true"></bodylist>
+            <bodylist id="makeup" name="Shadows"></bodylist>
         </div>
         <div class="items" v-if="!isBarber">
             <!--Tattoo Shop-->
-            <bodylist id="torso" name="Торс"></bodylist>
-            <bodylist id="head" name="Голова"></bodylist>
-            <bodylist id="leftarm" name="Левая рука"></bodylist>
-            <bodylist id="rightarm" name="Правая рука"></bodylist>
-            <bodylist id="leftleg" name="Левая нога"></bodylist>
-            <bodylist id="rightleg" name="Правая нога"></bodylist>
+            <bodylist id="torso" name="Torso"></bodylist>
+            <bodylist id="head" name="Head"></bodylist>
+            <bodylist id="leftarm" name="Left hand"></bodylist>
+            <bodylist id="rightarm" name="Right hand"></bodylist>
+            <bodylist id="leftleg" name="Left leg"></bodylist>
+            <bodylist id="rightleg" name="Right leg"></bodylist>
         </div>
     </div>
     <div class="weapons_buy" v-if="active">

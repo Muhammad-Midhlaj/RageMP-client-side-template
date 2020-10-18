@@ -174,7 +174,7 @@ setInterval(function () {
 mp.keys.bind(Keys.VK_U, false, function () { // Animations selector
     if (!loggedin || chatActive || editing || new Date().getTime() - lastCheck < 1000 || global.menuOpened) return;
     if (localplayer.isInAnyVehicle(true)) return;
-    OpenCircle("Категории", 0);
+    OpenCircle("Categories", 0);
 });
 
 mp.keys.bind(Keys.VK_E, false, function () { // E key
@@ -297,11 +297,11 @@ function CheckMyWaypoint() {
 mp.events.add('syncWP', function (bX, bY, type) {
     if(!mp.game.invoke('0x1DD1F58F493F1DA5')) {
 		mp.game.ui.setNewWaypoint(bX, bY);
-		if(type == 0) mp.events.call('notify', 2, 9, "Пассажир передал Вам информацию о своём маршруте!", 3000);
-		else if(type == 1) mp.events.call('notify', 2, 9, "Человек из списка контактов Вашего телефона передал Вам метку его местоположения!", 3000);
+		if(type == 0) mp.events.call('notify', 2, 9, "The passenger has given you information about his route!", 3000);
+		else if(type == 1) mp.events.call('notify', 2, 9, "A person from your phone's contact list has given you a label of his location!", 3000);
 	} else {
-		if(type == 0) mp.events.call('notify', 4, 9, "Пассажир попытался передать Вам информацию о маршруте, но у Вас уже установлен другой маршрут.", 5000);
-		else if(type == 1) mp.events.call('notify', 4, 9, "Человек из списка контактов Вашего телефона попытался передать Вам метку его местоположения, но у Вас уже установлена другая метка.", 5000);
+		if(type == 0) mp.events.call('notify', 4, 9, "The passenger tried to send you route information, but you already have a different route.", 5000);
+		else if(type == 1) mp.events.call('notify', 4, 9, "A person from your phone's contact list tried to send you a location tag, but you already have a different location tag set.", 5000);
 	}
 });
 
@@ -357,7 +357,7 @@ mp.events.add('render', () => {
         var secondsLeft = Math.trunc((deathTimer - new Date().getTime()) / 1000);
         var minutes = Math.trunc(secondsLeft / 60);
         var seconds = secondsLeft % 60;
-        mp.game.graphics.drawText(`До смерти осталось ${minutes}:${seconds}`, [0.5, 0.8], {
+        mp.game.graphics.drawText(`Left to death ${minutes}:${seconds}`, [0.5, 0.8], {
             font: 0,
             color: [255, 255, 255, 200],
             scale: [0.35, 0.35],
@@ -387,7 +387,7 @@ mp.events.add('render', () => {
 
 mp.events.add("playerRuleTriggered", (rule, counter) => {
     if (rule === 'ping' && counter > 5) {
-        mp.events.call('notify', 4, 2, "Ваш ping слишком большой. Зайдите позже", 5000);
+        mp.events.call('notify', 4, 2, "Your ping is too big. Come back later", 5000);
         mp.events.callRemote("kickclient");
     }
     /*if (rule === 'packetLoss' && counter => 10) {

@@ -5,7 +5,7 @@ mp.gui.chat.show(true);
 
 mp.events.add('addcandidate', function (Name) {
 	try {
-		elec.AddItem(new UIMenuItem(Name, "Кандидат"));
+		elec.AddItem(new UIMenuItem(Name, "Candidate"));
 		elecopened = true;
 		elec.Open();
 		mp.gui.cursor.visible = false;
@@ -16,8 +16,8 @@ mp.events.add('addcandidate', function (Name) {
 mp.events.add('openelem', (firstname) => {
 	try {
 		if(elec == null) {
-			elec = new Menu("ВЫБОРЫ", "Numero de candidato: ", new Point(50, 50));
-			elec.AddItem(new UIMenuItem(firstname, "Кандидат"));
+			elec = new Menu("ELECTIONS", "Candidate number: ", new Point(50, 50));
+			elec.AddItem(new UIMenuItem(firstname, "Candidate"));
 			elec.Close();
 			elec.ItemSelect.on(item => {
 				if(new Date().getTime() - global.lastCheck < 100) return; 

@@ -150,7 +150,7 @@ mp.events.add('render', () => {
 	try {
         if (!global.loggedin) return;
 		if(global.pressedraw) {
-			mp.game.graphics.drawText(`Нажмите 'E' для взаимодействия`, [0.10, 0.75], {
+			mp.game.graphics.drawText(`Press 'E' to interact`, [0.10, 0.75], {
 				font: 0,
 				color: [255, 255, 255, 185],
 				scale: [0.35, 0.35],
@@ -257,7 +257,7 @@ mp.events.add('render', () => {
 					outline: true
 				});
 			} else if(entity == truckorderveh) {
-				mp.game.graphics.drawText("Ваш Заказ", [entity.position.x, entity.position.y, entity.position.z], {
+				mp.game.graphics.drawText("Your order", [entity.position.x, entity.position.y, entity.position.z], {
 					font: 1,
 					color: [255, 255, 255, 255],
 					scale: [1.2, 1.2],

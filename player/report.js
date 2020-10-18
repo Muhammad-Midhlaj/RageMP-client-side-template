@@ -2,7 +2,7 @@ var reportactive = false;
 
 mp.events.add('addreport', (id_, author_, quest_) => {
     mp.gui.emmit(`addReport(${id_},'${author_}','${quest_}', false, '')`);
-    mp.events.call('notify', 0, 2, "Пришел новый репорт!", 3000);
+    mp.events.call('notify', 0, 2, "New report has arrived!", 3000);
 })
 
 mp.events.add('setreport', (id, name) => {

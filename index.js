@@ -100,7 +100,7 @@ mp.events.add('admin.toggleGodMode', () => {
 
     mp.players.local.setInvincible(global.isGodModeActive);
 
-    mp.events.call('notify', 4, 9, `GM - ${global.isGodModeActive ? 'включен' : 'выключен'}`, 3000);
+    mp.events.call('notify', 4, 9, `GM - ${global.isGodModeActive ? 'included' : 'switched off'}`, 3000);
 });
 
 global.chatActive = false;

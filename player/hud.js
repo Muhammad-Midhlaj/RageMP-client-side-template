@@ -75,7 +75,7 @@ mp.keys.bind(global.Keys.VK_6, false, function () { // 5 key - cruise mode on/of
 	if(vclass == 14 || vclass == 15 || vclass == 16) return;
 	if(global.localplayer.vehicle.isOnAllWheels() == false) return;
     if (new Date().getTime() - cruiseLastPressed < 300) {
-        mp.events.call('openInput', 'Круиз-контроль', 'Укажите скорость в км/ч', 3, 'setCruise');
+        mp.events.call('openInput', 'Cruise control', 'Indicate speed in km / h', 3, 'setCruise');
     } else {
         var veh = global.localplayer.vehicle;
         if (cruiseSpeed == -1) {
@@ -103,7 +103,7 @@ mp.events.add('setCruiseSpeed', function (speed) {
 	var veh = global.localplayer.vehicle;
 	var curSpeed = veh.getSpeed();
 	if(speed < curSpeed) {
-		mp.events.call('notify', 4, 9, "Нельзя установить скорость меньше, чем она есть на данный момент, снизьте скорость и попробуйте еще раз.", 6000);
+		mp.events.call('notify', 4, 9, "You cannot set the speed lower than it is at the moment, reduce the speed and try again.", 6000);
 		return;
 	}
     speed = speed / 3.6; // convert from kph to mps
@@ -146,9 +146,9 @@ mp.events.add('sendRPMessage', (type, msg, players) => {
 			
 			var name = "";
 			if(player.getVariable('IS_MASK') == true) {
-				name = (player === localplayer || global.localplayer.getVariable('IS_ADMIN') == true) ? `${player.name.replace("_", " ")} (${player.getVariable('REMOTE_ID')})` : `Незнакомец (${id})`;
+				name = (player === localplayer || global.localplayer.getVariable('IS_ADMIN') == true) ? `${player.name.replace("_", " ")} (${player.getVariable('REMOTE_ID')})` : `Stranger (${id})`;
 			} else {
-				name = (player === localplayer || global.localplayer.getVariable('IS_ADMIN') == true || global.passports[player.name] != undefined || global.friends[player.name] != undefined) ? `${player.name.replace("_", " ")} (${player.getVariable('REMOTE_ID')})` : `Незнакомец (${id})`;
+				name = (player === localplayer || global.localplayer.getVariable('IS_ADMIN') == true || global.passports[player.name] != undefined || global.friends[player.name] != undefined) ? `${player.name.replace("_", " ")} (${player.getVariable('REMOTE_ID')})` : `Stranger (${id})`;
 			}
             msg = msg.replace("{name}", name);
         }
@@ -274,7 +274,7 @@ mp.events.add('render', () => {
 
 			if (veh.getVariable('FUELTANK') !== undefined) {
 				let fueltank = veh.getVariable('FUELTANK');
-				mp.game.graphics.drawText(`Загружено: ${fueltank}/1000л`, [0.93, 0.80], {
+				mp.game.graphics.drawText(`Uploaded: ${fueltank}/1000l`, [0.93, 0.80], {
 					font: 0,
 					color: [255, 255, 255, 185],
 					scale: [0.4, 0.4],

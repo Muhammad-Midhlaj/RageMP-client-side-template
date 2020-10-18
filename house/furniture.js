@@ -2,7 +2,7 @@
 var moving_speeds = [0.01, 0.1, 1.0, 5.0, 10.0];
 var moving_speed_idx = 0;
 
-var editing_types = ["Позиция по X", "Позиция по Y", "Высота", "Наклон по X", "Наклон по Y", "Поворот"];
+var editing_types = ["Position by X", "Y position", "Height", "Slope on X", "Slope on Y", "Turn"];
 var editing_type_idx = 0;
 
 global.editing = false;
@@ -214,17 +214,17 @@ mp.events.add('render', () => {
     if (object !== null) {
 
         AddInstructionalStart();
-        AddInstructionalButton("Следующий режим", 197);
-        AddInstructionalButton("Предыдущий режим", 196);
-        AddInstructionalButton("Управление объектом", 194);
-        AddInstructionalButton("Управление объектом", 195);
-        AddInstructionalButtonCustom("Увеличить скорость", "t_+");
-        AddInstructionalButtonCustom("Уменьшить скорость", "t_-");
-        AddInstructionalButtonCustom("Установить", "t_Y");
-        AddInstructionalButtonCustom("Отмена", "t_N");
+        AddInstructionalButton("Next mode", 197);
+        AddInstructionalButton("Previous mode", 196);
+        AddInstructionalButton("Facility management", 194);
+        AddInstructionalButton("Facility management", 195);
+        AddInstructionalButtonCustom("Increase speed", "t_+");
+        AddInstructionalButtonCustom("Reduce speed", "t_-");
+        AddInstructionalButtonCustom("Install", "t_Y");
+        AddInstructionalButtonCustom("Cancellation", "t_N");
         AddInstructionalEnd(1);
 
-        mp.game.graphics.drawText(`Режим редактирования: ${editing_types[editing_type_idx]}\nСкорость: ${moving_speeds[moving_speed_idx]}`, [0.5, 0.9], {
+        mp.game.graphics.drawText(`Edit mode: ${editing_types[editing_type_idx]}\nSpeed: ${moving_speeds[moving_speed_idx]}`, [0.5, 0.9], {
             font: 0,
             color: [255, 255, 255, 255],
             scale: [0.5, 0.5],

@@ -13,12 +13,12 @@
             <div class="ticketfull" v-if="active">
                 <div class="ticketinside">
                     <div class="report">
-                        <p class="reporttext">Репорты</p>
+                        <p class="reporttext">Reports</p>
                         <div class="boxes">
                             <div class="boxreports">
                                 <div class="onereport" v-for="(value, index) in reports" @click="get(index)">
                                     <div class="reportinfo">
-                                        <p class="task">Задача</p> <p class="tasknumber">№ {{value[0]}}</p> <p class="taskuser">{{value[1]}}</p>
+                                        <p class="task">Task</p> <p class="tasknumber">No {{value[0]}}</p> <p class="taskuser">{{value[1]}}</p>
                                     </div>
                                     <div class="reporttasks">
                                         <p>{{value[2]}}</p>
@@ -38,12 +38,12 @@
                         </div>
                     </div>
                     <div class="answer">
-                        <p class="reporttext">Ответы</p>
+                        <p class="reporttext">Answers</p>
                         <div class="boxes">
                             <div class="boxreports">
                                 <div class="onereport" v-if="quser != ''">
                                     <div class="reportinfo">
-                                        <p class="task">Задача</p> <p class="tasknumber">№ {{qnum}}</p> <p class="taskuser">{{quser}}</p>
+                                        <p class="task">Task</p> <p class="tasknumber">No {{qnum}}</p> <p class="taskuser">{{quser}}</p>
                                     </div>
                                     <div class="reporttasks">
                                         <p>{{question}}</p>
@@ -55,23 +55,23 @@
                             <div class="textquestion">
                                 <p>
                                     <textarea class="user"
-                                              placeholder="Введите ответ на вопрос..."
+                                              placeholder="Enter the answer to the question ..."
                                               cols="30" rows="5"
                                               v-model="answer"></textarea>
                                 </p>
                             </div>
                             <div class="buttonquestion">
                                 <div class="butabs">
-                                    <p><button @click="send" class="buttonone">Ответить</button></p>
+                                    <p><button @click="send" class="buttonone">Reply</button></p>
                                 </div>
                                 <div class="butabr">
-                                    <p><button @click="retrn" class="buttononek">Вернуть</button></p>
+                                    <p><button @click="retrn" class="buttononek">Return</button></p>
                                 </div>
                             </div>
                         </div>
                     </div><!--answer -->
                     <div class="template">
-                        <p class="reporttext">Шаблоны</p>
+                        <p class="reporttext">Templates</p>
                         <div class="boxestempl">
                             <div class="boxtemplates">
                                 <div class="templ" v-for="(item, index) in templates">
@@ -87,7 +87,7 @@
                         <div class="texttempl">
                             <p>
                                 <textarea class="user"
-                                          placeholder="Напишите ваш текст для шаблона и нажмите на пустой"
+                                          placeholder="Write your text for the template and click on blank"
                                           cols="30" rows="5"
                                           :keyup.enter="submit" readonly></textarea>
                             </p>

@@ -168,12 +168,12 @@ lastCheck = new Date().getTime();
 if(hudstatus.belt)
 {
 localplayer.setConfigFlag(32, true);
-mp.events.call('notify', 4, 9, "Вы отстегнули ремень безопасности", 2000);
+mp.events.call('notify', 4, 9, "You unbuckled your seat belt", 2000);
 }
 else
 {
 localplayer.setConfigFlag(32, false);
-mp.events.call('notify', 2, 9, "Вы пристегнули ремень безопасности", 2000);
+mp.events.call('notify', 2, 9, "Have you fastened your seat belt", 2000);
 }
 
 hudstatus.belt = !hudstatus.belt;
@@ -194,7 +194,7 @@ mp.keys.bind(Keys.VK_6, false, function () { // 5 key - cruise mode on/off
 	if(vclass == 14 || vclass == 15 || vclass == 16) return;
 	if(localplayer.vehicle.isOnAllWheels() == false) return;
     if (new Date().getTime() - cruiseLastPressed < 300) {
-        mp.events.call('openInput', 'Круиз-контроль', 'Укажите скорость в км/ч', 3, 'setCruise');
+        mp.events.call('openInput', 'Cruise control', 'Indicate speed in km / h', 3, 'setCruise');
     } else {
         var veh = localplayer.vehicle;
         if (cruiseSpeed == -1) {
@@ -224,7 +224,7 @@ mp.events.add('setCruiseSpeed', function (speed) {
 	var veh = localplayer.vehicle;
 	var curSpeed = veh.getSpeed();
 	if(speed < curSpeed) {
-		mp.events.call('notify', 4, 9, "Нельзя установить скорость меньше, чем она есть на данный момент, снизьте скорость и попробуйте еще раз.", 6000);
+		mp.events.call('notify', 4, 9, "You cannot set the speed lower than it is at the moment, reduce the speed and try again.", 6000);
 		return;
 	}
     speed = speed / 3.6; // convert from kph to mps
@@ -269,9 +269,9 @@ mp.events.add('sendRPMessage', (type, msg, players) => {
 			
 			var name = "";
 			if(player.getVariable('IS_MASK') == true) {
-				name = (player === localplayer || localplayer.getVariable('IS_ADMIN') == true) ? `${player.name.replace("_", " ")} (${player.getVariable('REMOTE_ID')})` : `Незнакомец (${id})`;
+				name = (player === localplayer || localplayer.getVariable('IS_ADMIN') == true) ? `${player.name.replace("_", " ")} (${player.getVariable('REMOTE_ID')})` : `Stranger (${id})`;
 			} else {
-				name = (player === localplayer || localplayer.getVariable('IS_ADMIN') == true || passports[player.name] != undefined || friends[player.name] != undefined) ? `${player.name.replace("_", " ")} (${player.getVariable('REMOTE_ID')})` : `Незнакомец (${id})`;
+				name = (player === localplayer || localplayer.getVariable('IS_ADMIN') == true || passports[player.name] != undefined || friends[player.name] != undefined) ? `${player.name.replace("_", " ")} (${player.getVariable('REMOTE_ID')})` : `Stranger (${id})`;
 			}
             msg = msg.replace("{name}", name);
         }

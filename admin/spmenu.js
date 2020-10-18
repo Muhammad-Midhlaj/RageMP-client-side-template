@@ -1,8 +1,8 @@
 const spmenu = new global.NativeMenu("Spectate", "Spectate Menu", new global.Point(30, 500)); // Мы не выключаем чат, чтобы видеть переписку тех, за кем следим, поэтому двигаем саму табличку вниз
 spmenu.Close();
-spmenu.AddItem(new UIMenuListItem("Spectate", "Переключение игрока по ID",  new ItemsCollection(["Previous", "Next"])));
-spmenu.AddItem(new UIMenuItem("Refresh", "Обновить слежение за текущим игроком"));
-spmenu.AddItem(new UIMenuItem("Unspectate", "Выключить режим наблюдателя"));
+spmenu.AddItem(new UIMenuListItem("Spectate", "Switch player by ID",  new ItemsCollection(["Previous", "Next"])));
+spmenu.AddItem(new UIMenuItem("Refresh", "Update tracking of the current player"));
+spmenu.AddItem(new UIMenuItem("Unspectate", "Turn off spectator mode"));
 
 
 mp.events.add("spmode", (target, toggle) => {

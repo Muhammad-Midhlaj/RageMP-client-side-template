@@ -44,7 +44,7 @@ mp.events.add('render', () => {
         var seconds = secondsLeft % 60;
 
         mp.gui.execute(`console.log("tick")`);
-        mp.game.graphics.drawText(`До смерти осталось ${global.formatIntZero(minutes, 2)}:${global.formatIntZero(seconds, 2)}`, [0.5, 0.8], {
+        mp.game.graphics.drawText(`Left to death ${global.formatIntZero(minutes, 2)}:${global.formatIntZero(seconds, 2)}`, [0.5, 0.8], {
             font: 0,
             color: [255, 255, 255, 200],
             scale: [0.35, 0.35],
