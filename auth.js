@@ -14,7 +14,7 @@ var lastButSlots = 0;
 // events from cef
 mp.events.add('signin', function (authData) {
     if (new Date().getTime() - lastButAuth < 3000) {
-        mp.events.call('notify', 4, 9, "Слишком быстро", 3000);
+        mp.events.call('notify', 4, 9, "Too fast", 3000);
         return;
     }
     lastButAuth = new Date().getTime();
