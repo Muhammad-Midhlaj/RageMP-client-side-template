@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>redage.net - Roulete</title>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+  </script>
+  <link rel="stylesheet" href="css/roulete.css">
+</head>
+
+<body class="display-container">
+
+<main class="display-area  overlay">
+  <div class="roulete-page">
+    <div class="close-btn"></div>
+
+    <div class="roulete">
+      <div id="roulete-img" class="roulete-img"></div>
+
+      <div id="roulete-mark" class="mark"></div>
+
+      <div id="roulete-output" class="output">60</div>
+    </div>
+
+    <div class="controls">
+      <form action="" method="POST">
+        <h3>Сумма ставки</h3>
+
+        <div class="bet-controls">
+          <div class="js-min">Мин.</div>
+          <div class="js-double">х2</div>
+          <div class="js-half">1/2</div>
+          <div class="js-max">Макс.</div>
+        </div>
+
+        <h3>$</h3>
+        <div class="bet-input">
+          <input
+            type="number"
+            id="bet-input-id"
+            name="bet-input"
+            min="1000"
+            step="1000"
+            value="1000">
+        </div>
+
+        <div class="bet-choose-color">
+          <div id="redbet" class="red  js-bet-red active">
+            <span class="js-bet-red__output">0</span> $
+          </div>
+          <div id="zerobet" class="zero  js-bet-zero active">
+            <span class="js-bet-zero__output">0</span> $
+          </div>
+          <div id="blackbet" class="black  js-bet-black active">
+            <span class="js-bet-black__output">0</span> $
+          </div>
+        </div>
+
+        <a href="#" class="js-bet-reset  bet-reset">Сбросить</a>
+
+        <div class="bet-info">
+          <div class="balance">
+            <p>Баланс: <span class="bankcashoutput">0</span>$</p>
+            <p>Выигрыш: <span class="winOutput">0</span>$ <br>Минимальный баланс: 15000$<br>Максимальная ставка: 50000$</p>
+          </div>
+			
+		  <a href="#" class="js-bet-submit submit">Поставить</a>
+        </div>
+      </form>
+
+      <h3>Сделанные ставки</h3>
+      <div class="all-bets">
+        <div class="red">
+          <span class="js-bet-red__output__all">0</span> $
+        </div>
+        <div class="zero">
+          <span class="js-bet-zero__output__all">0</span> $
+        </div>
+        <div class="black">
+          <span class="js-bet-black__output__all">0</span> $
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+  <script src="js/roulete.js"></script>
+</body>
+</html>

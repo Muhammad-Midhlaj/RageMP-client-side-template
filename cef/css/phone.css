@@ -1,0 +1,31 @@
+body {
+    position: absolute;
+    right: 1%;
+    bottom: 1%;
+    cursor: default;
+    user-select: none;
+}
+
+.phone {
+    height: 530px;
+    width: 280px;
+    display: inline-block;
+    text-align: center;
+    background: url(../images/phone.png);
+    background-size: 280px 530px;
+    background-repeat: no-repeat;
+}
+.phone-button {
+    width: 1px;
+    height: 1px;
+    display: inline-block;
+    border-radius: 5px;
+    margin-top: 1px;
+    border: 2px solid #616161;
+    background: linear-gradient(to top left, rgb(5, 5, 5), rgb(35, 35, 35));
+}
+
+    .phone-button:active {
+        background: black;
+        border-color: #313131;
+    }

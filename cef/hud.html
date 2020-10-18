@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>redage.net - Hud</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/chat.css">
+    <!--<link rel="stylesheet" href="css/hud.css">-->
+	<link rel="stylesheet" href="css/hudnew.css">
+    <link rel="stylesheet" href="fonts/notify.css">
+    <link rel="stylesheet" href="css/noty.css" />
+    <link rel="stylesheet" href="css/theme.css" />
+
+	<link href="css/all.css" rel="stylesheet"> <!--load all styles -->
+    <style>
+        #effect {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #safezone {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            /*background: rgba(197, 0, 0, 0.5);
+			background-image: url('images/fukcpolice.jpg');
+			background-repeat: no-repeat;*/
+        }
+
+        .inpocket {
+            background-image: url('res/inpocket.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100%;
+            position: absolute;
+        }
+    </style>
+    <title>HUD</title>
+</head>
+<body>
+    <div id="safezone">
+
+        <div class="inGameHud" v-if="show"> <!-- v-if="show" -->
+            <div class="money_block bank">
+                <img src="/images/hud/new/bank.png" alt=""> {{bank}} $
+            </div>
+            <div class="money_block cash">
+                <img src="/images/hud/new/cash.png" alt=""> {{money}} $
+            </div>
+
+            <div class="gunshud" v-if="ammo"> <!-- v-if="ammo" -->
+                <div class="money_block bullet">
+                    <img src="/images/hud/new/bullet.png" alt=""> <div class="count"><b>{{ammo}}</b></div>
+                </div>
+            </div>
+
+            <img v-if="mic" id="microsound" src="/images/hud/new/micro.png" alt="" class="micro enabled">
+            <img v-else id="microsound" src="/images/hud/new/micro.png" alt="" class="micro">
+
+            <div class="speedometer" :style="{ opacity: inVeh ? 1 : 0 }">
+                <svg  xmlns="http://www.w3.org/2000/svg"  viewBox="15 0 167 167" :data-value="speed" class="speed">
+                    <path class="bg"  d="M41 149.5a77 77 0 1 1 117.93 0"  fill="none"/>
+                    <path class="meter" d="M41 149.5a77 77 0 1 1 117.93 0" fill="none" stroke-dasharray="350" stroke-dashoffset="350"/>
+                </svg>
+                <svg  xmlns="http://www.w3.org/2000/svg"  viewBox="15 0 167 167" :data-value="fuel" data-maxvalue="100"  class="fuel">
+                    <path class="bg"  d="M41 149.5a77 77 0 1 1 117.93 0"  fill="none"/>
+                    <path class="meter" d="M41 149.5a77 77 0 1 1 117.93 0" fill="none" stroke-dasharray="350" stroke-dashoffset="350"/>
+                </svg>
+                <div class="speed_count">
+					<!-- v-if="Math.random() > 0.5" -->
+				
+                    <div class="count" v-if="speed < 10"><div class="bg">00</div>{{speed}}</div>
+					<div class="count" v-else-if="speed < 100"><div class="bg">0</div>{{speed}}</div>
+					<div class="count" v-else><div class="bg"></div>{{speed}}</div>
+                    <div class="type">km/h</div>
+                    
+                </div>
+                <img src="./images/hud/new/fuel.png" alt="" class="icon_fuel">
+                <div class="lamp_list">
+                    <img v-if="belt" src="./images/hud/new/sec_yes.png" alt="" class="sec">
+                    <img v-else src="./images/hud/new/sec_no.png" alt="" class="sec">
+
+                    <img v-if="doors" src="./images/hud/new/door_yes.png" alt="" class="door">
+                    <img v-else src="./images/hud/new/door_no.png" alt="" class="door">
+
+                    <img v-if="engine" src="./images/hud/new/engine_yes.png" alt="" class="engine">
+                    <img v-else src="./images/hud/new/engine_no.png" alt="" class="engine">
+
+                    <img src="./images/hud/new/lamp_no.png" alt="" class="lamp">
+                </div>
+            </div>
+			
+			<div class="buttoms_list">
+				<div class="buttom_block"><div class="button_info">N</div>Microphone</div>
+				<div class="buttom_block"><div class="button_info">I</div>Inventory</div>
+				<div class="buttom_block"><div class="button_info">↑</div>Phone</div>
+				<!--<div class="buttom_block"><div class="button_info">U</div>Анимации</div>-->
+				<div class="buttom_block"><div class="button_info">B</div>Car engine</div>
+				<!--<div class="buttom_block"><div class="button_info">L</div>Двери авто</div>-->
+				<!--<div class="buttom_block"><div class="button_info">5</div>Скрыть ники</div>-->
+				<!--<div class="buttom_block"><div class="button_info">6</div>Круиз-контроль</div>-->
+				<!--<div class="buttom_block"><div class="button_info">F5</div>Скрыть HUD</div>-->
+				<!--<div class="buttom_block"><div class="button_info">F9</div>Донат</div>-->
+				<div class="buttom_block"><div class="button_info">F10</div>Help</div>
+				<!--<div class="buttom_block"><div class="button_info">Ё(~)</div>Курсор</div>-->
+			</div>
+        </div>
+        
+        <div id="chat" class="chat">
+            <ul id="chat_messages"></ul>
+        </div>
+		
+		<div class="logobox" v-if="show">
+			<!--<img src="/images/hud/new/bg_logo.png" alt="" class="logo_bg">
+			<img src="/images/hud/new/logo.png" class="logo_img" alt="">-->
+			<div class="name_server">
+				Kingsland <br> Role Play
+			</div>
+			<div class="info_bar">
+				<div class="line">
+					<img src="/images/hud/new/clock.png" alt="">
+					<div class="info">
+						<b>{{time}}</b>
+						{{date}}
+					</div>
+				</div>
+				<div class="line">
+					<img src="/images/hud/new/users.png" alt="">
+					<div class="info">
+						<b>{{online}} /</b>
+						1000
+					</div>
+				</div>
+			</div>
+        </div>
+
+    </div>
+
+    <div id="effect"></div>
+	
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/colorInterpolator.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/hud.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/noty.min.js"></script>
+    <script src="js/notify.js"></script>
+    <script>
+        function hidehud(toggle) {
+            if (toggle) {
+                HUD.show = false;
+                logotype.show = false;
+            } else {
+                HUD.show = true;
+                logotype.show = true;
+            }
+        }
+        function hidehelp(toggle) {
+            if (toggle) {
+                $('.help').hide();
+            } else {
+                $('.help').show();
+            }
+        }
+    </script>
+    <script>
+        function updateSafeZoneSize(screenWidht, screenHeight, safeZoneSize) {
+            
+            var savezoneDiv = document.getElementById("safezone");
+            safeZoneSize = (((1.0 - safeZoneSize) * 0.5) * 100.0);
+
+            savezoneDiv.style.right = savezoneDiv.style.left = ((screenWidht / 100) * safeZoneSize) + "px";
+            savezoneDiv.style.top = savezoneDiv.style.bottom = ((screenHeight / 100) * safeZoneSize) + "px";
+            return true;
+        }
+    </script>
+</body>
+</html>

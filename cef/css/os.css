@@ -1,0 +1,660 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300&subset=cyrillic');
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    user-select: none;
+}
+
+.bar {
+    margin-top: 9px;
+    width: 100%;
+    height: 15px;
+    background-color: rgba(255, 255, 255) transparent;
+    color: white;
+    padding: 5px;
+    font-size: 10pt;
+}
+.bar #txt {
+    position: absolute;
+    left: 35px;
+    top: 22px;
+    }
+.bar #wifi {
+    position: absolute;
+    right: 56px;
+    top: 21px;
+}
+.bar #wifi img {
+    width: 14px;
+    height: auto;
+}
+.bar #battery img {
+    width: 15px;
+    height: auto;
+}
+.bar #battery {
+    position: absolute;
+    right: 37px;
+    top: 21px;
+}
+.carrier {
+    margin-top: 5px;
+    margin-left: 25px;
+    float: left;
+}
+    .carrier span {
+        margin-left: 5px;
+        font-family: 'Ubuntu', sans-serif;
+    }
+
+.battery {
+    float: right;
+    font-size: 12pt;
+    margin-top: 2px;
+    margin-right: 50px;
+}
+
+
+.main {
+    margin-left: 20px;
+    width: 88%;
+    height: 440px;
+    max-height: 440px;
+    display: flex;
+    font-family: 'Ubuntu', sans-serif;
+    overflow-y: scroll;
+    z-index: 1;
+}
+
+
+.navigation {
+    width: 100%;
+    height: 40px;
+    background-color: rgba(255, 255, 255) transparent;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    z-index: 10;
+}
+
+.back, .home {
+    font-size: 16pt;
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding-top: 6px;
+}
+
+    .back:hover, .home:hover {
+        background-color: rgb(27, 27, 35);
+    }
+
+    .back:active, .home:active {
+        background-color: rgba(27, 27, 35, 0.8);
+    }
+
+    .back.disabled, .home.disabled {
+        color: rgb(124, 31, 34);
+    }
+
+    .back.disabled:hover, .home.disabled:hover {
+        background-color: rgba(27, 27, 35, 0);
+    }
+
+h1 {
+    color: white;
+    font-size: 20px;
+    margin: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 0;
+    /* width: 100%; */
+    margin-top: 10px;
+}
+
+p {
+    background-color: rgba(27, 27, 27, 0.8);
+    color: white;
+    font-size: 11pt;
+    margin: 5px 5px 5px 5px;
+    border-radius: 5px;
+    text-align: left;
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 0;
+    /* width: 100%; */
+    text-align: center;
+    padding: 5px 0;
+    background: none;
+}
+
+.button {
+    background-color: rgb(255, 255, 255) transparent;
+    color: white;
+    font-size: 14pt;
+    margin: 0 10px 5px 10px;
+    padding: 5px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    margin-right: 20;
+}
+
+    .button:hover {
+        background-color: rgba(27, 27, 35, 0.8);
+    }
+
+    .button:active {
+        background-color: rgba(27, 27, 35, 0.8);
+    }
+
+    
+input[type="text"] {
+    background-color: rgb(27, 27, 35);
+    color: white;
+    font-size: 14pt;
+    margin: 5px 25px 5px 5px;;
+    width: 88%;
+    padding: 5px;
+    cursor: text;
+    border-radius: 5px;
+    border-width: 0;
+}
+
+.contactBtn {
+	position: absolute;
+    background-color: rgb(255, 255, 255), transparent;
+    font-size: 14pt;
+    margin: 4px 4px 4px 4px;
+    cursor: pointer;
+	background-image: url('../images/phone/phone.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    width: 49px;
+    height: 49px;
+	right: 205px;
+}
+
+	.contactBtn:active {
+	color: #242424;
+	border-radius: 34px;	
+	height: 39px;
+	width: 39px;
+	box-shadow: 0 0 20px;
+    white-space: pre;
+    }
+
+.gpsBtn {
+	position: absolute;
+    background-color: rgb(255, 255, 255) transparent;
+    font-size: 14pt;
+    margin: 4px 4px 4px 4px; /* üst,  */
+    cursor: pointer;
+    background-image: url('../images/phone/gps.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    width: 52px;
+    height: 52px;
+	right: 145px;
+}
+
+	.gpsBtn:active {
+	color: #242424;
+	border-radius: 34px;	
+	height: 39px;
+	width: 39px;
+	box-shadow: 0 0 20px;
+    white-space: pre;
+    }
+	
+.servicesBtn {
+	position: absolute;
+    background-color: rgb(255, 255, 255) transparent;
+    font-size: 14pt;
+    margin: 4px 4px 4px 4px; /* üst,  */
+    cursor: pointer;
+    background-image: url('../images/phone/servisler.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    width: 49px;
+    height: 49px;
+	right: 85px;
+}
+
+	.servicesBtn:active {
+	background-color: rgba(27, 27, 35, 0.8);	
+	border-radius: 34px;	
+	border: 4px solid;
+	height: 39px;
+	width: 39px;
+	box-shadow: 0 0 20px;
+    }
+
+.grupBtn {
+    background-color: rgb(255, 255, 255), transparent;
+    font-size: 14pt;
+    margin: 4px 4px 4px 4px;
+    cursor: pointer;
+    background-image: url('../images/phone/gruplar.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+	.grupBtn:active {
+	background-color: rgba(27, 27, 35, 0.8);	
+	border-radius: 34px;	
+	border: 4px solid;
+	height: 39px;
+	width: 39px;
+	box-shadow: 0 0 20px;
+    }
+
+.businessBtn {
+	position: absolute;
+    background-color: rgb(255, 255, 255), transparent;
+    font-size: 14pt;
+    margin: 4px 4px 4px 4px;
+    cursor: pointer;
+    background-image: url('../images/phone/stop.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    width: 47px;
+    height: 47px;
+	right: 100px;
+	margin-top: 67px;
+}
+
+	.businessBtn:active {
+	background-color: rgba(27, 27, 35, 0.8);	
+	border-radius: 34px;	
+	border: 4px solid;
+	height: 39px;
+	width: 39px;
+	box-shadow: 0 0 20px;
+    }
+
+.homeBtn {
+	position: absolute;
+    background-color: rgb(255, 255, 255), transparent;
+    font-size: 14pt;
+    margin: 4px 4px 4px 4px;
+    cursor: pointer;
+    background-image: url('../images/phone/ev.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+	right: 58px;
+	right: 205px;
+	margin-top: 65px;
+}
+
+	.homeBtn:active {
+	background-color: rgba(27, 27, 35, 0.8);	
+	border-radius: 34px;	
+	border: 4px solid;
+	height: 39px;
+	width: 39px;
+	box-shadow: 0 0 20px;
+    }
+
+.hotelBtn {
+	position: absolute;
+    background-color: rgb(255, 255, 255), transparent;
+    font-size: 14pt;
+    margin: 4px 4px 4px 4px;
+    cursor: pointer;
+    background-image: url('../images/phone/hotel.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+	right: 48px;
+}
+
+	.hotelBtn:active {
+	background-color: rgba(27, 27, 35, 0.8);	
+	border-radius: 34px;	
+	border: 4px solid;
+	height: 39px;
+	width: 39px;
+	box-shadow: 0 0 20px;
+    }
+
+.ilanBtn {
+	position: absolute;
+    background-color: rgb(255, 255, 255), transparent;
+    font-size: 14pt;
+    margin: 4px 4px 4px 4px;
+    cursor: pointer;
+    background-image: url('../images/phone/ilanver.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+	right: 26px;
+}
+
+	.ilanBtn:active {
+	background-color: rgba(27, 27, 35, 0.8);	
+	border-radius: 34px;	
+	border: 4px solid;
+	height: 39px;
+	width: 39px;
+	box-shadow: 0 0 20px;
+    }
+
+.closeBtn {
+	position: absolute;
+    background-color: rgb(255, 255, 255), transparent;
+    font-size: 14pt;
+    cursor: pointer;
+    background-image: url('../images/phone/back.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    width: 80px;
+    height: 80px;
+	right: 98px;
+	margin-top: 395px;
+}
+
+	.closeBtn:hover {
+	color: #242424;
+    height: 83px;
+    border-radius: 20px;
+    white-space: pre;
+    }
+	
+.taxiBtn {
+	position: absolute;
+    background-color: rgb(255, 255, 255), transparent;
+    font-size: 14pt;
+    margin: 4px 4px 4px 4px;
+    cursor: pointer;
+    background-image: url('../images/phone/taxi.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+	right: 100px;
+	margin-top: 65px;
+}
+
+	.taxiBtn:active {
+	background-color: rgba(27, 27, 35, 0.8);	
+	border-radius: 34px;	
+	border: 4px solid;
+	height: 39px;
+	width: 39px;
+	box-shadow: 0 0 20px;
+    }	
+
+.adminBtn {
+    background-color: rgb(255, 255, 255), transparent;
+    font-size: 14pt;
+    margin: 4px 4px 4px 4px;
+    cursor: pointer;
+    background-image: url('../images/phone/yonetim.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+	.adminBtn:active {
+	background-color: rgba(27, 27, 35, 0.8);	
+	border-radius: 34px;	
+	border: 4px solid;
+	height: 39px;
+	width: 39px;
+	box-shadow: 0 0 20px;
+    }
+
+.lockBtn {
+    background-color: rgb(255, 255, 255), transparent;
+    font-size: 14pt;
+    margin: 4px 4px 4px 4px;
+    cursor: pointer;
+    background-image: url('../images/phone/lock_unlock.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+	.lockBtn:active {
+	background-color: rgba(27, 27, 35, 0.8);	
+	border-radius: 34px;	
+	border: 4px solid;
+	height: 39px;
+	width: 39px;
+	box-shadow: 0 0 20px;
+    }
+
+.leaveBtn {
+    background-color: rgb(255, 255, 255), transparent;
+    font-size: 14pt;
+    margin: 4px 4px 4px 4px;
+    cursor: pointer;
+    background-image: url('../images/phone/leave_house.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+	.leaveBtn:active {
+	background-color: rgba(27, 27, 35, 0.8);	
+	border-radius: 34px;	
+	border: 4px solid;
+	height: 39px;
+	width: 39px;
+	box-shadow: 0 0 20px;
+    }
+
+.onRadio {
+    background-color: rgb(255, 255, 255), transparent;
+    font-size: 14pt;
+    margin: 4px 4px 4px 4px;
+    cursor: pointer;
+    background-image: url('../images/phone/onradio.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+	.onRadio:active {
+	background-color: rgba(27, 27, 35, 0.8);	
+	border-radius: 34px;	
+	border: 4px solid;
+	height: 39px;
+	width: 39px;
+	box-shadow: 0 0 20px;
+    }
+
+.offRadio {
+    background-color: rgb(255, 255, 255), transparent;
+    font-size: 14pt;
+    margin: 4px 4px 4px 4px;
+    cursor: pointer;
+    background-image: url('../images/phone/offradio.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+	.offRadio:active {
+	background-color: rgba(27, 27, 35, 0.8);	
+	border-radius: 34px;	
+	border: 4px solid;
+	height: 39px;
+	width: 39px;
+	box-shadow: 0 0 20px;
+    }
+	
+.promoBtn {
+	position: absolute;
+    background-color: rgb(255, 255, 255), transparent;
+    font-size: 14pt;
+    margin: 4px 4px 4px 4px;
+    cursor: pointer;
+    background-image: url('../images/phone/promo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+	right: 58px;
+	right: 145px;
+	margin-top: 65px;
+}
+
+.promoBtn:active {
+	background-color: rgba(27, 27, 35, 0.8);	
+	border-radius: 34px;	
+	border: 4px solid;
+	height: 39px;
+	width: 39px;
+	box-shadow: 0 0 20px;
+    }
+
+.list input {
+    width: 58%;
+    text-align: center;
+    background-color: rgba(27, 27, 35, 0.8);
+    margin: 0 3px 5px 3px;
+}
+
+.list .left {
+    background-color: rgba(27, 27, 35, 0.8);
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.list .right {
+    background-color: rgba(27, 27, 35, 0.8);
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+    .list input:hover, .list .right:hover, .list .left:hover {
+        background-color: rgba(27, 27, 35, 0.8);
+        cursor: pointer;
+    }
+
+    .list input:active, .list .right:active, .list .left:active {
+        background-color: rgba(27, 27, 35, 0.8);
+        cursor: pointer;
+    }
+
+input[type="checkbox"] {
+    width: 60px;
+    height: 30px;
+    margin: 5px 0 5px 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #c6c6c6;
+    outline: none;
+    border-radius: 50px;
+    box-shadow: inset 0 0 5px rgba(0,0,0, .2);
+    transition: 0.5s;
+    position: relative;
+}
+
+input:checked[type="checkbox"] {
+    background: rgb(124, 31, 34);
+}
+
+input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    background: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(0,0,0, .2);
+    transition: 0.5s;
+}
+
+input:checked[type="checkbox"]::before {
+    left: 30px;
+}
+
+
+
+.debug {
+    position: absolute;
+    color: white;
+    font-size: 8pt;
+}
+
+.red {
+    color: white;
+    /* color: #f44336; */
+}
+
+.green {
+    color: #4CAF50;
+}
+
+.blue {
+    color: #2196F3;
+}
+
+.yellow {
+    color: #FFEB3B;
+}
+
+.orange {
+    color: #FF9800;
+}
+
+.teal {
+    color: #26A69A;
+}
+
+.cyan {
+    color: #00BCD4;
+}
+
+.lime {
+    color: #CDDC39;
+}
+
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(124, 31, 34),transparent;
+}

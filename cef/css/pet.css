@@ -1,0 +1,74 @@
+.petshop{
+    background-color: #212121;
+    color: white;
+    width: 300px;
+    height: 400px;
+    text-align: center;
+    border-radius: 10px;
+    position: absolute;
+    margin-top: -200px;
+    right: 0;
+    top: 50%;
+}
+.petshop i{
+    font-family: "icons";
+    font-style: normal;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #37474F;
+    border-radius: 5px;
+}
+.petshop i:hover{background-color: #263238}
+.petshop .list div{
+    width: 150px;
+    padding: 9px;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: #37474F;
+}
+.petshop h1{
+    margin: 0;
+    padding: 15px;
+    font-size: 20pt;
+    background-color: #263238;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.petshop .left-arrow{
+    float: left;
+}
+.petshop .right-arrow{
+    float: right;
+}
+.petshop .list{
+    margin-left: 8%;
+    margin-top: 15px;
+    width: 250px;
+}
+.petshop .items{
+    height: 200px;
+}
+.petshop .btns{
+    height: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.petshop .btn{
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid;
+    cursor: pointer;
+}
+.petshop .buy{
+    border-color: #43A047;
+    margin-bottom: 10px;
+}
+.petshop .exit{
+    border-color: #e53935
+}
+.petshop .buy:hover{
+    background-color: #2E7D32;
+}
+.petshop .exit:hover{
+    background-color: #c62828;
+}

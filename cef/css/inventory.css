@@ -1,0 +1,400 @@
+html, body {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	font-family: Uni Neue;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+html {
+  height: 100%;
+
+}
+
+div, span, object, iframe, img, table, caption, thead, tbody, tfoot, tr, tr, td, article, aside, canvas, details, figure, hgroup, menu, nav, footer, header, section, summary, mark, audio, video {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cit, code, del, dfn, em, ins, q, samp, small, strong, sub, sup, b, i, hr, dl, dt, dd, ol, ul, li, fieldset, legend, label {
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	margin: 0;
+	padding: 0;
+}
+article, aside, canvas, figure, figure img, figcaption, hgroup, footer, header, nav, section, audio, video {
+	display: block;
+}
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+table caption, table th, table td {
+	text-align: left;
+	vertical-align: middle;
+}
+a img {
+	border: 0;
+}
+:focus {
+	outline: 0;
+}
+b {
+	font-weight: 900;
+	font-family: UniNeueHeavy;
+}
+@font-face {
+	font-family: 'Uni Neue';
+	src: url('../fonts/UniNeueRegular.eot');
+	src: url('../fonts/UniNeueRegular.eot?iefix') format('eot'), url('../fonts/UniNeueRegular.woff') format('woff'), url('../fonts/UniNeueRegular.ttf') format('truetype'), url('../fonts/UniNeueRegular.svg#webfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	 box-sizing: border-box;
+}
+body {
+
+    /*background: url('../images/inventory/bg.jpg');*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+	overflow:hidden;
+
+}
+
+.rounding {
+	border-radius: 4px 4px 4px 4px;
+	-moz-border-radius: 4px 4px 4px 4px;
+	-webkit-border-radius: 4px 4px 4px 4px;
+}
+
+.inventory, .trunk {
+    padding-bottom: 10px;
+}
+
+/* Head */
+
+.head__tabs {
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+.head__tabs .tab {
+    width: 50px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px;
+    opacity: 0.2;
+    margin-left: 40px;
+}
+.head__tabs .tab.active {
+    opacity: 1;
+}
+
+.head__tabs .tab img {
+
+    width: 30px;
+    height: 30px;
+
+}
+
+.head__tabs li:hover:not(.close) img {
+
+    opacity: 0.7;
+      -webkit-transition: opacity 0.3s ease-in-out;
+	  -moz-transition: opacity 0.3s ease-in-out;
+	  -ms-transition: opacity 0.3s ease-in-out;
+	  -o-transition: opacity 0.3s ease-in-out;
+	  transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
+
+}
+
+.head__tabs .close {
+    justify-content: flex-end;
+    flex-grow: 1;
+    padding: 0px;
+    opacity: 1;
+}
+.head__tabs .tab.close span {
+    height: 52px;
+    padding-right: 15px;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.head__tabs .tab.close img {
+	
+    width: 22px;
+    height: 22px;
+
+}
+
+/* Unit */
+
+.interface__rd {
+
+    display: flex;
+    flex-direction: column;
+    padding: 11px;
+    overflow-y: hidden;
+
+}
+
+.unit {
+
+    background: rgba(0, 0, 0, 0.75);
+    margin-right: 10px;
+    color: #fff;
+    font-size: 18px;
+    padding-top: 35px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.unit:not(.statistics) .title {
+    padding-left: 15px;
+}
+
+.unit__main {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    position: absolute;
+    padding-bottom: 20px;
+    padding-top: 62px;
+    width: 100%;
+    padding-right: 12px;
+}
+
+.unit .title {
+    margin-bottom: 30px;
+}
+
+.inventory {
+	width:320px;
+}
+
+.statistics {
+    width: 320px;
+    padding-left: 15px;
+    padding-right: 0px;
+    height: 100%;
+    padding-bottom: 10px;
+}
+.trunk {
+	width:520px;
+}
+
+.inventory__box .item {
+
+    background: rgba(255,255,255,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+    position: relative;
+    margin-bottom: 10px;
+    float: left;
+    margin-left: 12px;
+	flex-grow: 1;
+	margin-left: 10px;
+
+}
+
+.inventory__box .fsortable-empty {
+    background: rgba(255,255,255,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+	position: relative;
+	width: 90px;
+	height: 90px;
+	margin-bottom: 10px;
+	flex-grow: 1;
+}
+
+.inventory__box .free {
+	pointer-events: none;
+}
+
+.inventory__box .item.active {
+    cursor: default !important;
+}
+
+.inventory__box .item.active {
+    background: rgba(255,255,255,0.25);
+}
+.inventory__box {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: -10px;
+    overflow-y: auto;
+}
+
+.inventory__box::-webkit-scrollbar
+{
+    width:0px;
+}
+.inventory__box::-webkit-scrollbar-track-piece
+{
+    background-coor:transparent;
+}
+
+.x1 {
+	width: 90px;
+	height: 90px;
+}
+
+.x2 {
+	width: 190px;
+	height: 90px;
+}
+
+.x3 {
+	width: 290px;
+	height: 90px;
+}
+
+.item img {
+    align-self: center;
+    max-height: 40px;
+    max-width: 50%;
+}
+
+
+.item .i_name {
+    font-size: 10px;
+    padding-bottom: 10px;
+    padding-right: 6px;
+    align-self: flex-end;
+    line-height: 11px;
+}
+
+.item.x1 .i_name {
+   width: 87px;
+}
+
+.item .i_title {
+    font-size: 12px;
+    padding-top: 6px;
+    padding-right: 6px;
+}
+
+.item .prefixSerial::before {
+    content: 'Serial: ';
+}
+
+.unit.rounding.statistics .inventory__box .info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 2px;
+}
+
+.unit.rounding.statistics .inventory__box {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    min-width: 100%;
+}
+.unit.rounding.statistics .inventory__box .info div:nth-child(1) {
+    font-weight: bold;
+}
+
+.unit.rounding.statistics .inventory__box .info div:nth-child(2) {
+    font-size: 12px;
+}
+
+.item:after {
+	content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+	border-radius: 4px 4px 4px 4px;
+	-moz-border-radius: 4px 4px 4px 4px;
+	-webkit-border-radius: 4px 4px 4px 4px;
+}
+
+.fm_clothes:after {
+    background: #C186DC;
+}
+
+.ml_clothes:after {
+    background: #86ABDC;
+}
+
+.rifles:after {
+    background: #DA6262;
+}
+
+.pistols:after {
+    background: #C2DA62;
+}
+
+.sniper:after {
+    background: #D7D7D7;
+}
+
+.pp:after {
+    background: #62DADA;
+}
+
+
+.item[data-placeholder="true"] {
+    flex-grow:1;
+}
+
+
+#contextMenu {
+    background: rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+}
+#contextMenu li {
+  list-style: none;
+}
+#contextMenu li a {
+    text-decoration: none;
+    width: 100%;
+    float: left;
+    color: #fff;
+    font-size: 11px;
+    text-align: center;
+    padding: 10px;
+}
+
+#contextMenu li a:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+.item.free.dropbox {
+	order: 1;
+}
+.item::before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    content: "";
+}

@@ -1,0 +1,807 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,500,700');
+
+@font-face {
+    font-family: "Uni Neue";
+    src: url("../fonts/UniNeue/400/UniNeueRegular.eot");
+    src: url("../fonts/UniNeue/400/UniNeueRegular.woff") format("woff"), url("../fonts/UniNeue/400/UniNeueRegular.ttf") format("truetype"), url("../fonts/UniNeue/400/UniNeueRegular.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Uni Neue";
+    src: url("../fonts/UniNeue/300/UniNeueLight.eot");
+    src: url("../fonts/UniNeue/300/UniNeueLight.woff") format("woff"), url("../fonts/UniNeue/300/UniNeueLight.ttf") format("truetype"), url("../fonts/UniNeue/300/UniNeueLight.svg") format("svg");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Uni Neue";
+    src: url("../fonts/UniNeue/500/UniNeueBook.eot");
+    src: url("../fonts/UniNeue/500/UniNeueBook.woff") format("woff"), url("../fonts/UniNeue/500/UniNeueBook.ttf") format("truetype"), url("../fonts/UniNeue/500/UniNeueBook.svg") format("svg");
+    font-weight: 500;
+    font-style: normal;
+}
+
+body {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+/* RA logotype */
+.logobox {
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: Uni Neue;
+    width: 177px;
+    height: 100px;
+    right: 0;
+}
+
+.logo {
+    height: 20px;
+    font-weight: 500;
+    font-size: 15px;
+    padding-left: 50px;
+    color: #fff;
+}
+
+.logo img {
+    width: 100px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.players_online {
+    width: 160px;
+    height: 1px;
+    justify-content: flex-end;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+}
+
+.players_online p {
+    padding-right: 10px;
+    font-weight: 100;
+}
+
+.players_online span p {
+    padding-right: 0;
+    font-weight: 700;
+}
+
+/* User game hud */
+
+.inGameHud {
+    position: absolute;
+    margin: 0 auto;
+    font-family: Uni Neue;
+    line-height: normal;
+    color:#fff;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 1921px) and (max-width: 2560px) {
+    .inGameHud .carhud 
+    {
+        width: 306px !important;
+        height: 118px;
+        /* background: rgba(0, 0, 0, 0.4); */
+        position:absolute;
+        bottom: -35px !important;
+        right: -46px !important;
+        overflow: hidden;
+    }
+    .inGameHud .doorhud {
+        width: 28px;
+        height: 28px;
+        margin-left: 40px !important;
+        margin-top: 40px;
+    }
+    .inGameHud .petrol {
+    width: 24px;
+    height: 24px;
+    margin-left: 104px !important;
+    margin-top: 19px;
+    display: flex;
+    }
+    .inGameHud .petrolblock {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 41px;
+    right: 25px !important;
+    width: 70px;
+    align-items: center;
+    margin-left: 9px;
+    font-weight: 600;
+    }
+	.inGameHud .gunshud {
+	left: 60px !important;	
+	}
+	.inGameHud .microhud {
+	margin-left: 155px !important;
+	}
+	.inGameHud .locationhud {
+    color: #00a8f0;
+    position: absolute;
+    border-radius: 35px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    width: 200px;
+    height: 45px;
+    text-align: left;
+    bottom: 0;
+    left: 230px;
+}
+
+.inGameHud .locationhud i {
+    color: #ff1100;
+    position: relative;
+    /* border-radius: 35px; */
+    font-size: 40px;
+    /* background: #1e1e1e40; */
+    /* padding: 5px; */
+    width: 200px;
+    text-align: left;
+    top: 4px;
+    bottom: 0;
+    left: 8px;
+}
+
+.inGameHud .locationhud #location {
+    font-weight: 600;
+    font-size: 16px;
+    margin-left: 46px;
+    color: #fff;
+    position: relative;
+    top: -39px;
+}
+
+.inGameHud .locationhud #street {
+    font-size: 14px;
+    margin-left: 46px;
+    position: relative;
+    color: #bfbfbf;
+    top: -37px;
+}
+}
+
+@media (min-width: 1401px) and (max-width: 1920px) {
+    .inGameHud .carhud 
+    {
+        width: 276px !important;
+        height: 118px;
+        /* background: rgba(0, 0, 0, 0.4); */
+        position:absolute;
+        bottom: -35px !important;
+        right: -46px !important;
+        overflow: hidden;
+    }
+    .inGameHud .doorhud {
+        width: 28px;
+        height: 28px;
+        margin-left: 40px !important;
+        margin-top: 40px;
+    }
+    .inGameHud .petrol {
+    width: 24px;
+    height: 24px;
+    margin-left: 104px !important;
+    margin-top: 19px;
+    display: flex;
+    }
+    .inGameHud .petrolblock {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 41px;
+    right: 5px !important;
+    width: 70px;
+    align-items: center;
+    margin-left: 9px;
+    font-weight: 600;
+    }
+    .test {
+    /* top: 50px !important; */
+    /* right: 118px !important; */
+    }
+	.inGameHud .locationhud {
+    color: #00a8f0;
+    position: absolute;
+    border-radius: 35px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    width: 200px;
+    height: 45px;
+    text-align: left;
+    bottom: 0;
+    left: 230px;
+}
+
+.inGameHud .locationhud i {
+    color: #ff1100;
+    position: relative;
+    /* border-radius: 35px; */
+    font-size: 40px;
+    /* background: #1e1e1e40; */
+    /* padding: 5px; */
+    width: 200px;
+    text-align: left;
+    top: 4px;
+    bottom: 0;
+    left: 4px;
+}
+
+.inGameHud .locationhud #location {
+    font-weight: 600;
+    font-size: 16px;
+    margin-left: 40px;
+    color: #fff;
+    position: relative;
+    top: -39px;
+}
+
+.inGameHud .locationhud #street {
+    font-size: 14px;
+    margin-left: 40px;
+    position: relative;
+    color: #bfbfbf;
+    top: -37px;
+}
+}
+
+@media (min-width: 1024px) and (max-width: 1400px) {
+.inGameHud .carhud 
+{
+    width: 316px;
+    height: 118px;
+    /* background: rgba(0, 0, 0, 0.4); */
+    position:absolute;
+    bottom: -30px;
+    right: -46px;
+    overflow: hidden;
+}
+.inGameHud .locationhud {
+    color: #00a8f0;
+    position: absolute;
+    border-radius: 35px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    width: 200px;
+    height: 45px;
+    text-align: left;
+    bottom: 0;
+    left: 230px;
+}
+
+.inGameHud .locationhud i {
+    color: #ff1100;
+    position: relative;
+    /* border-radius: 35px; */
+    font-size: 40px;
+    /* background: #1e1e1e40; */
+    /* padding: 5px; */
+    width: 200px;
+    text-align: left;
+    top: 4px;
+    bottom: 0;
+    left: 4px;
+}
+
+.inGameHud .locationhud #location {
+    font-weight: 600;
+    font-size: 16px;
+    margin-left: 40px;
+    color: #fff;
+    position: relative;
+    top: -39px;
+}
+
+.inGameHud .locationhud #street {
+    font-size: 14px;
+    margin-left: 40px;
+    position: relative;
+    color: #bfbfbf;
+    top: -37px;
+}
+}
+
+.inGameHud .position 
+{
+    width: 571px;
+    height: 46px;
+}
+
+.inGameHud .hud 
+{
+    width: 370px;
+    height: 45px;
+    position:absolute;
+    bottom: 0px;
+    right: 0px;
+    display: flex;
+    overflow: hidden;
+            border-radius: 10px;
+            background: #1e1e1e80;
+}
+.inGameHud .hud2
+{
+    height: 250px;
+    position:absolute;
+    bottom: 0px;
+    right: 0px;
+}
+.inGameHud .pouch 
+{
+    width: 158px;
+    height: 24px;
+    margin-left: 24px;
+    margin-top: 10px;
+    display: flex;
+    font-weight: 500;
+}
+
+.inGameHud .moneyinblock 
+{ 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    margin-left: 12px;
+	
+}
+
+.inGameHud #money 
+{
+    font-size: 21.15px;
+}
+
+.inGameHud #jsmoney 
+{
+    font-size: 21.15px;
+}
+
+.inGameHud .bank 
+{
+    width: 24px; 
+    height: 24px; 
+    margin-left: 24px;
+    margin-top: 10px; 
+    display: flex;
+}
+
+.inGameHud #jsbank 
+{
+    font-size: 21.15px;
+}
+
+.inGameHud .bankinblock 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    margin-left: 12px;
+    font-weight: 500;
+}
+.inGameHud .gunshud 
+{
+    width: 90px;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.4);
+    position:absolute;
+    bottom:0px;
+    right: 503px;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.inGameHud .patrons 
+{
+    width: 90px;
+    height: 24px; 
+    display: flex;
+    margin-top: 9px;
+    margin-left: 12px;
+    position: absolute;
+}
+
+.inGameHud .patronsblock 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    margin-top: 2px;
+    margin-left: 11px;
+}
+
+.inGameHud #patronnum 
+{
+    font-size: 22.93px;
+}
+
+.inGameHud .datehud 
+{
+    position: absolute;
+    width: 68px;
+    bottom: 555px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    text-align: center;
+    right: 1px;
+    border-radius: 30px;
+    /*background: #1e1e1e80;*/
+}
+
+.inGameHud .clock 
+{
+    position: absolute;
+    width: 68px;
+    bottom: 566px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    text-align: center;
+    right: 46px;
+    border-radius: 30px;
+    /*background: #1e1e1e80;*/
+}
+
+.inGameHud #time 
+{
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 1px;
+}
+
+.inGameHud #datetime 
+{
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: -25px;
+}
+
+.inGameHud .microhud 
+{
+    position: absolute;
+    width: 24px;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+    text-align: center;
+    right: 13px;
+    border-radius: 51px;
+    background: #1e1e1e80;
+	
+}
+.inGameHud .carhud 
+{
+    width: 270px;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.4);
+    position:absolute;
+    bottom: 0px;
+    right: 390px;
+    overflow: hidden;
+}
+
+.inGameHud .carshuds 
+{
+    display: flex;
+}
+
+.inGameHud .speedhud 
+{
+    width: 40px;
+    font-weight: 500;
+    margin-left: 12px;
+    margin-top: -1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inGameHud #speed 
+{
+    font-size: 23px;
+    margin-bottom: -2px; 
+}
+
+.inGameHud #speedtxt 
+{
+    font-size: 14px;
+    margin-top: -25px;
+}
+
+.inGameHud .doorhud 
+{
+    width: 28px; 
+    height: 26px; 
+    margin-left: 24px;
+    margin-top: 10px;
+}
+
+.inGameHud .enginehud 
+{
+    width: 28px; 
+    height: 28px; 
+    margin-left: 24px; 
+    margin-top: 9px;
+}
+
+.inGameHud .petrol 
+{
+    width: 24px; 
+    height: 24px; 
+    margin-left: 24px; 
+    margin-top: 11px; 
+    display: flex;
+}
+
+.inGameHud .petrolblock 
+{ 
+    display: flex; 
+    justify-content: center;
+    align-items: center;  
+    margin-left: 9px;
+    font-weight: 500;
+}
+
+.inGameHud #petrolit 
+{
+    font-size: 21.15px;
+}
+
+.inGameHud #jsliters 
+{
+    font-size: 21.15px;
+}
+
+.inGameHud .locationhud {
+    color: #00a8f0;
+    position: absolute;
+    border-radius: 35px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    width: 200px;
+    height: 45px;
+    text-align: left;
+    bottom: 0;
+    left: 230px;
+}
+
+.inGameHud .locationhud i {
+    color: #ff1100;
+    position: relative;
+    /* border-radius: 35px; */
+    font-size: 40px;
+    /* background: #1e1e1e40; */
+    /* padding: 5px; */
+    width: 200px;
+    text-align: left;
+    top: 4px;
+    bottom: 0;
+    left: 4px;
+}
+
+.inGameHud .locationhud #location {
+    font-weight: 600;
+    font-size: 16px;
+    margin-left: 40px;
+    color: #fff;
+    position: relative;
+    top: -39px;
+}
+
+.inGameHud .locationhud #street {
+    font-size: 14px;
+    margin-left: 40px;
+    position: relative;
+    color: #bfbfbf;
+    top: -37px;
+}
+
+.speedometer{
+  position: absolute;
+  bottom: 100px;
+  right: 20px;
+  }
+.speed_count {
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 6.92593vh;
+  color: #ffffff;
+  font-weight: 900;
+  right: 10.5vh;
+  bottom: 8vh;
+}
+
+.speed_count .count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 11vh;
+}
+
+.speed_count .type {
+  text-transform: uppercase;
+  font-size: 1.2963vh;
+  font-weight: 900;
+  opacity: 0.19;
+}
+
+.speed_count .bg {
+  opacity: 0.19;
+}
+
+.speed {
+  position: absolute;
+  bottom: 0vh;
+  right: 3vh;
+  width: 26.85185vh;
+  height: unset;
+}
+
+.speed path {
+  will-change: auto;
+  stroke-width: 0.24074vh;
+  stroke-miterlimit: round;
+  -webkit-transition: stroke-dashoffset 250ms ease-in-out;
+  transition: stroke-dashoffset 250ms ease-in-out;
+}
+
+.speed path.bg {
+  stroke: rgba(255, 255, 255, 0.2);
+}
+
+.speed path.meter {
+  stroke: #ff1100;
+  -moz-box-shadow:0 0 10px #000;
+  -webkit-box-shadow:0 0 10px #000;
+  box-shadow:0 0 10px #000;
+}
+
+.fuel {
+  position: absolute;
+  bottom: 1.8vh;
+  right: 30.59259vh;
+  width: 8.40741vh;
+  height: unset;
+}
+
+.fuel path {
+  will-change: auto;
+  stroke-width: 0.74074vh;
+  stroke-miterlimit: round;
+  -webkit-transition: stroke-dashoffset 850ms ease-in-out;
+  transition: stroke-dashoffset 850ms ease-in-out;
+}
+
+.fuel path.bg {
+  stroke: rgba(255, 255, 255, 0.2);
+}
+
+.fuel path.meter {
+  stroke: #ff1100;
+    -moz-box-shadow:0 0 10px #000;
+  -webkit-box-shadow:0 0 10px #000;
+  box-shadow:0 0 10px #000;
+}
+
+.icon_fuel {
+  width: 1.48148vh;
+  position: absolute;
+  bottom: 2.5vh;
+  right: 34vh;
+}
+
+.lamp_list {
+  width: 13.88889vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: 2.5vh;
+  right: 9.2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.lamp_list .engine {
+  width: 2.22222vh;
+}
+
+.lamp_list .lamp {
+  width: 2.40741vh;
+}
+
+.lamp_list .door {
+  width: 1.75926vh;
+}
+
+.lamp_list .sec {
+  width: 1.75926vh;
+}
+
+.inGameHud .eathud{
+	position: absolute;
+    width: 57px;
+	bottom: 90px;
+	display: flex;
+	flex-direction: column;
+	padding: 2px;
+	text-align: center;
+	right: 1px;
+	
+}
+.inGameHud .eatnumber #eat{
+    left: 200px;
+    /*width: 57px; */
+    bottom: 135px;
+    display: flex;
+    flex-direction: column;
+    padding: 11px;
+    text-align: center;
+            border-radius: 30px;
+            background: #1e1e1e80;
+}
+.inGameHud .eatnumber p{
+    text-align: left;
+    text-shadow: 0px 0px 0px #000;
+}
+.inGameHud .waternumber #water{
+    left: 200px;
+    /* width: 57px; */
+    bottom: 135px;
+    display: flex;
+    flex-direction: column;
+    padding: 11px;
+    text-align: center;
+            border-radius: 30px;
+            background: #1e1e1e80;
+}
+.inGameHud .waternumber p{
+    text-align: left;
+    text-shadow: 0px 0px 1px #000;
+}
+.inGameHud .eathud p{
+    text-align: left;
+    text-shadow: 0px 0px 1px #000;
+}

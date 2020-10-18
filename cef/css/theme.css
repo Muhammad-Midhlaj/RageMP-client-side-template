@@ -1,0 +1,105 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    user-select: none;
+}
+
+.noty_theme__fivestar.noty_bar {
+  margin: 4px 0;
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: rgba(0, 0, 0, 0.6) 0 0 10px 0; }
+  .noty_theme__fivestar.noty_bar .noty_progressbar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    background-color: #fff;
+    opacity: 0.8; }
+  .noty_theme__fivestar.noty_bar .noty_body {
+    padding: 1.25em;
+    font-size: 12pt; }
+  .noty_theme__fivestar.noty_bar .noty_buttons {
+    padding: 0 10px .5em 10px; }
+
+.noty_theme__fivestar.noty_type__alert,
+.noty_theme__fivestar.noty_type__notification {
+  background: linear-gradient(90deg, rgba(196, 196, 196,0.8) 0%, rgba(33,32,43,0.8) 31%);
+  border-radius: 5px;  
+}
+
+.noty_theme__fivestar.noty_type__alert .text i,
+.noty_theme__fivestar.noty_type__notification .text i {
+  color: #fff; 
+}
+
+.noty_theme__fivestar.noty_type__warning {
+	border-bottom: 5px solid #f56d17;
+    border-radius: 22px;
+        height: auto;
+}
+
+.noty_theme__fivestar.noty_type__warning .text i {
+  color: #ff6a00; 
+      margin-top: -5px;
+}  
+
+.noty_theme__fivestar.noty_type__error {
+	border-bottom: 5px solid #e03c3b;
+    border-radius: 22px;
+    height: 54px;
+}
+
+.noty_theme__fivestar.noty_type__error .text i {
+  color: #ff6a00; 
+      margin-top: -5px;
+}
+
+.noty_theme__fivestar.noty_type__info,
+.noty_theme__fivestar.noty_type__information {
+	border-bottom: 5px solid #3b83e0;
+    border-radius: 22px;
+    height: 54px;
+}
+
+.noty_theme__fivestar.noty_type__info .text i,
+.noty_theme__fivestar.noty_type__information .text i {
+  color: #ff6a00; 
+      margin-top: -5px;
+}
+
+.noty_theme__fivestar.noty_type__success {
+	border-bottom: 5px solid #3b83e0;
+    border-radius: 22px;
+    height: 54px;
+}
+
+
+.noty_theme__fivestar.noty_type__success .text i {
+   color: #3b83e0; 
+      margin-top: -5px;
+}
+
+.text{
+line-height: 1em;
+    /* text-align: center; */
+    font-size: 13pt;
+    margin-top: -3px;
+    color: #fff;
+}
+.text i{
+  float: left;
+  font-size: 34pt;
+  margin-right: 30px;
+}
+
+#noty_layout__bottomCenter, #noty_layout__topCenter{
+  width: 600px;
+}
+#noty_layout__topLeft, #noty_layout__topRight,
+#noty_layout__bottomLeft, #noty_layout__bottomRight,
+#noty_layout__centerLeft, #noty_layout__centerRight,
+#noty_layout__center{
+  width: 450px;
+}

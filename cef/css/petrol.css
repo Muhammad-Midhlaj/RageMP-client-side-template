@@ -1,0 +1,50 @@
+﻿.petrol {
+    position: absolute;
+    background-image: url('../res/petrol.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: -375px;
+    height: 550px;
+    width: 750px;
+    left: 50%;
+    bottom: 0;
+}
+
+    .petrol input {
+        text-align: center;
+        margin-left: 290px;
+        margin-top: 400px;
+        background: none;
+        font-size: 25pt;
+        border: none;
+        height: 30px;
+        width: 140px;
+        float: left;
+    }
+
+    .petrol .btns {
+        margin-left: 45px;
+        margin-top: 369px;
+        height: 136px;
+        width: 63px;
+        float: left;
+    }
+
+    .petrol .btn {
+        cursor: pointer;
+        height: 34px;
+        width: 60px;
+    }
+
+    .petrol .no {
+        margin-top: 0px;
+    }
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}

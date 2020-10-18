@@ -1,0 +1,306 @@
+{
+    "data": [
+        {
+            "cmd":"/report",
+            "descr":"Presente una queja a la administración.",
+            "category":"General"        },  
+		{
+            "cmd":"/password",
+            "descr":"Cambiar contraseña",
+			"category":"General"        },
+		{
+            "cmd":"/myguest",
+            "descr":"Ingrese a su hogar personal sin abrir la puerta.",
+			"category":"General"        },
+		{
+            "cmd":"/buybiz",
+            "descr":"Compra un negocio.",
+			"category":"General"        },
+		{
+            "cmd":"/sellbiz [id] [precio]",
+            "descr":"Vender un negocio a un jugador.",
+			"category":"General"        },
+		{
+            "cmd":"/time",
+            "descr":"Consultar tiempo de condena/carcel.",
+			"category":"General"        },
+		{
+            "cmd":"/dice [id] [cantidad]",
+            "descr":"Jugar a los dados.",
+            "category":"General"        },
+		{
+            "cmd":"/findtrailer",
+            "descr":"Marcar trailer (para camionero)",
+			"category":"General"        },
+		{
+            "cmd":"/q",
+            "descr":"Desconexión rápida del servidor.",
+			"category":"General"        },
+		{
+            "cmd":"Botón 'G'",
+            "descr":"Menú de interacción",
+			"category":"General"        },
+		{
+            "cmd":"Botón 'N'",
+            "descr":"Hablar por el micrófono",
+			"category":"General"        },
+		{
+            "cmd":"Botón 'I'",
+            "descr":"Abre el inventario y las estadísticas del personaje.",
+			"category":"General"        },
+		{
+            "cmd":"Botón 'M'",
+            "descr":"Teléfono móvil",
+			"category":"General"        },
+		{
+            "cmd":"Botón 'L'",
+            "descr":"Abrir/cerrar un coche.",
+			"category":"General"        },
+		{
+            "cmd":"Botón 'B'",
+            "descr":"Arrancar/parar un coche",
+			"category":"General"        },
+		{
+            "cmd":"Botón 'U'",
+            "descr":"Lista de animaciones.",
+			"category":"General"        },
+		{
+            "cmd":"Botón '5'",
+            "descr":"Mostrar/Ocultar ID de jugador.",
+			"category":"General"        },
+		{
+            "cmd":"Botón '6'",
+            "descr":"Control de crucero.",
+			"category":"General"        },
+		{
+            "cmd":"Botón 'F10'",
+            "descr":"Ayuda.",
+			"category":"General"        },
+		{
+            "cmd":"Botón 'F9'",
+            "descr":"Panel de donaciones.",
+			"category":"General"        },
+		{
+            "cmd":"Botón 'F5'",
+            "descr":"Ocultar/mostrar HUD.",
+			"category":"General"        },
+		{
+            "cmd":"Botón 'F1'",
+            "descr":"Abre el menú de Rage.",
+			"category":"General"        },
+		{
+            "cmd":"Botón 'T'",
+            "descr":"Abrir chat",
+			"category":"Chat"        },
+		{
+            "cmd":"/b",
+            "descr":"Chat OOC",
+			"category":"Chat"        },
+		{
+            "cmd":"/me",
+            "descr":"Sirve para representar acciones que no tienen una animación.Ejemplo: /me yo tomé un pañuelo y le limpié el sudor de la cara.",
+			"category":"Chat"        },
+		{
+            "cmd":"/do",
+            "descr":"Sirve para el rol de entorno. Ejemplo: /do En la calle se verían pocos vehiculos",
+			"category":"Chat"        },
+		{
+            "cmd":"/try",
+            "descr":"Representar una acción con un resultado aleatorio. Ejemplo: /try Después de buscar a la persona de enfrente, pude encontrar insectos en la ropa.",
+			"category":"Chat"        },
+		{
+            "cmd":"/todo",
+            "descr":"Reproducción de palabras + acciones. Ejemplo: /todo Encantado de conocerte * cortésmente tendiéndole la mano a la persona opuesta",
+			"category":"Chat"        },
+		{
+            "cmd":"/s",
+            "descr":"Gritar.",
+			"category":"Chat"        },
+		{
+            "cmd":"/f",
+            "descr":"Chat facciones",
+			"category":"Chat"        },
+		{
+            "cmd":"/dep",
+            "descr":"Chat de departamento (Chat general de todas las fracciones estatales).",
+			"category":"Chat"        },
+		{
+            "cmd":"/gov",
+            "descr":"Mensaje al gobierno",
+			"category":"Chat"        },
+		{
+            "cmd":"/m",
+            "descr":"Megáfono",
+			"category":"Chat | LSPD | FIB | Ejercito"        },
+		{
+            "cmd":"/call",
+            "descr":"SMS.",
+			"category":"Chat"        },
+		{
+            "cmd":"/fontsize",
+            "descr":"Cambiar el tamaño de fuente del chat.",
+			"category":"Chat"        },
+		{
+            "cmd":"/pagesize",
+            "descr":"Cambiar el número de líneas de chat.",
+			"category":"Chat"        },
+		{
+            "cmd":"/chatalpha",
+            "descr":"Alternar la traducción de chat.",
+			"category":"Chat"        },
+		{
+            "cmd":"/timestamp",
+            "descr":"Visualización de la hora en el chat.",
+			"category":"Chat"        },
+		{
+            "cmd":"/buyfuel [cantidad]",
+            "descr":"Comprar combustible en una estación de servicio.",
+			"category":"Mecánico"        },
+		{
+            "cmd":"/sellfuel [id] [cantidad] [precio por litro]",
+            "descr":"Vende combustible a un jugador.",
+			"category":"Mecánico"        },
+		{
+            "cmd":"/ma",
+            "descr":"Acepta una llamada de mecánico",
+			"category":"Mecánico"        },
+		{
+            "cmd":"/repair [id] [precio]",
+            "descr":"Reparar un vehículo",
+			"category":"Mecánico"        },
+		{
+            "cmd":"/ta [id]",
+            "descr":"Aceptar llamada.",
+			"category":"Taxi"        },
+		{
+            "cmd":"/tprice [id] [precio]",
+            "descr":"Precio del servicio.",
+			"category":"Taxi"        },
+		{
+            "cmd":"/ctaxi",
+            "descr":"Cancelar llamada.",
+			"category":"Taxi"        },
+		{
+            "cmd":"/cmechanic",
+            "descr":"Cancelar llamada.",
+			"category":"Mecánico"        },
+		{
+            "cmd":"/orders",
+            "descr":"Lista de pedidos",
+			"category":"Camionero"        },
+		{
+            "cmd":"/t",
+            "descr":"Walkie-talkie Camionero.",
+			"category":"Camionero"        },
+		{
+            "cmd":"/su [Número de pasaporte] [nº estrellas] [razón]",
+            "descr":"Emitir orden de búsqueda.",
+			"category":"LSPD | FIB"        },
+		{
+            "cmd":"/arrest [id]",
+            "descr":"Arrestar a un jugador.(Poner en la prisión)",
+			"category":"LSPD | FIB"        },
+		{
+            "cmd":"/rfp [id]",
+            "descr":"Libera a un jugador de la prisión.",
+			"category":"LSPD | FIB"        },
+		{
+            "cmd":"/pd [id]",
+            "descr":"Aceptar llamada.",
+			"category":"LSPD | FIB"        },
+		{
+            "cmd":"/givegunlic [id] [precio]",
+            "descr":"Emitir una licencia de armas.",
+			"category":"LSPD | FIB"        },
+		{
+            "cmd":"/takegunlic [id] ",
+            "descr":"Revocar licencia de armas.",
+			"category":"LSPD | FIB"        },
+		{
+            "cmd":"/pull [id]",
+            "descr":"Sacar al jugador del coche.",
+			"category":"LSPD | FIB | Mafia | Ejército | Gobierno"        },
+		{
+            "cmd":"/incar [id]",
+            "descr":"Посадить игрока в авто.",
+			"category":"LSPD | FIB | Mafia | Ejército | Gobierno"        },
+		{
+            "cmd":"/warg",
+            "descr":"Habilitar modo de emergencia.",
+			"category":"LSPD | FIB"        },
+		{
+            "cmd":"/openstock /closestock ",
+            "descr":"Abrir/Cerrar el almacén.",
+			"category":"LSPD | FIB | EMS | Ejército | Gobierno | Bandas | Mafia"        },
+		{
+            "cmd":"Botón 'X'",
+            "descr":"Esposar",
+			"category":"LSPD | FIB | Ejército | Gobierno"        },
+		{
+            "cmd":"Botón 'Z'",
+            "descr":"Llevar a alguien esposado.",
+			"category":"LSPD | FIB | Ejército | Gobierno"        },
+		{
+            "cmd":"Botón 'U'",
+            "descr":"[En vehículo policial] Ordenador policial.",
+			"category":"LSPD | FIB"        },
+		{
+            "cmd":"Botón 'G'",
+            "descr":"Interacción con el jugador. (Buscar, consultar documentos, etc.)",
+			"category":"LSPD | FIB"        },
+		{
+            "cmd":"/heal [id] [precio]",
+            "descr":"Factura para la cura",
+			"category":"EMS"        },
+		{
+            "cmd":"/ems [id]",
+            "descr":"Acepta la llamada.",
+			"category":"EMS"        },
+		{
+            "cmd":"/givemedlic [id]",
+            "descr":"Entregar licencia medica",
+			"category":"EMS"        },
+		{
+            "cmd":"/givepmlic [id] [precio]",
+            "descr":"Vender licencia paramédica",
+			"category":"EMS"        },
+		{
+            "cmd":"Botón 'F7'",
+            "descr":"Publicar un anuncio",
+			"category":"LSNEWS"        },
+		{
+            "cmd":"/capture",
+            "descr":"Iniciar captura de territorio.",
+			"category":"Bandas"        },
+		{
+            "cmd":"Botón 'G'",
+            "descr":"Interacción con el jugador. (Robar, poner bolsa)",
+			"category":"Mafia | Bandas"        },
+		{
+            "cmd":"/bizwar",
+            "descr":"Iniciar captura de negocio.",
+			"category":"Mafia"        },
+		{
+            "cmd":"/takebiz",
+            "descr":"Toma el control de un negocio.",
+			"category":"Mafia"        },
+		{
+            "cmd":"/respawn",
+            "descr":"Respawn de vehiculos de facciones",
+			"category":"Administración"        },
+		{
+            "cmd":"/setrank [id] [rank]",
+            "descr":"Cambiar rango de jugador",
+			"category":"Administración"        },
+		{
+            "cmd":"/invite [ID]",
+            "descr":"Invitar a la facción",
+			"category":"Administración"        },
+		{
+            "cmd":"/uninvite [ID]",
+            "descr":"Despide a un jugador de una facción",
+			"category":"Administración"
+        }
+
+    ]
+}

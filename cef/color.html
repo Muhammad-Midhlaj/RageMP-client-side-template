@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>redage.net - Color picker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/color.css">
+</head>
+<body style="opacity: 0">
+    <div id="window" class="color-picker-panel">
+        <h2 class="panel-header top">Выберите цвет</h2>
+        <div class="panel-row">
+            <div class="swatches default-swatches"></div>
+            <button id="color-indicator" class="button preview"></button>
+        </div>
+        <div class="panel-row">
+            <div class="spectrum-map">
+                <button id="spectrum-cursor" class="color-cursor"></button>
+                <canvas id="spectrum-canvas"></canvas>
+            </div>
+            <div class="hue-map">
+                <button id="hue-cursor" class="color-cursor"></button>
+                <canvas id="hue-canvas"></canvas>
+            </div>
+        </div>
+        <div class="panel-row">
+            <div id="rgb-fields" class="field-group value-fields rgb-fields active">
+                <div class="field-group">
+                    <label for="" class="field-label">R:</label>
+                    <input type="number" max="255" min="0" id="red" class="field-input rgb-input" />
+                </div>
+                <div class="field-group">
+                    <label for="" class="field-label">G:</label>
+                    <input type="number" max="255" min="0" id="green" class="field-input rgb-input" />
+                </div>
+                <div class="field-group">
+                    <label for="" class="field-label">B:</label>
+                    <input type="number" max="255" min="0" id="blue" class="field-input rgb-input" />
+                </div>
+            </div>
+            <div id="hex-field" class="field-group value-fields hex-field">
+                <label for="" class="field-label">Hex:</label>
+                <input type="text" id="hex" class="field-input" />
+            </div>
+            <button id="mode-toggle" class="button mode-toggle">Режим</button>
+        </div>
+        <!---<div class="panel-row">
+            <button onclick="apply()" class="button swatch">
+                <span>Применить цвет</span>
+            </button>
+            <button onclick="cancel()" class="button swatch">
+                <span>Отмена</span>
+            </button>
+        </div>--->
+    </div>
+    <script src='js/tinycolor.min.js'></script>
+    <script type="text/javascript" src="js/colors.js"></script>
+</body>
+</html>

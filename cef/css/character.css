@@ -1,0 +1,127 @@
+﻿body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.editor {
+    width: 42vh;
+    height: 98vh;
+    max-height: 98vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    color: white;
+}
+
+    .editor h1 {
+        background: #E78A48;
+        box-shadow: 0 0 15px #E78A48;
+        color: white;
+        padding: 8px;
+        margin: 10px;
+        font-size: 10pt;
+        text-align: center;
+        font-weight: 300;
+    }
+
+    .editor h3 {
+        margin: 8px;
+        font-size: 18pt;
+        font-weight: 300;
+        color: white;
+    }
+
+    .editor .button {
+        background: #E78A48;
+        box-shadow: 0 0 15px #E78A48;
+        color: white;
+        padding: 8px;
+        margin: 10px;
+        font-size: 10pt;
+        text-align: center;
+        font-weight: 300;
+        cursor: pointer;
+    }
+
+        .editor .button:hover {
+            background: #FF9F77;
+        }
+    .editor .slider {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+.element {
+    padding: 8px;
+    color: white;
+}
+
+
+.switch{
+    display: block;
+}
+.switch .btn{
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: rgb(55, 55, 55);
+}
+.switch .on{
+    background-color: #E78A48;
+}
+.list {
+    margin-top: 8px;
+    text-align: center;
+}
+
+    .list div {
+        padding: 8px;
+        width: 57%;
+        text-align: center;
+        background-color: #E78A48;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        color: white;
+        display: inline-block;
+    }
+
+    .list .left {
+        background-color: #E78A48;
+        color: white;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        display: inline-block;
+    }
+
+    .list .right {
+        background-color: #E78A48;
+        color: white;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        display: inline-block;
+    }
+
+        .list input:hover, .list .right:hover, .list .left:hover {
+            background-color: #FF9F77;
+            cursor: pointer;
+        }
+
+        .list input:active, .list .right:active, .list .left:active {
+            background-color: #E78A48;
+            cursor: pointer;
+        }
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #555;
+}
+::-webkit-scrollbar-thumb {
+  background: #ddd; 
+}

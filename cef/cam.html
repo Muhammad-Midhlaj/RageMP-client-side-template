@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>redage.net - Cam</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300&amp;subset=cyrillic-ext" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/cam.css">
+    <link rel="stylesheet" type="text/css" href="css/slider.css">
+</head>
+<body>
+    <div class="control" style="display: none">
+        <p>Поворот</p>
+        <input id="rotate" type="range" value="0" step="1" min="0" max="360">
+        <output id="rotate">0</output>
+        <p>Высота</p>
+        <input id="height" type="range" value="0" step="0.1" min="-0.7" max="0.7">
+        <output id="height">0</output>
+        <p>Дальность</p>
+        <input id="depth" type="range" value="1" step="0.1" min="0.5" max="1.5">
+        <output id="depth">0</output>
+    </div>
+</body>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/rangeslider.min.js"></script>
+<script src="js/cam.js"></script>
+</html>

@@ -1,0 +1,349 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+.masks{
+    position: absolute;
+    text-align: center;
+    font-family: 'PT Sans', sans-serif;
+    color: white;
+    /* display: none; */
+}
+.bg {
+    color: white;
+    background: url(https://imgur.com/jAOIgSG.png);
+    width: 420px;
+    height: 239px;
+    background-size: 350px;
+}
+.bg2 {
+    height: 387px !important;
+    width: 420px !important;
+    left: 0px !important;
+    position: relative !important;
+    top: -60px !important;
+}
+.masks .right{
+    right: 13%;
+    top: 10%;
+    position: fixed;
+    /* height: 500px; */
+    width: 300px;
+    background: #0a0a14;
+    border-radius: 10px;
+}
+.masks .left{
+    height: 100%;
+    position: fixed;
+    display: none;
+    width: 420px;
+    padding-top: 0;
+    background: #0a0a14;
+    left: 0px;
+}
+.masks i{
+    /* font-family: "icons"; */
+    font-style: normal;
+    cursor: pointer;
+    color: #fff;
+    /* padding: 10px; */
+    /* background-color: #37474F; */
+    border-radius: 5px;
+}
+.masks .btn i{
+    /* font-family: "icons"; */
+    font-style: normal;
+    cursor: pointer;
+    color: #cf2b2b;
+    /* padding: 10px; */
+    /* background-color: #37474F; */
+    border-radius: 5px;
+}
+.left i{
+    /* font-family: "icons"; */
+    font-style: normal;
+    cursor: pointer;
+    margin-right: 7px;
+    /* padding: 10px; */
+    /* background-color: #37474F; */
+    border-radius: 5px;
+}
+
+.left i:hover{
+    /* font-family: "icons"; */
+    font-style: normal;
+    margin-right: 7px;
+    /* padding: 10px; */
+    border-radius: 5px;
+}
+.masks .list1 div{
+    width: 20px;
+    /* padding: 9px; */
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    display: inline-table;
+    /* background-color: #37474F; */
+}
+.masks .list div{
+    width: 20px;
+    /* padding: 9px; */
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    display: inline-table;
+    /* background-color: #37474F; */
+}
+.name1 {
+    background: #ffffff00 !important;
+    font-family: "Font Awesome 5 Free" !important;
+}
+.masks h1{
+    margin: 0;
+    padding: 8px;
+    font-size: 18pt;
+    text-align: left;
+    background: linear-gradient(56deg, rgba(97,91,139,1) 37%, rgba(78,74,115,1) 56%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.bg1{
+    margin-top: 0px !important;
+    /* margin: 0 !important; */
+    padding: 15px !important;
+    top: -229px;
+    font-weight: 600;
+    position: relative;
+    color: #ffffff;
+    text-align: center !important;
+    font-size: 25pt !important;
+    background: #ffffff00 !important;
+    text-shadow: 1px 1px 2px #88888890;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.masks .left-arrow{
+    /* float: right; */
+}
+.masks .right-arrow{
+    /* float: right; */
+}
+.masks .list1{
+    font-weight: 600;
+    color: #888;
+    padding: 30px 0px 30px 11px;
+    position: relative;
+    font-size: 17px;
+    width: 300px;
+    border-top: 1px solid #57474720;
+    border-block-end: 1px solid #57575720;
+    text-align: left;
+}
+.list1 span {
+  color: #000;
+  position: absolute;
+  right: 12px;
+}
+.masks .list{
+    font-weight: 600;
+    color: #888;
+    padding: 30px 0px 30px 11px;
+    font-size: 17px;
+    position: relative;
+    width: 300px;
+    border-block-end: 1px solid #57575720;
+    text-align: left;
+}
+.list span {
+  color: #000;
+  position: absolute;
+  right: 12px;
+}
+.masks .items{
+    height: 200px;
+}
+.masks .btn{
+    padding: 10px;
+    border-radius: 5px;
+    /* border: 2px solid; */
+    cursor: pointer;
+    margin: 10px;
+}
+.masks .buy{
+    background: linear-gradient(56deg, rgba(228,174,114,1) 37%, rgba(233,188,103,1) 56%);
+    font-size: 17px;
+    width: 220px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    box-shadow: 0 0px 9px 1px rgba(228,174,114,0.7);
+}
+.masks .exit{
+    /* background: linear-gradient(56deg, rgba(228,174,114,1) 37%, rgba(233,188,103,1) 56%); */
+    font-size: 28px;
+    /* width: 220px; */
+    top: -25px;
+    right: -10px;
+    font-weight: 600;
+    position: absolute;
+    /* margin-bottom: 10px; */
+    /* margin-left: 40px; */
+    /* box-shadow: 0 0px 9px 1px rgba(228,174,114,0.7); */
+}
+.masks .buy:hover{
+    background: #e9bc67;
+}
+.masks .exit:hover{
+    color: #fff;
+}
+.masks .icon{
+    /* height: 50px; */
+    border-block-end: 2px solid #57575720;
+    font-size: 19px;
+    width: 300px;
+    color: #787878;
+    /* color: #fff; */
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    margin-left: 60px;
+    /* border-radius: 14px; */
+    /* background: linear-gradient(56deg, rgba(255,43,3,1) 37%, rgba(245,58,4,1) 56%); */
+    margin-bottom: 10px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 35px;
+}
+.masks .icon.active{
+    color: #fff;
+    border-radius: 14px;
+    background: linear-gradient(56deg, rgba(97,91,139,1) 37%, rgba(78,74,115,1) 56%);
+}
+.masks .icon:hover{
+    color: #fff;
+    border-radius: 14px;
+    background: linear-gradient(56deg, rgba(97,91,139,1) 37%, rgba(78,74,115,1) 56%);
+}
+.masks p{
+    color: #888;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 13px;
+    text-align: left;
+}
+.masks .right p{
+    color: #888;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 14px;
+    text-align: left;
+}
+.price{
+    color: #888;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 0px !important;
+    text-align: left;
+    padding-left: 13px;
+    padding-top: 10px;
+    padding-block-end: 25px;
+    border-block-end: 1px solid #57575720;
+}
+.masks p span{
+    color: #fff;
+    font-size: 16pt;
+    position: absolute;
+    margin-top: -3px;
+    right: 12px;
+}
+p.price:after {
+    content: "";
+    color: #fff;
+    font-size: 16pt;
+    background: linear-gradient(56deg, rgba(97,91,139,1) 37%, rgba(78,74,115,1) 56%);
+    height: 3px;
+    width: 80px;
+    border-radius: 5px;
+    position: absolute;
+    margin-top: 42px;
+    right: 110px;
+    box-shadow: 0 0px 14px 0 rgba(97,91,139,1);
+}
+.masks .hat img{
+    width: 20px;
+    position: relative;
+    top: 1px;
+    /* margin-right: 5px; */
+}
+
+.masks .jacket img{
+    width: 20px;
+    position: relative;
+    top: 1px;
+	margin-right: 5px;
+}
+.masks .shirt img{
+    width: 20px;
+    position: relative;
+    top: 1px;
+	margin-right: 5px;
+}
+.masks .pants img{
+    width: 15px;
+    height: 20px;
+    position: relative;
+    top: 1px;
+    margin-right: 10px;
+}
+.masks .shoe img{
+    width: 20px;
+    position: relative;
+    top: 1px;
+	margin-right: 5px;
+}
+.masks .gloves img{
+    width: 20px;
+    position: relative;
+    top: 1px;
+	margin-right: 5px;
+}
+.masks .watches img{
+    width: 20px;
+    position: relative;
+    top: 1px;
+	margin-right: 5px;
+}
+.masks .glasses img{
+    width: 20px;
+    position: relative;
+    top: 1px;
+	margin-right: 5px;
+}
+.masks .jewerly img{
+    width: 20px;
+    position: relative;
+    top: 1px;
+	margin-right: 5px;
+}
+ul {
+  margin: 12px;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  max-width: 320px;
+}
+ul li {
+  margin: 16px 0;
+  position: relative;
+}
+html {
+  box-sizing: border-box;
+}
+
+@media (min-width: 301px) and (max-width: 1400px) {
+    .masks{
+    position: absolute;
+    text-align: center;
+    font-family: 'PT Sans', sans-serif;
+    color: white;
+    zoom: 70%;
+}
+}
+

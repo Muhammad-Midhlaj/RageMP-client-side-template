@@ -1,0 +1,172 @@
+body {
+    background: transparent !important;
+}
+
+.wrapper {
+    margin: 25px;
+}
+
+.menu {
+    color: white;
+    left: 0;
+    right: 0;
+    position: absolute;
+    float: left;
+    height: 800px;
+    width: 625px;
+    max-width: 625px;
+}
+
+.menu-left {
+    background: #172446d9;
+    opacity: 0.8;
+    margin: 0 auto;
+    margin-left: 25px !important;
+    float: left;
+    height: inherit;
+    width: 46%;
+}
+
+.menu-head {
+    background: #f54242;
+    height: 80px;
+}
+
+.menu-body-option:hover {
+    background: #e03838 !important;
+    cursor: pointer !important;
+}
+
+.text-round {
+    display: inline-block;
+    border-radius: 50%;
+    border: 2px solid;
+    margin: 14px;
+    font-size: 26px;
+}
+
+.text-round:before,
+.text-round:after {
+    content: '\200B';
+    display: inline-block;
+    line-height: 0px;
+
+    padding-top: 50%;
+    padding-bottom: 50%;
+}
+
+.text-round:before {
+    padding-left: 20px;
+}
+
+.text-round:after {
+    padding-right: 20px;
+}
+
+.text-float-left {
+    float: left;
+}
+
+.text-float-right {
+    float: right;
+}
+
+.text-option {
+    font-size: 24px;
+}
+
+.menu-center {
+    margin: 0 auto;
+    width: 40%;
+    height: 80px;
+    background: black;
+    opacity: 0.8;
+}
+
+.menu-right {
+    height: inherit;
+    width: 50%;
+    background: #172446d9;
+    opacity: 0.8;
+    color: white;
+    float: right;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-center {
+    text-align: center;
+    font-size: 20px;
+}
+
+.text-heading-1 {
+    font-size: 30px !important;
+}
+
+.text-heading-2 {
+    font-size: 26px !important;
+    padding-top: 10px;
+}
+
+.menu-body-option {
+    float: none;
+}
+
+.text-rotation {
+    vertical-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 15px;
+    width: 100%;
+}
+
+.text-icon-rotation {
+    width: 60px;
+    height: 60px;
+}
+
+.text-icon-rotation:hover {
+    background-color: black;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.active {
+    background: #ff8400;
+}
+
+.form-group {
+    padding: 10px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: white;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #ff8400;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #ff8400;
+    cursor: pointer;
+}

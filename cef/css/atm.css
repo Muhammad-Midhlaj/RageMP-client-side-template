@@ -1,0 +1,59 @@
+.atm{
+    position: absolute;
+    height: 600px;
+    width: 800px;
+    background-image: url('../res/atm.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    left:50%;
+    top:50%;
+    margin-left: -400px;
+    margin-top: -300px;
+}
+.atm .left{
+    height: 220px;
+    width: 250px;
+    margin-top: 105px;
+    margin-left: 50px;
+}
+.atm .right{
+    width: 480px;
+    height: 300px;
+    margin-top: 70px;
+    float: right;
+}
+.atm .block{
+    background-color: #E74856;
+    width: 46%;
+    height: 66px;
+    margin: 5px;
+    display: inline-block;
+    cursor: pointer;
+}
+.atm .block:hover{
+    background-color: #FF4343;
+}
+.atm .left p{
+    font-size: 14pt;
+    margin: 0;
+    margin-bottom: 35px;
+    color: #FF4343;
+}
+.atm .right p{
+    color: white;
+    padding: 10px;
+    margin: 0;
+}
+.atm input{
+    width: 88%;
+    margin: 5px;
+    padding: 15px;
+    font-size: 12pt;
+    border: 2px solid black;
+    background-color: rgba(0,0,0,0);
+}
+.atm p.subinfo{
+    width: 94%;
+    color: black;
+}

@@ -1,0 +1,881 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+	<link rel="stylesheet" href="fonts/montserrat/montserrat.css">
+
+	<link rel="stylesheet" href="css/noty.css">
+	<link rel="stylesheet" href="css/theme.css">
+	<link rel="stylesheet" href="css/u.css">
+	<link rel="stylesheet" href="css/auth.css" />
+</head>
+
+<body>
+	<div class="switch-content authDiv">
+		<main class="gta-acount  authorization  auth-page show">
+			<div class="man"></div>
+			<div class="left-top-sign">
+				<div class="img">
+				</div>
+				<div class="texts">
+					<div class="copy"></div>
+				</div>
+			</div>
+			<div class="gta-acount__content">
+
+				<form id="auth-form" action="" method="POST">
+					<div class="input-cont">
+						<label for="entry-login-id">
+							<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M4.46875 3.66666H18.2188C19.1641 3.66666 19.9375 4.44009 19.9375 5.38541V15.6979C19.9375 16.6432 19.1641 17.4167 18.2188 17.4167H4.46875C3.52344 17.4167 2.75 16.6432 2.75 15.6979V5.38541C2.75 4.44009 3.52344 3.66666 4.46875 3.66666Z" stroke="white" stroke-width="0.859375" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M19.9375 5.38541L11.3438 11.401L2.75 5.38541" stroke="white" stroke-width="0.859375" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							<span class="text">Login</span>
+						</label>
+						<input type="text" class="the-input entry-login" name="entry-login" id="entry-login-id" placeholder="example" required>
+					</div>
+
+					<div class="input-cont">
+						<label for="entry-password-id">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M12.9167 6.24999L15.8333 3.33332M17.5 1.66666L15.8333 3.33332L17.5 1.66666ZM9.49165 9.67499C9.92194 10.0995 10.264 10.605 10.4981 11.1623C10.7322 11.7196 10.8538 12.3177 10.8558 12.9222C10.8579 13.5267 10.7403 14.1256 10.5099 14.6844C10.2795 15.2433 9.94087 15.751 9.51344 16.1784C9.08601 16.6059 8.57825 16.9445 8.0194 17.1749C7.46055 17.4053 6.86165 17.5229 6.25718 17.5208C5.65271 17.5188 5.0546 17.3972 4.49731 17.1631C3.94002 16.929 3.43454 16.5869 3.00998 16.1567C2.17509 15.2922 1.71312 14.1345 1.72356 12.9327C1.734 11.731 2.21603 10.5814 3.06582 9.73165C3.9156 8.88187 5.06516 8.39984 6.2669 8.3894C7.46863 8.37896 8.62639 8.84093 9.49082 9.67582L9.49165 9.67499ZM9.49165 9.67499L12.9167 6.24999L9.49165 9.67499ZM12.9167 6.24999L15.4167 8.74999L18.3333 5.83332L15.8333 3.33332L12.9167 6.24999Z" stroke="white" stroke-width="0.952381" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							<span class="text">Password</span>
+						</label>
+						<input type="password" class="the-input" id="entry-password-id" name="entry-password" placeholder="*******************" required>
+					</div>
+
+					<div class="btn-cont">
+						<input class="the-btn-enter btn-enter js-btn-auth" type="submit" value="Enter">
+						<a class="btn-register  js-btn-register" href="registration.html">Don't have an account? Register now!</a>
+						<a class="restore-pw js-btn-restore" href="restorepass.html">Restore password</a>
+					</div>
+				</form>
+
+			</div>
+		</main>
+		<main class="gta-acount  reg-and-restore restorepass  rest-page">
+			<div class="man"></div>
+			<div class="left-top-save">
+				<div class="img">
+					<svg width="54" height="55" viewBox="0 0 54 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M35.5673 47.482V43.0361C35.5673 40.6778 34.6305 38.4161 32.9629 36.7486C31.2954 35.0811 29.0337 34.1443 26.6755 34.1443H11.1148C8.75657 34.1443 6.49491 35.0811 4.82737 36.7486C3.15983 38.4161 2.22302 40.6778 2.22302 43.0361V47.482" stroke="white" stroke-width="4.4459" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M18.8951 25.2524C23.8059 25.2524 27.7869 21.2714 27.7869 16.3606C27.7869 11.4498 23.8059 7.46884 18.8951 7.46884C13.9843 7.46884 10.0033 11.4498 10.0033 16.3606C10.0033 21.2714 13.9843 25.2524 18.8951 25.2524Z" stroke="white" stroke-width="4.4459" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</div>
+				<div class="texts">
+					<div class="title">Restore password</div>
+					<div class="copy"></div>
+				</div>
+			</div>
+			<div class="gta-acount__content">
+				<div class="left">
+					<div class="content-the">
+						<a class="first-btn btn-back js-btn-back" href="index.html">Have an account? To come in!</a>
+					</div>
+
+					<svg width="1" height="897" viewBox="0 0 1 897" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M0.500061 0L0.500022 897" stroke="white" stroke-dasharray="8 8"/>
+					</svg>
+				</div>
+
+				<div class="right">
+					<form id="rest-form" action="" method="POST">
+						<div class="input-cont">
+							<input type="text" class="the-input entry-login" name="entry-login" id="entry-login-id" placeholder="Login" required>
+						</div>
+
+						<div class="btn-cont">
+							<input class="the-btn-enter btn-restore-end" type="submit" value="Remember!">
+						</div>
+					</form>
+				</div>
+			</div>
+		</main>
+		<main class="gta-acount reg-and-restore registration  reg-page ">
+			<div class="man"></div>
+			<div class="left-top-reg">
+				<div class="img with-margin">
+					<svg width="54" height="55" viewBox="0 0 54 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g clip-path="url(#clip0)">
+							<path d="M35.5672 47.482V43.0361C35.5672 40.6778 34.6304 38.4161 32.9629 36.7486C31.2954 35.0811 29.0337 34.1443 26.6754 34.1443H11.1148C8.75654 34.1443 6.49488 35.0811 4.82734 36.7486C3.1598 38.4161 2.22299 40.6778 2.22299 43.0361V47.482" stroke="white" stroke-width="4.4459" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M18.8951 25.2524C23.8059 25.2524 27.7869 21.2714 27.7869 16.3606C27.7869 11.4498 23.8059 7.46884 18.8951 7.46884C13.9843 7.46884 10.0033 11.4498 10.0033 16.3606C10.0033 21.2714 13.9843 25.2524 18.8951 25.2524Z" stroke="white" stroke-width="4.4459" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M44.459 18.5836V31.9213" stroke="white" stroke-width="4.4459" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M51.1279 25.2524H37.7902" stroke="white" stroke-width="4.4459" stroke-linecap="round" stroke-linejoin="round"/>
+						</g>
+						<defs>
+							<clipPath id="clip0">
+								<rect width="53.3508" height="53.3508" fill="white" transform="translate(0 0.800003)"/>
+							</clipPath>
+						</defs>
+					</svg>
+				</div>
+				<div class="texts">
+					<div class="title">Registering a new account</div>
+					<div class="copy"></div>
+				</div>
+			</div>
+			<div class="gta-acount__content">
+				<div class="left">
+					<div class="content-the">
+						<a class="first-btn btn-back js-btn-back" href="index.html">Have an account? To come in!</a>
+					</div>
+
+					<svg width="1" height="897" viewBox="0 0 1 897" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M0.500061 0L0.500022 897" stroke="white" stroke-dasharray="8 8"/>
+					</svg>
+				</div>
+
+				<div class="right">
+					<form id="reg-form" action="" method="POST">
+						<div class="input-cont">
+							<label>
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M4.46875 3.66666H18.2188C19.1641 3.66666 19.9375 4.44009 19.9375 5.38541V15.6979C19.9375 16.6432 19.1641 17.4167 18.2188 17.4167H4.46875C3.52344 17.4167 2.75 16.6432 2.75 15.6979V5.38541C2.75 4.44009 3.52344 3.66666 4.46875 3.66666Z" stroke="white" stroke-width="0.859375" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M19.9375 5.38541L11.3438 11.401L2.75 5.38541" stroke="white" stroke-width="0.859375" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								<span class="text">E-mail</span>
+							</label>
+							<input class="the-input" type="email" name="new-user__email" id="new-user__email-id" placeholder="example@gmail.com" required>
+						</div>
+
+						<div class="input-cont">
+							<label>
+								<svg width="22" height="22" viewBox="0 0 54 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M35.5673 47.482V43.0361C35.5673 40.6778 34.6305 38.4161 32.9629 36.7486C31.2954 35.0811 29.0337 34.1443 26.6755 34.1443H11.1148C8.75657 34.1443 6.49491 35.0811 4.82737 36.7486C3.15983 38.4161 2.22302 40.6778 2.22302 43.0361V47.482" stroke="white" stroke-width="4.4459" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M18.8951 25.2524C23.8059 25.2524 27.7869 21.2714 27.7869 16.3606C27.7869 11.4498 23.8059 7.46884 18.8951 7.46884C13.9843 7.46884 10.0033 11.4498 10.0033 16.3606C10.0033 21.2714 13.9843 25.2524 18.8951 25.2524Z" stroke="white" stroke-width="4.4459" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								<span class="text">Login</span>
+							</label>
+							<input type="text" class="the-input new-user__login" name="new-user__login" id="new-user__login-id" placeholder="Steav91" required>
+						</div>
+
+						<div class="input-cont">
+							<label>
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.9167 6.24999L15.8333 3.33332M17.5 1.66666L15.8333 3.33332L17.5 1.66666ZM9.49165 9.67499C9.92194 10.0995 10.264 10.605 10.4981 11.1623C10.7322 11.7196 10.8538 12.3177 10.8558 12.9222C10.8579 13.5267 10.7403 14.1256 10.5099 14.6844C10.2795 15.2433 9.94087 15.751 9.51344 16.1784C9.08601 16.6059 8.57825 16.9445 8.0194 17.1749C7.46055 17.4053 6.86165 17.5229 6.25718 17.5208C5.65271 17.5188 5.0546 17.3972 4.49731 17.1631C3.94002 16.929 3.43454 16.5869 3.00998 16.1567C2.17509 15.2922 1.71312 14.1345 1.72356 12.9327C1.734 11.731 2.21603 10.5814 3.06582 9.73165C3.9156 8.88187 5.06516 8.39984 6.2669 8.3894C7.46863 8.37896 8.62639 8.84093 9.49082 9.67582L9.49165 9.67499ZM9.49165 9.67499L12.9167 6.24999L9.49165 9.67499ZM12.9167 6.24999L15.4167 8.74999L18.3333 5.83332L15.8333 3.33332L12.9167 6.24999Z" stroke="white" stroke-width="0.952381" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								<span class="text">Password</span>
+							</label>
+							<input class="the-input " type="password" name="new-user__pw" id="new-user__pw-id" placeholder="Password" required>
+						</div>
+
+						<div class="input-cont">
+							<label>
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.9167 6.24999L15.8333 3.33332M17.5 1.66666L15.8333 3.33332L17.5 1.66666ZM9.49165 9.67499C9.92194 10.0995 10.264 10.605 10.4981 11.1623C10.7322 11.7196 10.8538 12.3177 10.8558 12.9222C10.8579 13.5267 10.7403 14.1256 10.5099 14.6844C10.2795 15.2433 9.94087 15.751 9.51344 16.1784C9.08601 16.6059 8.57825 16.9445 8.0194 17.1749C7.46055 17.4053 6.86165 17.5229 6.25718 17.5208C5.65271 17.5188 5.0546 17.3972 4.49731 17.1631C3.94002 16.929 3.43454 16.5869 3.00998 16.1567C2.17509 15.2922 1.71312 14.1345 1.72356 12.9327C1.734 11.731 2.21603 10.5814 3.06582 9.73165C3.9156 8.88187 5.06516 8.39984 6.2669 8.3894C7.46863 8.37896 8.62639 8.84093 9.49082 9.67582L9.49165 9.67499ZM9.49165 9.67499L12.9167 6.24999L9.49165 9.67499ZM12.9167 6.24999L15.4167 8.74999L18.3333 5.83332L15.8333 3.33332L12.9167 6.24999Z" stroke="white" stroke-width="0.952381" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								<span class="text">Password</span>
+							</label>
+							<input class="the-input " type="password" name="new-user__pw-repeat" id="new-user__pw-repeat-id" placeholder="Repeat Password" required>
+						</div>
+
+						<div class="input-cont">
+							<label>
+								<svg width="20" height="20" class="mb-2px" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M16.6666 10V18.3333H3.33331V10" stroke="white" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M18.3334 5.83334H1.66669V10H18.3334V5.83334Z" stroke="white" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M10 18.3333V5.83334" stroke="white" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M10 5.83332H6.25002C5.69749 5.83332 5.16758 5.61383 4.77688 5.22313C4.38618 4.83243 4.16669 4.30252 4.16669 3.74999C4.16669 3.19746 4.38618 2.66755 4.77688 2.27685C5.16758 1.88615 5.69749 1.66666 6.25002 1.66666C9.16669 1.66666 10 5.83332 10 5.83332Z" stroke="white" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M10 5.83332H13.75C14.3025 5.83332 14.8324 5.61383 15.2231 5.22313C15.6138 4.83243 15.8333 4.30252 15.8333 3.74999C15.8333 3.19746 15.6138 2.66755 15.2231 2.27685C14.8324 1.88615 14.3025 1.66666 13.75 1.66666C10.8333 1.66666 10 5.83332 10 5.83332Z" stroke="white" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								<span class="text">Promocode</span>
+							</label>
+							<input type="text" class="the-input promo-code" name="new-user__promo-code" id="new-user__promo-code" placeholder="Not necessary">
+						</div>
+
+						<div class="btn-cont">
+							<input class="the-btn-enter btn-register-end" type="submit" value="Register">
+						</div>
+					</form>
+				</div>
+			</div>
+		</main>
+		<main class="gta-acount  slots  slots-page ">
+			<div class="info-slot">
+				<div class="title h3"><i class="fa fa-chart-bar"></i> Character stats</div>
+				<div class="name my-1">
+						{{currSlot[0]}} {{currSlot[1]}}
+				</div>
+				<div class="wrap-info">
+					<div class="left">
+						<div class="money my-1"><i class="fa fa-wallet"></i> {{currSlot[6]}} $</div>
+						<div class="info my-1">
+							<div class="text">Fraction:</div>
+							<div class="value">{{currSlot[5]}}</div>
+						</div>
+					</div>
+					<div class="right">
+						<div class="money my-1"><i class="fa fa-credit-card"></i> {{currSlot[7]}} $</div>
+						<div class="info my-1">
+							<div class="text">Exp:</div>
+							<div class="value"><b>{{currSlot[3]}}</b> / <span>{{currSlot[4]}}</span></div>
+						</div>
+					</div>
+				</div>
+				<div v-if="currSlotId != 0 && !chooseBuy && canChoose" class="delet-char">
+					<div class="button danger-btn">Delete Charecter</div>
+				</div>
+			</div>
+			<div class="info-chars df">
+				<div class="main-info">
+					{{login}}, you have {{redbucks}}
+					<a href="#">Top up account</a>
+				</div>
+
+				<div class="char col-l ">
+					<i class="fas fa-user"></i>
+					<div class="text">
+						<span class="empty">Slot № 1</span>
+						<h3>{{slotL[0]}} {{slotL[1]}}</h3>
+					</div>
+					<div class="level">
+						<i class="fa fa-user-plus"></i>
+						<i class="fa fa-lock"></i>
+						<span>{{slotL[2]}}</span>
+					</div>
+				</div>
+
+				<div class="char col-m ">
+					<i class="fas fa-user"></i>
+					<div class="text">
+						<span class="empty">Slot № 2</span>
+						<h3>{{slotM[0]}} {{slotM[1]}}</h3>
+					</div>
+					<div class="level">
+						<i class="fa fa-user-plus"></i>
+						<i class="fa fa-lock"></i>
+						<span>{{slotM[2]}}</span>
+					</div>
+				</div>
+
+				<div class="char col-r ">
+					<i class="fas fa-user"></i>
+					<div class="text">
+						<span class="empty">Slot № 3</span>
+						<h3>{{slotR[0]}} {{slotR[1]}}</h3>
+					</div>
+					<div class="level">
+						<i class="fa fa-user-plus"></i>
+						<i class="fa fa-lock"></i>
+						<span>{{slotR[2]}}</span>
+					</div>
+				</div>
+			</div>
+			<div class="choose-chars">
+				<div v-if="currSlotId != 0 && !chooseBuy && canChoose" class="btn button choose-the">Choose</div>
+				<div v-if="chooseBuy" class="btn button buy-the">Buy</div>
+			</div>
+
+			<div v-show="is_modal" class="bg-hide-form-new-char" @click="show_modal_delete = show_modal_new_char = is_modal = false"></div>
+
+			<div v-show="show_modal_new_char" class="form-new-char">
+				<form>
+					<div class="input-cont">
+						<label>Name (English only)
+						</label>
+						<input type="text" class="the-input" name="name" placeholder="Elon" pattern="[A-Za-z]" required>
+					</div>
+					<div class="input-cont">
+						<label>Surname (English only)
+						</label>
+						<input type="text" class="the-input" name="surname" placeholder="Putin" pattern="[A-Za-z]" required>
+					</div>
+					<a class="btn-second js-btn-create" :class="{disable: disable_new_char_btn}" href="#">Create</a>
+				</form>
+			</div>
+
+			<div v-show="show_modal_delete" class="window are-you-sure-delete">
+				<div class="text">Are you sure you want to delete the character: {{currSlot[0]}} {{currSlot[1]}}?</div>
+
+				<div class="buttons-wrap df">
+					<div class="button" @click="deleteChar">Yes</div>
+					<div class="button" @click="show_modal_delete = is_modal = false">No</div>
+				</div>
+			</div>
+
+			<div class="slots__wrapper">
+				<div v-show="false" class="slots__cols">
+					<!-- (.active  +.delete)    (.free  +.create +.blocked)    .non-active -->
+					<div class="slot-col  col-l  ">
+						<div class=" free__wrapper">
+							<h2>Slot <b>№</b><span>1</span> not yet&nbsp;activate</h2>
+							<p>Upon purchase, the slot is issued forever, in it you can create a new character</p>
+							<p class="price">
+								<span class="gray">Price:</span> &nbsp;<b>$</b> <span class="value">1000</span> GC
+							</p>
+							<p class="bonus">+ Bonus <span class="gold">VIP Gold</span> for 1 month.</p>
+							<a href="#" class="btn  unlock-slot js-unlock-slot-1">Unlock slot</a>
+						</div>
+
+						<div class="free__wrapper">
+							<img class="some-persone" src="img/person_free.jpg" alt="person_free.jpg">
+
+							<!-- all status titles -->
+							<h2>
+								<span class="free-title">Slot <b>№</b><span>1</span> free</span>
+								<span class="create-title">Creating a new character</span>
+								<span class="transfer-title">Transferring an old character</span>
+								<span class="blocked-title">Character blocked</span>
+							</h2>
+
+							<!-- free -->
+							<p>You can create a new character, or transfer the old one to&nbsp;this account</p>
+
+							<a href="#" class="btn  create-new  js-create-new-1">Create new</a>
+							<!-- <a href="#" class="btn  transfer-person  js-transfer-person-1">Перенести персонажа</a> -->
+							<!-- create-new -->
+							<form id="create-person-1" action="" method="POST">
+								<div class="input-cont">
+									<input type="text"
+									name="new-person-1__name"
+									id="new-person-1__name-id"
+									placeholder="Name (English only)"
+									pattern="[A-Za-z]"
+									required>
+								</div>
+
+								<div class="input-cont">
+									<input id="new-person-1__sername-id"
+									type="text"
+									name="new-person-1__sername"
+									placeholder="Surname (English only)"
+									pattern="[A-Za-z]"
+									required>
+								</div>
+
+								<input class="js-create-person-submit-1" type="submit" value="Создать и перейти к настройке">
+							</form>
+							<a href="#" class="cancel  js-create-cancel-1">Cancellation</a>
+
+							<!-- transfer-person -->
+							<form id="transfer-person-1" action="" method="POST">
+								<div class="input-cont">
+									<input type="text"
+									name="transfer-person-1__name"
+									id="transfer-person-1__name-id"
+									placeholder="Name (English only)"
+									pattern="[A-Za-z]"
+									required>
+								</div>
+
+								<div class="input-cont">
+									<input id="transfer-person-1__sername-id"
+									type="text"
+									name="transfer-person-1__sername"
+									placeholder="Surname (English only)"
+									pattern="[A-Za-z]"
+									required>
+								</div>
+
+								<div class="input-cont">
+									<input type="password"
+									name="transfer-person-1__pw" id="transfer-person-1__pw-id"
+									placeholder="Password от персонажа"
+									required>
+								</div>
+
+								<input class="js-transfer-person-submit-1" type="submit" value="Перенести персонажа">
+							</form>
+							<a href="#" class="cancel  js-transfer-cancel-1">Cancellation</a>
+
+							<!-- blocked -->
+							<div class="blocked-cont">
+								<div class="blocked-cont__reason">
+									<h4>Reason:</h4>
+									<p>{{blockL[0]}}</p>
+									<h4>Banned: &nbsp;<b>{{blockL[1]}}</b></h4>
+								</div>
+
+								<ul class="blocked-cont__dates">
+									<li>
+										<span>Ban date:</span>
+										<time>{{blockL[2]}}</time>
+									</li>
+									<li>
+										<span>Unban date:</span>
+										<time class="green">{{blockL[3]}}</time>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+
+						<div class="active__wrapper">
+							<div class="person-cont">
+								<img src="img/person_active.png" alt="person_active.png" class="active-persone">
+							</div>
+
+							<h2>Removing your character</h2>
+
+							<h3><span class="name">{{slotL[0]}}</span> <span class="sername">{{slotL[1]}}</span></h3>
+
+							<ul class="characteristics">
+								<li>
+									<b>Level</b>
+									<span class="line"></span>
+									<div>{{slotL[2]}}</div>
+								</li>
+								<li>
+									<b>Exp</b>
+									<span class="line"></span>
+									<div>
+										<b>{{slotL[3]}}</b> / <span>{{slotL[4]}}</span>
+									</div>
+								</li>
+								<li>
+									<b>Fraction</b>
+									<span class="line"></span>
+									<div>{{slotL[5]}}</div>
+								</li>
+								<li>
+									<b>Money on hands</b>
+									<span class="line"></span>
+									<div>
+										<span>{{slotL[6]}}</span> $
+									</div>
+								</li>
+								<li>
+									<b>Money in bank</b>
+									<span class="line"></span>
+									<div>
+										<span>{{slotL[7]}}</span> $
+									</div>
+								</li>
+							</ul>
+
+							<div class="cont">
+								<a href="#" class="btn  btn-enter js-btn-enter-1">Enter</a>
+								<a href="delete-person.html" class="js-btn-delete-1  btn-delete">Remove Charecter</a>
+							</div>
+
+							<form id="delete-person-1" action="" method="POST">
+								<div class="input-cont">
+									<input type="text"
+									name="delete-person-1__name"
+									id="delete-person-1__name-id"
+									placeholder="Name"
+									required>
+								</div>
+
+								<div class="input-cont">
+									<input type="text"
+									name="delete-person-1__sername" id="delete-person-1__sername-id"
+									placeholder="Surname"
+									required>
+								</div>
+
+								<div class="input-cont">
+									<input type="password"
+									name="delete-person-1__pw" id="delete-person-1__pw-id"
+									placeholder="Account password"
+									required>
+								</div>
+
+								<input class="js-delete-person-submit-1" type="submit" value="Delete character permanently">
+							</form>
+							<a href="#" class="js-delete-cancel-1  delete-cancel">Cancellation</a>
+
+						</div>
+					</div>
+
+
+					<div class="slot-col  col-m  ">
+						<div class="non-active__wrapper">
+							<h2>Slot <b>№</b><span>2</span> not yet&nbsp;activate</h2>
+							<p>Upon purchase, the slot is issued forever, in it you can create a new character</p>
+							<p class="price">
+								<span class="gray">Price:</span> &nbsp;<b>$</b> <span class="value">1000</span> GC
+							</p>
+							<p class="bonus">+ Bonus <span class="gold">VIP Gold</span> for 1 month.</p>
+							<a href="#" class="btn  unlock-slot js-unlock-slot-2">Unlock slot</a>
+						</div>
+
+						<div class="free__wrapper">
+							<img class="some-persone" src="img/person_free.jpg" alt="person_free.jpg">
+
+							<!-- all status titles -->
+							<h2>
+								<span class="free-title">Slot <b>№</b><span>2</span> free</span>
+								<span class="create-title">Creating a new character</span>
+								<span class="transfer-title">Transferring an old character</span>
+								<span class="blocked-title">Character locked</span>
+							</h2>
+
+							<!-- free -->
+							<p>You can create a new character, or transfer the old one to&nbsp;this account</p>
+
+							<a href="#" class="btn  create-new  js-create-new-2">Create new</a>
+							<!-- <a href="#" class="btn  transfer-person  js-transfer-person-2">Перенести персонажа</a> -->
+							<!-- create-new -->
+							<form id="create-person-2" action="" method="POST">
+								<div class="input-cont">
+									<input type="text"
+									name="new-person-2__name"
+									id="new-person-2__name-id"
+									placeholder="Name (English only)"
+									pattern="[A-Za-z]"
+									required>
+								</div>
+
+								<div class="input-cont">
+									<input type="text"
+									name="new-person-2__sername" id="new-person-2__sername-id"
+									placeholder="Surname (English only)"
+									pattern="[A-Za-z]"
+									required>
+								</div>
+
+								<input class="js-create-person-submit-2" type="submit" value="Создать и перейти к настройке">
+							</form>
+							<a href="#" class="cancel  js-create-cancel-2">Cancellation</a>
+
+							<!-- transfer-person -->
+							<form id="transfer-person-2" action="" method="POST">
+								<div class="input-cont">
+									<input type="text"
+									name="transfer-person-2__name"
+									id="transfer-person-2__name-id"
+									placeholder="Name (English only)"
+									pattern="[A-Za-z]"
+									required>
+								</div>
+
+								<div class="input-cont">
+									<input id="transfer-person-2__sername-id"
+									type="text"
+									name="transfer-person-2__sername"
+									placeholder="Surname (English only)"
+									pattern="[A-Za-z]"
+									required>
+								</div>
+
+								<div class="input-cont">
+									<input type="password"
+									name="transfer-person-2__pw" id="transfer-person-2__pw-id"
+									placeholder="Password от персонажа"
+									required>
+								</div>
+
+								<input class="js-transfer-person-submit-2" type="submit" value="Перенести персонажа">
+							</form>
+							<a href="#" class="cancel  js-transfer-cancel-2">Cancellation</a>
+
+							<!-- blocked -->
+							<div class="blocked-cont">
+								<div class="blocked-cont__reason">
+									<h4>Reason:</h4>
+									<p>{{blockM[0]}}</p>
+									<h4>Banned: &nbsp;<b>{{blockM[1]}}</b></h4>
+								</div>
+
+								<ul class="blocked-cont__dates">
+									<li>
+										<span>Ban date:</span>
+										<time>{{blockM[2]}}</time>
+									</li>
+									<li>
+										<span>Unban date:</span>
+										<time class="green">{{blockM[3]}}</time>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+
+						<div class="active__wrapper">
+
+							<div class="person-cont">
+								<img src="img/person_active.png" alt="person_active.png" class="active-persone">
+							</div>
+
+							<h2>Removing your character</h2>
+
+							<h3><span class="name">{{slotM[0]}}</span> <span class="sername">{{slotM[1]}}</span></h3>
+
+							<ul class="characteristics">
+								<li>
+									<b>Level</b>
+									<span class="line"></span>
+									<div>{{slotM[2]}}</div>
+								</li>
+								<li>
+									<b>Exp</b>
+									<span class="line"></span>
+									<div>
+										<b>{{slotM[3]}}</b> / <span>{{slotM[4]}}</span>
+									</div>
+								</li>
+								<li>
+									<b>Fraction</b>
+									<span class="line"></span>
+									<div>{{slotM[5]}}</div>
+								</li>
+								<li>
+									<b>Money on hands</b>
+									<span class="line"></span>
+									<div>
+										<span>{{slotM[6]}}</span> $
+									</div>
+								</li>
+								<li>
+									<b>Money in bank</b>
+									<span class="line"></span>
+									<div>
+										<span>{{slotM[7]}}</span> $
+									</div>
+								</li>
+							</ul>
+
+							<div class="cont">
+								<a href="#" class="btn  btn-enter js-btn-enter-2">Enter</a>
+								<a href="delete-person.html" class="js-btn-delete-2  btn-delete">Remove charecter</a>
+							</div>
+
+							<form id="delete-person-2" action="" method="POST">
+								<div class="input-cont">
+									<input type="text"
+									name="delete-person-2__name"
+									id="delete-person-2__name-id"
+									placeholder="Name"
+									required>
+								</div>
+
+								<div class="input-cont">
+									<input type="text"
+									name="delete-person-2__sername" id="delete-person-2__sername-id"
+									placeholder="Surname"
+									required>
+								</div>
+
+								<div class="input-cont">
+									<input type="password"
+									name="delete-person-2__pw" id="delete-person-2__pw-id"
+									placeholder="Account password"
+									required>
+								</div>
+
+								<input class="js-delete-person-submit-2" type="submit" value="Delete character permanently">
+							</form>
+							<a href="#" class="js-delete-cancel-2  delete-cancel">Cancellation</a>
+
+						</div>
+					</div>
+
+
+					<div class="slot-col  col-r  ">
+						<div class="non-active__wrapper">
+							<h2>Slot <b>№</b><span>3</span> not yet&nbsp;activate</h2>
+							<p>Upon purchase, the slot is issued forever, in it you can create a new character</p>
+							<p class="price">
+								<span class="gray">Price:</span> &nbsp;<b>$</b> <span class="value">1000</span> GC
+							</p>
+							<p class="bonus">+ Bonus <span class="gold">VIP Gold</span> for 1 month.</p>
+							<a href="#" class="btn  unlock-slot js-unlock-slot-3">Unlock slot</a>
+						</div>
+
+						<div class="free__wrapper">
+							<img class="some-persone" src="img/person_free.jpg" alt="person_free.jpg">
+
+							<!-- all status titles -->
+							<h2>
+								<span class="free-title">Slot <b>№</b><span>3</span> free</span>
+								<span class="create-title">Creating a new character</span>
+								<span class="transfer-title">Transferring an old character</span>
+								<span class="blocked-title">Character locked</span>
+							</h2>
+
+							<!-- free -->
+							<p>You can create a new character, or transfer the old one to&nbsp;this account</p>
+
+							<a href="#" class="btn  create-new  js-create-new-3">Create new</a>
+							<!-- <a href="#" class="btn  transfer-person  js-transfer-person-3">Перенести персонажа</a> -->
+							<!-- create-new -->
+							<form id="create-person-3" action="" method="POST">
+								<div class="input-cont">
+									<input type="text"
+									name="new-person-3__name"
+									id="new-person-3__name-id"
+									placeholder="Name (English only)"
+									pattern="[A-Za-z]"
+									required>
+								</div>
+
+								<div class="input-cont">
+									<input type="text"
+									name="new-person-3__sername" id="new-person-3__sername-id"
+									placeholder="Surname (English only)"
+									pattern="[A-Za-z]"
+									required>
+								</div>
+
+								<input class="js-create-person-submit-3" type="submit" value="Создать и перейти к настройке">
+							</form>
+							<a href="#" class="cancel  js-create-cancel-3">Cancellation</a>
+
+							<!-- transfer-person -->
+							<form id="transfer-person-3" action="" method="POST">
+								<div class="input-cont">
+									<input type="text"
+									name="transfer-person-3__name"
+									id="transfer-person-3__name-id"
+									placeholder="Name (English only)"
+									pattern="[A-Za-z]"
+									required>
+								</div>
+
+								<div class="input-cont">
+									<input id="transfer-person-3__sername-id"
+									type="text"
+									name="transfer-person-3__sername"
+									placeholder="Surname (English only)"
+									pattern="[A-Za-z]"
+									required>
+								</div>
+
+								<div class="input-cont">
+									<input type="password"
+									name="transfer-person-3__pw" id="transfer-person-3__pw-id"
+									placeholder="Password от персонажа"
+									required>
+								</div>
+
+								<input class="js-transfer-person-submit-3" type="submit" value="Перенести персонажа">
+							</form>
+							<a href="#" class="cancel  js-transfer-cancel-3">Cancellation</a>
+
+							<!-- blocked -->
+							<div class="blocked-cont">
+								<div class="blocked-cont__reason">
+									<h4>Reason:</h4>
+									<p>{{blockR[0]}}</p>
+									<h4>Banned: &nbsp;<b>{{blockR[1]}}</b></h4>
+								</div>
+
+								<ul class="blocked-cont__dates">
+									<li>
+										<span>Ban date:</span>
+										<time>{{blockR[2]}}</time>
+									</li>
+									<li>
+										<span>Unban date:</span>
+										<time class="green">{{blockR[3]}}</time>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+
+						<div class="active__wrapper">
+							<div class="person-cont">
+								<img src="img/person_active.png" alt="person_active.png" class="active-persone">
+							</div>
+
+							<h2>Removing your character</h2>
+
+							<h3><span class="name">{{slotR[0]}}</span> <span class="sername">{{slotR[1]}}</span></h3>
+
+							<ul class="characteristics">
+								<li>
+									<b>Level</b>
+									<span class="line"></span>
+									<div>{{slotR[2]}}</div>
+								</li>
+								<li>
+									<b>Exp</b>
+									<span class="line"></span>
+									<div>
+										<b>{{slotR[3]}}</b> / <span>{{slotR[4]}}</span>
+									</div>
+								</li>
+								<li>
+									<b>Fraction</b>
+									<span class="line"></span>
+									<div>{{slotR[5]}}</div>
+								</li>
+								<li>
+									<b>Money on hands</b>
+									<span class="line"></span>
+									<div>
+										<span>{{slotR[6]}}</span> $
+									</div>
+								</li>
+								<li>
+									<b>Money in bank</b>
+									<span class="line"></span>
+									<div>
+										<span>{{slotR[7]}}</span> $
+									</div>
+								</li>
+							</ul>
+
+							<div class="cont">
+								<a href="#" class="btn  btn-enter js-btn-enter-3">Enter</a>
+								<a href="delete-person.html" class="js-btn-delete-3  btn-delete">Remove charecter</a>
+							</div>
+
+							<form id="delete-person-3" action="" method="POST">
+								<div class="input-cont">
+									<input type="text"
+									name="delete-person-3__name"
+									id="delete-person-3__name-id"
+									placeholder="Name"
+									required>
+								</div>
+
+								<div class="input-cont">
+									<input id="delete-person-3__sername-id"
+									type="text"
+									name="delete-person-3__sername"
+									placeholder="Surname"
+									required>
+								</div>
+
+								<div class="input-cont">
+									<input type="password"
+									name="delete-person-3__pw" id="delete-person-3__pw-id"
+									placeholder="Account password"
+									required>
+								</div>
+
+								<input class="js-delete-person-submit-3" type="submit" value="Delete character permanently">
+							</form>
+							<a href="#" class="js-delete-cancel-3  delete-cancel">Cancellation</a>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<main class="gta-acount  delete-person  delete-person-page">
+			<div class="delete-person__alert">
+				<h2>
+					Do you really want to delete the character: {{currSlot[0]}} {{currSlot[1]}}<br>
+					<span class="js-person-name"></span> ?
+				</h2>
+
+				<p>It will be impossible to restore it in the future.!</p>
+
+				<div class="btn-cont">
+					<a href="#" class="btn-cancel  js-delete-cancel">Cancellation</a>
+					<a href="#" class="btn-confirm js-delete-confirm">Confirm deletion</a>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="js/notify.js"></script>
+	<script src="js/noty.min.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/u.js"></script>
+	<script src="js/auth.js"></script>
+</body>
+</html>

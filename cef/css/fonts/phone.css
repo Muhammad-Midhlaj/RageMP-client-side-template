@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("./phone.eot");
+  src: url("./phone.eot?#iefix") format("embedded-opentype"),
+       url("./phone.woff") format("woff"),
+       url("./phone.ttf") format("truetype"),
+       url("./phone.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./phone.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+font-style: normal;
+}
+
+.flaticon-arrowhead-pointing-to-the-right:before { content: "\f100"; }
+.flaticon-left-arrow:before { content: "\f101"; }
+.flaticon-square:before { content: "\f102"; }
+.flaticon-arrows:before { content: "\f103"; }
+.flaticon-phone:before { content: "\f104"; }
+.flaticon-interface:before { content: "\f105"; }
+.flaticon-power:before { content: "\f106"; }
+.flaticon-silhouette:before { content: "\f107"; }
+.flaticon-load:before { content: "\f108"; }

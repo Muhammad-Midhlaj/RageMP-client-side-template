@@ -1,0 +1,348 @@
+﻿
+
+@media (min-width: 400px) and (max-width: 8799px) {
+    .wraper {
+    zoom: 100%}
+
+}
+
+.wraper {
+    display: flex;
+	justify-content: center;
+        margin: 414px 0 0;
+	font-family: "Ubuntu", sans-serif;
+}
+
+.wraper .showBack{
+	position: absolute;
+    box-shadow: inset 0 0 678px 586px rgb(29 27 40 / 86%);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.boxRespawnHome, .boxRespawnOnExit, .boxRespawnFractions {
+	display:none;
+}
+.wraper .logoProject{
+position: fixed;
+    top: -3vw;
+    left: 0%;
+    display: flex;
+    width: 14%;
+	transition: all .33s;
+    opacity: 0.7;
+}
+.wraper .logoProject:hover{
+	width:14.5%;  
+	transform: rotate(9deg);
+	transition: all .33s;
+	opacity:0.3;
+}
+.wraper .infoItems{
+position: absolute;
+    top: -31%;
+    background: rgb(0 0 0 / 82%);
+    border-radius: 5px;
+    width: 56%;
+    left: 21%;
+    height: 29%;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+} 
+.wraper .pistols{
+	margin-left: -8px;width: 15%;position: relative;top: -15%;
+}
+.wraper .clothes{
+	margin-left: 48px;width: 15%;position: relative;top: -17%;
+}
+.wraper .cross1{
+	position: absolute;top: -20%;width: 16%;opacity: 0.9;right: 28%;
+}
+.wraper .cross2{
+	position: absolute;top: -20%;width: 16%;opacity: 0.9;left: 24%;
+}
+.boxRespawnHome:hover .infoItems{
+position: absolute;
+    top: -27%;
+    background: rgb(0 0 0 / 82%);
+    border-radius: 5px;
+    width: 56%;
+    left: 21%;
+    height: 24%;
+    justify-content: center;
+    opacity: 1;
+	visibility:visible;
+}
+.boxRespawnFractions:hover .infoItems{
+position: absolute;
+    top: -27%;
+    background: rgb(0 0 0 / 82%);
+    border-radius: 5px;
+    width: 56%;
+    left: 21%;
+    height: 24%;
+    justify-content: center;
+    opacity: 1;
+	visibility:visible;
+}
+.boxRespawnOnExit:hover .infoItems{
+position: absolute;
+    top: -27%;
+    background: rgb(0 0 0 / 82%);
+    border-radius: 5px;
+    width: 56%;
+    left: 21%;
+    height: 24%;
+    justify-content: center;
+    opacity: 1;
+	visibility:visible;
+}
+
+.wraper .imgs{
+	width: 17%;
+	margin-top: 27px;
+}
+.wraper img{
+	margin-top: 27px;
+}
+.boxRespawnHome {
+	position: absolute;
+       background: url(http://marinaq6.beget.tech/UI/donate/menu/vip.png);
+    width: 23%;
+    height: 22%;
+	background-size:110%;
+	background-position-y: -156px;
+    background-position-x: -30px;
+    text-align: center;
+    font-size: 19px;
+    line-height: 64px;
+    left: 7%;
+    color: white;
+	border-radius: 8px;
+		  -webkit-transition-property: background;
+     -moz-transition-property: background;
+       -o-transition-property: background;
+          transition-property: background;
+  -webkit-transition-duration: 1s;
+     -moz-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-timing-function: linear;
+     -moz-transition-timing-function: linear;
+       -o-transition-timing-function: linear;
+          transition-timing-function: linear;
+		  transition: all .55s;
+		  background-color: rgb(0 0 0 / 82%);
+}
+.boxRespawnHome:hover {
+	width: 30%;
+    height: 28%;
+    margin-top: -29px;
+	line-height: 66px;
+    font-size: 25px;
+		  -webkit-transition-property: background;
+     -moz-transition-property: background;
+       -o-transition-property: background;
+          transition-property: background;
+  -webkit-transition-duration: 1s;
+     -moz-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-timing-function: linear;
+     -moz-transition-timing-function: linear;
+       -o-transition-timing-function: linear;
+          transition-timing-function: linear;
+		  transition: all .55s;
+		  background-color: #f13939;
+    box-shadow: 0px 0px 15px rgba(255,99,90,1);
+}
+.boxRespawnFractions:hover {
+	width: 30%;
+    height: 28%;
+    margin-top: -29px;
+	    line-height: 66px;
+    font-size: 25px;
+		  -webkit-transition-property: background;
+     -moz-transition-property: background;
+       -o-transition-property: background;
+          transition-property: background;
+  -webkit-transition-duration: 1s;
+     -moz-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-timing-function: linear;
+     -moz-transition-timing-function: linear;
+       -o-transition-timing-function: linear;
+          transition-timing-function: linear;
+		  transition: all .55s;
+		      background-color: #f13939;
+			      background-position-y: -70px;
+    box-shadow: 0px 0px 15px rgba(255,99,90,1);      
+}
+.boxRespawnOnExit:hover {
+	width: 30%;
+    height: 28%;
+    margin-top: -29px;
+	    line-height: 45px;
+    font-size: 25px;
+		  -webkit-transition-property: background;
+     -moz-transition-property: background;
+       -o-transition-property: background;
+          transition-property: background;
+  -webkit-transition-duration: 1s;
+     -moz-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-timing-function: linear;
+     -moz-transition-timing-function: linear;
+       -o-transition-timing-function: linear;
+          transition-timing-function: linear;
+		  transition: all .55s;
+		  left: 35.5%;
+		      background-color: #f13939;
+			  
+    box-shadow: 0px 0px 15px rgba(255,99,90,1);
+}
+.boxRespawnOnExit {
+	position: absolute;
+    background: url(http://marinaq6.beget.tech/UI/donate/menu/all.png);
+	background-size:100%;
+    width: 23%;
+    height: 22%;
+    text-align: center;
+    font-size: 19px;
+    line-height: 64px;
+	left: 39%;
+    color: white;
+	border-radius: 8px;
+		  -webkit-transition-property: background;
+     -moz-transition-property: background;
+       -o-transition-property: background;
+          transition-property: background;
+  -webkit-transition-duration: 1s;
+     -moz-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-timing-function: linear;
+     -moz-transition-timing-function: linear;
+       -o-transition-timing-function: linear;
+          transition-timing-function: linear;
+		  transition: all .55s;
+		 background-color: rgb(0 0 0 / 82%);
+}
+.boxRespawnFractions {
+	position: absolute;
+       background: url(http://marinaq6.beget.tech/UI/donate/menu/money.png);
+	   background-size:110%;
+    width: 23%;
+	right: 6%;
+    height: 22%;
+    text-align: center;
+    font-size: 19px;
+    line-height: 64px;
+    color: white;
+	border-radius: 8px;
+		  -webkit-transition-property: background;
+     -moz-transition-property: background;
+       -o-transition-property: background;
+          transition-property: background;
+  -webkit-transition-duration: 1s;
+     -moz-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-timing-function: linear;
+     -moz-transition-timing-function: linear;
+       -o-transition-timing-function: linear;
+          transition-timing-function: linear;
+		   transition: all .55s;
+		   background-position-y: -70px;
+    background-position-x: -30px;
+		  background-color: rgb(0 0 0 / 82%);
+}
+
+
+.noBox2 {
+   display:none;
+   
+}
+
+.noHome {
+    position: absolute;
+    width: 23%;
+	left: 7%;
+    height: 22%;
+    text-align: center;
+    font-size: 19px;
+    line-height: 64px;
+    color: white;
+	border-radius: 8px;
+		  -webkit-transition-property: background;
+     -moz-transition-property: background;
+       -o-transition-property: background;
+          transition-property: background;
+  -webkit-transition-duration: 1s;
+     -moz-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-timing-function: linear;
+     -moz-transition-timing-function: linear;
+       -o-transition-timing-function: linear;
+          transition-timing-function: linear;
+		   transition: all .55s;
+		   background-position-y: -70px;
+    background-position-x: -30px;
+		  background-color: rgb(0 0 0 / 82%);
+}
+
+.noFraction{
+	position: absolute;
+    width: 23%;
+	right: 6%;
+    height: 22%;
+    text-align: center;
+    font-size: 19px;
+    line-height: 64px;
+    color: white;
+	border-radius: 8px;
+		  -webkit-transition-property: background;
+     -moz-transition-property: background;
+       -o-transition-property: background;
+          transition-property: background;
+  -webkit-transition-duration: 1s;
+     -moz-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-timing-function: linear;
+     -moz-transition-timing-function: linear;
+       -o-transition-timing-function: linear;
+          transition-timing-function: linear;
+		   transition: all .55s;
+		   background-position-y: -70px;
+    background-position-x: -30px;
+		  background-color: rgb(0 0 0 / 82%);
+}
+
+.notext {
+	font-family: "UniNeueBook";
+    color: #c4c4c4;
+    font-size: 2vw;
+    line-height: 5vh;
+    text-align: center;
+}
+.noBox3 {
+display:none;
+}
+
+.noText span {
+    font-family: "UniNeueBold";
+}
+
+
+
+@media (min-width: 1px) and (max-width: 1600px) {
+    .wraper {
+    zoom: 70%}
+}  

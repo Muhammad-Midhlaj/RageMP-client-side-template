@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+.clothes{
+    position: absolute;
+    text-align: center;
+    font-family: 'PT Sans', sans-serif;
+    color: white;
+}
+.bg {
+    color: white;
+    background: url(https://imgur.com/jAOIgSG.png);
+    width: 420px;
+    height: 160px;
+    background-size: 350px;
+}
+.clothes .right{
+    right: 13%;
+    top: 10%;
+    position: fixed;
+    /* height: 500px; */
+    width: 300px;
+    background: #0a0a14;
+    border-radius: 10px;
+}
+.clothes .left{
+    height: 100%;
+    position: fixed;
+    width: 420px;
+    padding-top: 0;
+    background: #0a0a14;
+    left: 0px;
+}
+.clothes i{
+    /* font-family: "icons"; */
+    font-style: normal;
+    cursor: pointer;
+    color: #fff;
+    /* padding: 10px; */
+    /* background-color: #37474F; */
+    border-radius: 5px;
+}
+.left i{
+    /* font-family: "icons"; */
+    font-style: normal;
+    cursor: pointer;
+    margin-right: 7px;
+    /* padding: 10px; */
+    /* background-color: #37474F; */
+    border-radius: 5px;
+}
+
+.left i:hover{
+    /* font-family: "icons"; */
+    font-style: normal;
+    margin-right: 7px;
+    /* padding: 10px; */
+    border-radius: 5px;
+}
+.clothes .list1 div{
+    width: 20px;
+    /* padding: 9px; */
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    display: inline-table;
+    /* background-color: #37474F; */
+}
+.clothes .list div{
+    width: 20px;
+    /* padding: 9px; */
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    display: inline-table;
+    /* background-color: #37474F; */
+}
+.name1 {
+    background: #ffffff00 !important;
+    font-family: "Font Awesome 5 Free" !important;
+}
+.clothes h1{
+    margin: 0;
+    padding: 8px;
+    font-size: 14pt;
+    text-align: left;
+    background: linear-gradient(56deg, rgba(97,91,139,1) 37%, rgba(78,74,115,1) 56%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.bg1{
+    margin-top: 0px !important;
+    /* margin: 0 !important; */
+    padding: 15px !important;
+    top: 39px;
+    font-weight: 600;
+    position: relative;
+    color: #ffffff;
+    text-align: center !important;
+    font-size: 25pt !important;
+    background: #ffffff00 !important;
+    text-shadow: 1px 1px 2px #88888890;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.clothes .left-arrow{
+    /* float: right; */
+}
+.clothes .right-arrow{
+    /* float: right; */
+}
+.clothes .list1{
+    font-weight: 600;
+    color: #888;
+    padding: 30px 0px 30px 11px;
+    position: relative;
+    width: 300px;
+    border-top: 1px solid #57474720;
+    border-block-end: 1px solid #57575720;
+    text-align: left;
+}
+.list1 span {
+  color: #000;
+  position: absolute;
+  right: 12px;
+}
+.clothes .list{
+    font-weight: 600;
+    color: #888;
+    padding: 30px 0px 30px 11px;
+    position: relative;
+    width: 300px;
+    border-block-end: 1px solid #57575720;
+    text-align: left;
+}
+.list span {
+  color: #000;
+  position: absolute;
+  right: 12px;
+}
+.clothes .items{
+    height: 200px;
+}
+.clothes .btn{
+    padding: 10px;
+    border-radius: 5px;
+    /* border: 2px solid; */
+    cursor: pointer;
+    margin: 10px;
+}
+.clothes .buy{
+    background: linear-gradient(56deg, rgba(228,174,114,1) 37%, rgba(233,188,103,1) 56%);
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    box-shadow: 0 0px 9px 1px rgba(228,174,114,0.7);
+}
+.clothes .exit{
+    color: #575757;
+    text-align: left;
+    font-size: 22px;
+    font-weight: 600;
+    /* background-color: #e53935 */
+}
+.clothes .buy:hover{
+    background: #e9bc67;
+}
+.clothes .exit:hover{
+    color: #888
+}
+.clothes .icon{
+    /* height: 50px; */
+    border-block-end: 2px solid #57575720;
+    font-size: 19px;
+    width: 300px;
+    color: #787878;
+    /* color: #fff; */
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    margin-left: 60px;
+    /* border-radius: 14px; */
+    /* background: linear-gradient(56deg, rgba(255,43,3,1) 37%, rgba(245,58,4,1) 56%); */
+    margin-bottom: 10px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 35px;
+}
+.clothes .icon.active{
+    color: #fff;
+    border-radius: 14px;
+    background: linear-gradient(56deg, rgba(97,91,139,1) 37%, rgba(78,74,115,1) 56%);
+}
+.clothes .icon:hover{
+    color: #fff;
+    border-radius: 14px;
+    background: linear-gradient(56deg, rgba(97,91,139,1) 37%, rgba(78,74,115,1) 56%);
+}
+.clothes p{
+    color: #888;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 13px;
+    text-align: left;
+}
+.clothes .right p{
+    color: #888;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 14px;
+    text-align: left;
+}
+.price{
+    color: #888;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 0px !important;
+    text-align: left;
+    padding-left: 13px;
+    padding-top: 10px;
+    padding-block-end: 25px;
+    border-block-end: 1px solid #57575720;
+}
+.clothes p span{
+    color: #fff;
+    font-size: 16pt;
+    position: absolute;
+    margin-top: -3px;
+    right: 12px;
+}
+p.price:after {
+    content: "";
+    color: #fff;
+    font-size: 16pt;
+    background: linear-gradient(56deg, rgba(97,91,139,1) 37%, rgba(78,74,115,1) 56%);
+    height: 3px;
+    width: 80px;
+    border-radius: 5px;
+    position: absolute;
+    margin-top: 42px;
+    right: 110px;
+    box-shadow: 0 0px 14px 0 rgba(97,91,139,1);
+}
+.clothes .hat img{
+    width: 20px;
+    position: relative;
+    top: 1px;
+    /* margin-right: 5px; */
+}
+
+.clothes .jacket img{
+    width: 20px;
+    position: relative;
+    top: 1px;
+	margin-right: 5px;
+}
+.clothes .shirt img{
+    width: 20px;
+    position: relative;
+    top: 1px;
+	margin-right: 5px;
+}
+.clothes .pants img{
+    width: 15px;
+    height: 20px;
+    position: relative;
+    top: 1px;
+    margin-right: 10px;
+}
+.clothes .shoe img{
+    width: 20px;
+    position: relative;
+    top: 1px;
+	margin-right: 5px;
+}
+.clothes .gloves img{
+    width: 20px;
+    position: relative;
+    top: 1px;
+	margin-right: 5px;
+}
+.clothes .watches img{
+    width: 20px;
+    position: relative;
+    top: 1px;
+	margin-right: 5px;
+}
+.clothes .glasses img{
+    width: 20px;
+    position: relative;
+    top: 1px;
+	margin-right: 5px;
+}
+.clothes .jewerly img{
+    width: 20px;
+    position: relative;
+    top: 1px;
+	margin-right: 5px;
+}
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+  input[type='checkbox'], input[type='radio'] {
+    --active: #275EFE;
+    --active-inner: #fff;
+    --focus: 2px rgba(39, 94, 254, 0.3);
+    --border: #BBC1E1;
+    --border-hover: #275EFE;
+    --background: #fff;
+    --disabled: #F6F8FF;
+    --disabled-inner: #E1E6F9;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 21px;
+    outline: none;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid var(--bc, var(--border));
+    background: var(--b, var(--background));
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+  }
+  input[type='checkbox']:after, input[type='radio']:after {
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    position: absolute;
+    transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
+  }
+  input[type='checkbox']:checked, input[type='radio']:checked {
+    --b: var(--active);
+    --bc: var(--active);
+    --d-o: 0.3s;
+    --d-t: 0.6s;
+    --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+  }
+  input[type='checkbox']:disabled, input[type='radio']:disabled {
+    --b: var(--disabled);
+    cursor: not-allowed;
+    opacity: 0.9;
+  }
+  input[type='checkbox']:disabled:checked, input[type='radio']:disabled:checked {
+    --b: var(--disabled-inner);
+    --bc: var(--border);
+  }
+  input[type='checkbox']:disabled + label, input[type='radio']:disabled + label {
+    cursor: not-allowed;
+  }
+  input[type='checkbox']:hover:not(:checked):not(:disabled), input[type='radio']:hover:not(:checked):not(:disabled) {
+    --bc: var(--border-hover);
+  }
+  input[type='checkbox']:focus, input[type='radio']:focus {
+    box-shadow: 0 0 0 var(--focus);
+  }
+  input[type='checkbox']:not(.switch), input[type='radio']:not(.switch) {
+    width: 21px;
+  }
+  input[type='checkbox']:not(.switch):after, input[type='radio']:not(.switch):after {
+    opacity: var(--o, 0);
+  }
+  input[type='checkbox']:not(.switch):checked, input[type='radio']:not(.switch):checked {
+    --o: 1;
+  }
+  input[type='checkbox'] + label, input[type='radio'] + label {
+    font-size: 14px;
+    line-height: 21px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    margin-left: 4px;
+  }
+  input[type='checkbox']:not(.switch) {
+    border-radius: 7px;
+  }
+  input[type='checkbox']:not(.switch):after {
+    width: 5px;
+    height: 9px;
+    border: 2px solid var(--active-inner);
+    border-top: 0;
+    border-left: 0;
+    left: 7px;
+    top: 4px;
+    transform: rotate(var(--r, 20deg));
+  }
+  input[type='checkbox']:not(.switch):checked {
+    --r: 43deg;
+  }
+  input[type='checkbox'].switch {
+    width: 38px;
+    border-radius: 11px;
+  }
+  input[type='checkbox'].switch:after {
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: var(--ab, var(--border));
+    transform: translateX(var(--x, 0));
+  }
+  input[type='checkbox'].switch:checked {
+    --ab: var(--active-inner);
+    --x: 17px;
+  }
+  input[type='checkbox'].switch:disabled:not(:checked):after {
+    opacity: 0.6;
+  }
+  input[type='radio'] {
+    border-radius: 50%;
+  }
+  input[type='radio']:after {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background: var(--active-inner);
+    opacity: 0;
+    transform: scale(var(--s, 0.7));
+  }
+  input[type='radio']:checked {
+    --s: 0.5;
+  }
+}
+ul {
+  margin: 12px;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  max-width: 320px;
+}
+ul li {
+  margin: 16px 0;
+  position: relative;
+}
+html {
+  box-sizing: border-box;
+}
+
+*:before, *:after {
+  box-sizing: inherit;
+}
+@media (min-width: 301px) and (max-width: 1400px) {
+    .clothes{
+    position: absolute;
+    text-align: center;
+    font-family: 'PT Sans', sans-serif;
+    color: white;
+    zoom: 70%;
+}
+}

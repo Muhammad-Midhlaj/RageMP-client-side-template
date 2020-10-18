@@ -1,0 +1,414 @@
+﻿:root{
+	--purple: #9D63CF;
+	--black02: rgba(0, 0, 0, 0.2);
+}
+body{font: 300 16px/16px Roboto;letter-spacing: -0.3px;}
+body, *{padding: 0;margin: 0;box-sizing: border-box; color: #fff;}
+
+.a,.a:hover,.a:focus,.a:active,
+a,a:hover,a:focus,a:active{color: #fff;text-decoration: none;cursor: pointer;}
+.a.mousedown, a:active{
+	opacity: 0.7;
+}
+
+.purple-text{color: var(--purple);}
+
+body > .phone{width: 251.697;height: 510.206;position: relative;overflow: hidden;position: absolute;right: 0;bottom: 0;display: none;}
+body > .phone.show{display: block;}
+
+body > .android{background: url('../assets/android/img/phone.svg') right bottom no-repeat; background-size: contain;}
+.elem-camera{width: 10.61px; height: 10.61px; position: absolute; right: 18.23px;bottom: 9.59;}
+.elem-camera img{width: 100%;height: 100%; object-fit: contain;}
+.screen{
+	position: absolute;width: calc(100% - 16px);height: calc(100% - 36px);
+	top: 7.5px; left: 5px;border-radius: 15px 15px 10px 10px; overflow: hidden;margin-left: 2px;
+}
+.apps.screen{height: calc(100% - 29px);}
+.apps.screen .header {
+	height: 60px; background: #333541 0% 0% no-repeat padding-box;box-shadow: 0px 3px 6px #00000029;
+	border-radius: 10px 10px 0px 0px; position: relative; z-index: 2;
+}
+.apps.screen .header .title{text-align: center;letter-spacing: -0.48px;margin-bottom: 8px;}
+.apps.screen .header .title span{padding: 0;margin: 0;}
+.apps.screen .header .title span.w{font: 300 16px/21px Roboto;letter-spacing: -0.48px;color: #FFFFFF;}
+.apps.screen .header .title span.p{font: 500 16px/21px Roboto;letter-spacing: -0.48px;color: var(--purple);}
+.apps.screen .header .icon{position: absolute;bottom: 6px;right: 19px;}
+.apps.screen .header .icon.messages{right: 9px;}
+.apps.screen .go-to-home{
+	background: #333541 0% 0% no-repeat padding-box;border-radius: 0px 0px 10px 10px; height: 46px; position: relative;
+}
+.apps.screen .app-screen{height: calc(100% - 60px - 46px);}
+
+.app-screen{background: #2C2F38}
+
+::-webkit-scrollbar {width: 6px;}
+::-webkit-scrollbar-track {}
+::-webkit-scrollbar-thumb { background: #6C7386; width: 6px; border-radius: 10px;}
+.scrollable{overflow: auto;padding-right: 10px; position: relative;height: 100%;}
+.scrollable-wrap{position: relative;overflow: hidden;height: 100%;}
+.scrollable-line{position: absolute;top: 0;right: 13px;width: 1px;height: 100%;background: #6C7287;z-index: 0;}
+
+.scrollable-line{
+	height: calc(100% - var(--top-padding) - var(--bottom-padding) - 10px); top: calc(var(--top-padding) + 5px);
+}
+
+.scroll-hide{overflow: auto;height: 100%;}
+.scroll-hide::-webkit-scrollbar{width: 0;}
+.scroll-hide::-webkit-scrollbar-track{width: 0;}
+.scroll-hide::-webkit-scrollbar-thumb{width: 0;}
+
+.back-button, .a-button{
+	width: 100%; min-height: 22px; border-radius: 5px; background: #8a4fbd;box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.24);
+	padding: 4px; font-size: 12px; line-height: 16px; letter-spacing: -0.03em; text-align: center; color: #fff;
+}
+.a-button.mousedown{
+	background: #b596cf;box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.24);opacity: 1;
+}
+.back-button, .back-button:hover{
+	background: #4e5462; color: #6C7386;
+}
+.back-button.mousedown{
+	background: #bbbdc4; color: #6C7386;
+}
+.a-del{
+	background: #ba395e;
+}
+
+.a-del.mousedown{
+	background: #ba395e;
+}
+
+textarea,input{
+	width: 100%;
+	min-height: 29px;
+	border-radius: 5px;
+	background: var(--black02);
+	border: 0;
+	resize: none;
+	outline: 0;
+	padding: 5px 7px;
+	margin-bottom: 7px;
+
+	font-size: 12px;
+	line-height: 16px;
+	letter-spacing: -0.03em;
+	text-align: left;
+	color: #fff;
+}
+textarea{max-height: 60px; position: relative;}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0;}
+input[type=number] {-moz-appearance: textfield;}
+
+::placeholder { /* Firefox, Chrome, Opera */
+	font: 300 12px/16px Roboto;letter-spacing: -0.3px;
+	color: #fff;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+	font: 300 12px/16px Roboto;letter-spacing: -0.3px;
+	color: #fff;
+}
+
+.app-screen{
+	--top-padding: 10px;
+	--bottom-padding: 20px;
+}
+.app-screen .wrap{padding: var(--top-padding) 20px var(--bottom-padding) 20px;}
+
+/* main-screen */
+	.main-screen{background: url('../assets/android/img/main-screen/bg_main.png') 0% 0% no-repeat; background-size: cover;}
+	.main-screen .top {position: absolute;top: 12px;right: 11px;}
+	.main-screen .top .gps{margin-right: 3.8px}
+	.main-screen .top .roaming{margin-right: 1.5px}
+	.main-screen .top .roaming-text{font: 500 6px/8px Roboto;letter-spacing: -0.18px;color: #DCDCDC;}
+	.main-screen .top .battery{margin-left: 3.8px}
+	.main-screen .time{
+		font: 100 44px/8px Roboto;letter-spacing: -2.2px;color: #FFFFFF;margin-top: 55px;
+		width: 100%;height: 58px;display: flex;align-items: center;justify-content: center;
+	}
+	.main-screen .icons {margin-top: 15px;flex-wrap: wrap;width: 90%;margin-left: 5%;}
+	.main-screen .icons .icon{margin-top: 16px; flex: 1 0 33%; }
+	.main-screen .icons .icon .img{width: 32px;height: 32px;border-radius: 9px;overflow: hidden;}
+	.main-screen .icons .icon img{width: 100%;height: 100%;object-fit: cover;}
+	.main-screen .icons .icon span{
+		text-align: center;font: 300 10px/10px Roboto;letter-spacing: -0.24px;color: #FFFFFF;margin-top: 4px;
+	}
+	/*.icons .icon[class*="bg"] img{object-fit: none}*/
+	.main-screen .icons .icon.bg1 .img{background: #546DE9;}
+	.main-screen .icons .icon.bg2 .img{background: #007AFF;}
+	.main-screen .icons .icon.bank img{width: 20px; height: 20px;margin-top: -1px;}
+	.main-screen .icons .icon.transport img{width: 22px; height: 17px;}
+	.main-screen .icons .icon.music img{width: 16.65px; height: 20.81px;}
+
+	.main-screen .pinned-icons {margin-top: 56px;flex-wrap: wrap;width: 80%;margin-left: 10%;}
+	.main-screen .pinned-icons .icon{margin-top: 16px; flex: 1 0 25%; }
+	.main-screen .pinned-icons .icon .img{width: 26px;height: 26px;border-radius: 9px;overflow: hidden;}
+	.main-screen .pinned-icons .icon span{
+		text-align: center;font: 300 9px/10px Roboto;letter-spacing: -0.24px;color: #FFFFFF;margin-top: 4px;
+	}
+	.main-screen .pinned-icons .icon.icon-phone .img{background: #01D38A}
+	.main-screen .pinned-icons .icon.icon-comment .img{background: #FE834D}
+	.main-screen .pinned-icons .icon.icon-worldwide .img{background: #0169FA}
+	.main-screen .pinned-icons .icon.icon-camera .img{background: #652D90}
+	.main-screen .navigation{margin: 1.2em auto 0; width: 90%;}
+	.main-screen .navigation > a {background: transparent; padding: 0.3em 1.3em; border-radius: 4px;}
+	.main-screen .navigation > a:active {background: #0000002b;}
+/* end main-screen */
+
+/*weazel-news-screen*/
+	.weazel-news-screen{
+		--top-padding: 29px;
+		--bottom-padding: 20px;
+	}
+	.weazel-news-screen .wrap{padding: var(--top-padding) 11px var(--bottom-padding) 24px;}
+	.weazel-news-screen .item .texts .text{font: 12px/16px Roboto;letter-spacing: -0.03em;}
+	.weazel-news-screen .item{
+		width: 100%;min-height: 58px;border-radius: 5px;background: var(--black02);padding: 7px 14px;
+		position: relative; margin-bottom: 9px;
+	}
+	.weazel-news-screen .whatsapp{position: absolute;right: 7px;bottom: 5px;}
+	.weazel-news-screen .item:before{
+		content: ''; position: absolute; left: 5px; top: 3px; width: 4px; height: calc(100% - 6px); border-radius: 2px;
+		background: linear-gradient(#9d63cf 0%, #5c1d92 100%); box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+	}
+
+	.weazel-news-screen .add{width: 100%; height: 100%; padding: 26px 22px;}
+	.weazel-news-screen .add .form{width: 100%;margin: 0 auto;}
+	.weazel-news-screen .add .form .a{width: 70%;margin: 1em auto;}
+	.weazel-news-screen .add .form .desc{font-size: 12px;letter-spacing: -0.03em;color: #fff;}
+	.weazel-news-screen .wrap{}
+/*end weazel-news-screen*/
+
+/*online-bank-screen*/
+	.online-bank-screen .items{padding-top: 16px;}
+	.online-bank-screen .item{margin-bottom: 13px;}
+	.online-bank-screen{}
+/*end online-bank-screen*/
+
+/*my-number-screen*/
+	.my-number-screen{}
+	.my-number-screen .copy-wrap{
+	}
+	.my-number-screen .copy-wrap .number{
+		height: 32px;
+		border-radius: 5px 0px 0px 5px;
+		background: #4e5462;
+		padding-top: 5px; padding-bottom: 8px;
+		flex: 1px;
+	}
+	.my-number-screen .copy-wrap .number input{
+		background: 0;padding: 0;margin: 0; margin-top: 4px;width: 60px;
+	}
+	.my-number-screen .copy-wrap .copy{
+		background: #4e5462; width: 32px; height: 32px; border-radius: 0px 5px 5px 0px;
+		margin-left: 8px;
+	}
+/*end my-number-screen*/
+
+/*car-find-screen*/
+	.car-find-screen{
+		--top-padding: 26px;
+		--bottom-padding: 20px;
+	}
+	.car-find-screen .wrap{padding: var(--top-padding) 11px var(--bottom-padding) 20px;}
+
+	.car-find-screen .items{}
+	.car-find-screen .item{
+		position: relative;padding-top: 9px;padding-left: 17.5px; height: 113px; margin-bottom: 10px;
+	}
+	.car-find-screen .item > *{position: relative;z-index: 2;}
+	.car-find-screen .item .bg{position: absolute; left: 0;top: 9px;z-index: 0;width: 100%;}
+	.car-find-screen .item .bg img{box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);}
+	.car-find-screen .item .number{position: absolute; top: 24px; left: 17.5px;}
+	.car-find-screen .item .name{margin-bottom: 4px;}
+	.car-find-screen .item .photo{width: 54%; position: absolute;right: 0; top: 0;}
+	.car-find-screen .item .photo img{width: 100%;}
+
+	.car-find-screen .wrap.car{padding-right: 20px}
+	.car-find-screen .action-car {
+		padding: 19px 13px 19px 22px ; margin-top: 10px; width: 100%; height: 110px; border-radius: 10px;
+		background: linear-gradient(#9d63cf 0%, #5c1d92 100%); box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+	}
+	.car-find-screen .action-car .a-button.gps{}
+	.car-find-screen .action-car .a-button span{flex: 1;}
+	.car-find-screen .action-car .a-button img{margin-right: 2px;}
+	.car-find-screen .action-car .a-button.mousedown{
+		background: #b596cf;box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.24);opacity: 1;
+	}
+/*end car-find-screen*/
+
+/*events-screen*/
+	.events-screen .wrap.scrollable-wrap{padding-right: 11px;}
+	.events-screen .time{color: #45BC4E; text-align: center;}
+	.events-screen .info{
+		height: 115px; border-radius: 10px; padding: 5px 13px 6px;
+		background: linear-gradient(#9d63cf 0%, #5c1d92 100%);box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+	}
+	.events-screen .info .title{flex: 1 0 100%;}
+	.events-screen .number{margin-top: 4px;}
+/*end events-screen*/
+
+/*gps-screen*/
+	.gps-screen .items{padding-top: 16px;}
+	.gps-screen .item{margin-bottom: 13px;}
+/*end gps-screen*/
+
+/*music-cloud-screen*/
+	.music-cloud-screen{
+		--top-padding: 22px;
+		--bottom-padding: 18px;
+	}
+	.music-cloud-screen .player .preview{background: #4E5462;height: 52%;width: 100%; position: relative;}
+	.music-cloud-screen .player .preview .heart{position: absolute;right: 14px;top: 10px;cursor: pointer;}
+	.music-cloud-screen .player .preview .logo{border: 5px solid #6C7386;border-radius: 50%;height: 111px;width: 111px;}
+
+	.music-cloud-screen .slider-load{height: 2px; background: #6C7287; width: 100%;position: relative;}
+	.music-cloud-screen .slider-load .fill{width: 78%; height: 100%; background: var(--purple);}
+	.music-cloud-screen .slider-load .circle{
+		left: 78%; background: #E0E0E0; height: 10px; width: 10px; border-radius: 50%;
+		position: absolute; bottom: 50%; transform: translateY(50%);
+	}
+	.music-cloud-screen .info{background: #2C2F38;height: calc(48% - 2px);width: 100%;}
+	.music-cloud-screen .volume{font: 300 10px/13px Roboto;}
+	.music-cloud-screen .name-music {width: 90%;}
+	.music-cloud-screen .name-music .title{font: 300 16px/13px Roboto;letter-spacing: -0.48px;}
+	.music-cloud-screen .name-music .desc{font: 300 10px/13px Roboto;margin-top: 4px;}
+	.music-cloud-screen .controlls {height: auto; margin: auto;position: relative;top: -7px;}
+	.music-cloud-screen .controlls > *{border: 1px solid var(--purple); border-radius: 50%; box-sizing: content-box;}
+	.music-cloud-screen .controlls .next,
+	.music-cloud-screen .controlls .prev{height: 29px;width: 29px;}
+	.music-cloud-screen .controlls .play{margin: 0 20px; height: 37px;width: 37px;}
+	.music-cloud-screen .controlls .play .play-icon{padding-left: 4px;}
+
+	svg.svg-heart{fill:#6c7386;}
+	svg.svg-heart.active, svg.svg-heart:hover{fill:var(--purple);}
+
+	.music-cloud-screen .listmusic {
+		padding: var(--top-padding) calc(13% - 20px) var(--bottom-padding) 13%;overflow: hidden;position: relative;height: 100%;
+	}
+	.music-cloud-screen .listmusic .items {width: 100%;flex-wrap: wrap; margin: 0 auto;height: 100%; padding-right: 20px;}
+	.music-cloud-screen .listmusic .items .item{max-width: 76px;margin-bottom: 20px;cursor: pointer;}
+	.music-cloud-screen .listmusic .items .item .preview{background: #4E5462; position: relative;height: 76px;width: 76px;}
+	.music-cloud-screen .listmusic .items .item .preview .heart{
+		position: absolute;right: 6.5px;top: 5.9px;cursor: pointer;
+		width:8.55px; height:7.61px;
+	}
+	.music-cloud-screen .listmusic .items .item .preview .logo{border: 3px solid #6C7386;border-radius: 50%;height: 50px;width: 50px;}
+	.music-cloud-screen .listmusic .items .item .preview .logo img{height: 22px;width: 22px;margin-left: 3px;}
+	.music-cloud-screen .listmusic .items .item .name-music{
+		margin-top: 2px;text-align: center;
+	}
+	.music-cloud-screen .listmusic .items .item .name-music > *{font: 300 8px/10px Roboto;letter-spacing: -0.03em;}
+	.music-cloud-screen .listmusic .items .item .name-music .title{color: var(--purple);}
+	.music-cloud-screen .listmusic .items .item .name-music .desc{margin-top: 1px;}
+/*end music-cloud-screen*/
+
+/*auction-screen*/
+	.auction-screen{}
+/*end auction-screen*/
+
+/*trade-board-screen*/
+	.trade-board-screen{}
+/*end trade-board-screen*/
+
+/*my-phone-screen*/
+	/*.my-phone-screen{
+		--top-padding: 29px;
+		--bottom-padding: 20px;
+	}*/
+	/*.my-phone-screen .wrap{padding: var(--top-padding) 11px var(--bottom-padding) 21px;}*/
+
+	.my-phone-screen .wrap{padding: 15px 20px 19px;height: 100%;position: relative;}
+	.my-phone-screen .wrap.main{padding: 30px 34px 19px;}
+
+	.my-phone-screen .wrap .phone-number {position: relative;}
+	.my-phone-screen .wrap .phone-number .number{}
+	.my-phone-screen .wrap .phone-number .backspace{position: absolute;right: 0;}
+
+	.my-phone-screen .wrap .numbers-wrap {margin-top: 30px}
+	.my-phone-screen .wrap .numbers-wrap.funcs-number-wrap {position: absolute;left: 0;padding: 0 34px;bottom: 18px;height: 30px;}
+	.my-phone-screen .wrap .numbers-wrap .number{width: 30%;margin-bottom: 18px;}
+	.my-phone-screen .wrap .numbers-wrap .number .a{
+		width: 40px;height: 40px;background: #4e5462;filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.5));
+		border-radius: 5px;
+	}
+	.my-phone-screen .wrap .numbers-wrap .funcs .a{height: 30px;}
+	.my-phone-screen .wrap .numbers-wrap .phone-btn .a{width: 50px;background: #01D38A}
+
+	.my-phone-screen .wrap .list-of-contacts{position: relative;height: 100%;}
+	.my-phone-screen .wrap .list-of-contacts .items .item{border-bottom: 1px solid var(--black02); padding-bottom: 5.5px;margin-bottom: 5px;}
+	.my-phone-screen .wrap .list-of-contacts .items .item span{margin-left: 6.5px;}
+	.my-phone-screen .wrap .list-of-contacts .add-new{
+		width: 40px; height: 40px; border-radius: 20px; background: #8a4fbd;
+		box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.24); position: absolute; bottom: 46px;right: 0;
+	}
+
+	.my-phone-screen .wrap .contact-edit input[readonly]{
+		background: #4E5462; padding: 3px 7px; min-height: 23px;
+	}
+	.my-phone-screen .wrap .number-input-wrap.copyWrap {}
+	.my-phone-screen .wrap .number-input-wrap.copyWrap input{flex: 1; margin-bottom: 0; border-radius: 5px 0 0 5px;}
+	.my-phone-screen .wrap .number-input-wrap.copyWrap .copy{
+		height: 23px; width: 24px; margin-left: 5px; background: #4E5462; border-radius: 0 5px 5px 0;
+	}
+	.my-phone-screen .wrap .number-input-wrap.copyWrap .copy img{height: 13px;}
+	.my-phone-screen .wrap .a-call{background: #01D38A}
+	.my-phone-screen .wrap .a-call.mousedown{background: #039663}
+
+	.my-phone-screen .wrap .call {position: relative;width: 100%;height: 100%;padding-top: 20px;}
+	.my-phone-screen .wrap .call .icon {margin-top: 41px;}
+
+	.my-phone-screen .wrap .call .wrap-acts {position: absolute;left: 0;bottom: 11px;}
+	.my-phone-screen .wrap .call .wrap-acts > *{width: 50px; height: 50px; border-radius: 50%;}
+	.my-phone-screen .wrap .call .act-accept {background: #01D38A}
+	.my-phone-screen .wrap .call .act-dismiss {background: #E61943}
+	.my-phone-screen .wrap .call .act-dismiss img{transform: rotateZ(135deg); margin-top: 2px;}
+
+	.my-phone-screen .wrap .call.on {text-align: center;}
+
+	.my-phone-screen .wrap .call.out .wrap-acts,
+	.my-phone-screen .wrap .call.on .wrap-acts{justify-content: center;}
+
+	.my-phone-screen .wrap .call.out .act-accept,
+	.my-phone-screen .wrap .call.on .act-accept{display: none !important;}
+
+/*end my-phone-screen*/
+
+/*messages-screen*/
+
+	.messages-screen{
+		--top-padding: 29px;
+		--bottom-padding: 20px;
+	}
+	.messages-screen .wrap{padding: var(--top-padding) 11px var(--bottom-padding) 21px;}
+
+	.messages-screen .item{
+		height: 42px; border-bottom: 1px solid var(--black02); padding-bottom: 10px;margin-bottom: 8px;
+	}
+	.messages-screen .item .icon{margin-right: 5px; position: relative;}
+	.messages-screen .item .icon.new:before{
+		content:''; position: absolute; top: 0; left: 0; background: var(--purple);
+		width: 9px;height: 9px;border-radius: 50%;
+	}
+
+	.messages-screen .open-chat {height: 100%;position: relative;}
+
+	.messages-screen .write-area {position: absolute;left: 0;bottom: 0;width: 100%;padding: 15px 11px;}
+	.messages-screen .write-area .write {flex:1;}
+	.messages-screen .write-area .write input{
+		margin-bottom: 0; border-bottom-right-radius: 0;border-top-right-radius: 0;
+	}
+	.messages-screen .write-area .mail,
+	.messages-screen .write-area .geo{
+		background: var(--black02);width: 29px;height: 29px;border-radius: 5px;margin-left: 2px;
+	}
+	.messages-screen .write-area .mail{
+		margin-left: 0; border-bottom-left-radius: 0;border-top-left-radius: 0;
+	}
+	.messages-screen .add-wrap{padding: 11px 46px;}
+	.messages-screen .show{padding: 11px 20px;}
+	.messages-screen .message{background: var(--black02);border-radius: 5px;padding: 10px;max-width: 80%;margin-top: 10px;}
+	.messages-screen .message.out{align-self: flex-end;background: rgba(157, 99, 207, 0.2)}
+/*end messages-screen*/
+

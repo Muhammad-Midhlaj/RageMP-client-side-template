@@ -1,0 +1,141 @@
+.menu{
+    display: none;
+    position: absolute;
+    width: 350px;
+    height: 500px;
+    border-radius: 15px;
+    background-color: #e0e0e0;
+    top: 50%;
+    margin-top: -250px;
+}
+.menu#fishshop h1 { background-color: #121212; }
+.menu#fishshop .exit{ background-color: #121212; }
+.menu#fishshop .exit:hover{ background-color: #121212; }
+.menu h1{
+    margin: 0;
+    padding: 15px;
+    font-weight: 400;
+    font-size: 18pt;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.menu .elements{
+    padding: 10px;
+    height: 370px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.menu .block{
+    display: flow-root;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+.menu .block span{
+    float: left;
+    width: 50%;
+    font-size: 14pt;
+    padding: 8px;
+    padding-top: 0;
+    color: green;
+}
+.menu .left{
+    float: left;
+    padding: 7px;
+    width: 60%;
+    font-size: 14pt;
+}
+.menu .right{
+    float: right;
+    padding: 10px;
+    background-color: #60db56;
+    color:white;
+    border-radius: 10px;
+    font-size: 10pt;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.menu .right:hover{
+    background-color: #35c22c;
+}
+
+.menu .buttons{
+    height: 50px;
+    text-align: center;
+    color: white;
+}
+.menu .btn{
+    text-align: center;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 8px;
+    width: 40%;
+    cursor: pointer;
+}
+.menu .btn.big{
+    width: 90%;
+}
+
+
+.menu#shop h1,
+.menu#work h1{
+    background-color: #b63f3f;
+}
+.menu#shop .exit,
+.menu#work .exit{
+    background-color: #b63f3f;
+}
+.menu#shop .exit:hover,
+.menu#work .exit:hover{
+    background-color: #c22222;
+}
+.menu#work .resign{
+    background-color: #2b83b0;
+}
+.menu#work .resign:hover{
+    background-color: #007bbb;
+}
+.menu#fib h1{ background-color: #0e1024; }
+.menu#fib .exit{ background-color: #0e1024; }
+.menu#fib .exit:hover{ background-color: #000644; }
+.menu#fib .right{ background-color: #364455; }
+.menu#fib .right:hover{ background-color: #364455; }
+
+.menu#lspd h1 { background-color: #214984; }
+.menu#lspd .exit{ background-color: #214984; }
+.menu#lspd .exit:hover{ background-color: #214984; }
+
+.menu#army h1{ background-color: #2a2b26; }
+.menu#army .exit{ background-color: #2a2b26; }
+.menu#army .exit:hover{ background-color: #2a2b26; }
+.menu#army .right{ background-color: #524630; }
+.menu#army .right:hover{ background-color: #524630; }
+
+.menu#fishshop h1 { background-color: #121212; }
+.menu#fishshop .exit{ background-color: #121212; }
+.menu#fishshop .exit:hover{ background-color: #121212; }
+
+.menu#black h1 { background-color: #121212; }
+.menu#black .exit{ background-color: #121212; }
+.menu#black .exit:hover{ background-color: #121212; }
+
+.menu#gang h1 { background-color: #121212; }
+.menu#gang .exit{ background-color: #121212; }
+.menu#gang .exit:hover{ background-color: #121212; }
+
+.menu#mafia h1 { background-color: #121212; }
+.menu#mafia .exit{ background-color: #121212; }
+.menu#mafia .exit:hover{ background-color: #121212; }
+
+.menu#gov h1 { background-color: #121212; }
+.menu#gov .exit{ background-color: #121212; }
+.menu#gov .exit:hover{ background-color: #121212; }
+
+.menu#sheriff h1 { background-color: #214984; }
+.menu#sheriff .exit{ background-color: #214984; }
+.menu#sheriff .exit:hover{ background-color: #214984; }

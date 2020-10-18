@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>redage.net - Inventory</title>
+	<meta content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1.0" name="viewport">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link href="css/inventory.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.dragsort.js"></script>
+</head>
+
+<body>
+	<div class="vinventory interface__rd" :style="{ opacity: active ? 1 : 0 }">
+		<ul class="head__tabs rounding">
+			<li class="tab active" id="invent"><img src="images/inventory/icons/briefcase.png"></li>
+			<li class="tab active" id="chart"><img src="images/inventory/icons/pie-chart.png"></li>
+			<li class="tab" v-bind:class="{active: trunktoggled}" id="trunk"><img src="images/inventory/icons/trunk-opea.png"></li>
+			<li class="tab close" v-on:click="CloseInventory();"><span><img src="images/inventory/icons/close.svg"></span></li>
+		</ul>
+		
+		<div class="unit__main">
+			<div class="unit rounding inventory">
+				<div class="title">Inventory <span id="grid-1-num"></span></div>
+				<div class="inventory__box grid grid-1" id="grid-1"></div>
+			</div>
+
+			<div class="unit rounding statistics">
+				<div class="title">Character stats</div>
+				<div class="inventory__box">
+					<div class="info"><div>First Name Last Name</div><div>{{username}}</div></div>
+					<div class="info"><div>Level</div><div>{{level}}</div></div>
+					<div class="info"><div>EXP</div><div>{{exp}}</div></div>
+					<div v-if="fractionlevel">
+						<div class="info"><div>Fraction</div><div>{{fractionname}}</div></div>
+						<div class="info"><div>Rank</div><div>{{fractionlevel}}</div></div>
+					</div>
+					<div v-else>
+						<div class="info"><div>Job</div><div>{{jobname}}</div></div>
+					</div>
+					<div class="info"><div>Phone</div><div>{{phonenumber}}</div></div>
+					<div class="info"><div>Status</div><div>{{status}}</div></div>
+					<div class="info"><div>Warns</div><div>{{warnscount}}</div></div>
+					<!--<div class="info"><div>Баны</div><div>0</div></div>-->
+					<div class="info"><div>Licenses</div><div>{{licensecount}}</div></div>
+					<div class="info"><div>Registration date</div><div>{{registerdate}}</div></div>
+					<div class="info"><div>ID number</div><div>{{passid}}</div></div>
+					<div class="info"><div>Bank number</div><div>{{bankid}}</div></div>
+					<!--<div class="info"><div>Семейное положение</div><div>Женат</div></div>-->
+				</div>
+			</div>
+
+			<div class="unit rounding trunk" v-bind:style="{ opacity: trunktoggled ? 1.0 : 0.0}">
+				<div class="title">{{trunktitle}} <span id="grid-2-num"></span></div>
+				<div class="inventory__box grid grid-2" id="grid-2"></div>
+			</div>
+			
+			<ul id="contextMenu" class="dropdown-menu" role="menu" style="display:none" >
+				<li><a tabindex="-1" href="#">Use</a></li>
+				<li><a tabindex="-1" href="#">Transfer</a></li>
+				<li><a tabindex="-1" href="#">Throw away</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/inventory.js"></script>
+	<script type="text/javascript">
+
+		var count_max = {'1': 20, '2': 40};
+		var add = true;
+		var placeHolderTemplate = "<div class='item x1 free'></div>";
+		var dropbox = "<div class='item x1 free dropbox'></div>";
+
+		function resave() {
+
+			if(inventory.invent.length) inventory.invent = [];
+			if(inventory.trunk.length) inventory.trunk = [];
+
+			for (var i = 1; i <= 2; i++) {
+				var container = $('#grid-' + i);
+
+				var item__cnt = 0;
+
+				var length = $('#grid-' + i).find(".rounding").length;
+				if (length) {
+					
+					container.find(".rounding").each(function(index, el) {
+						var itemtype = $(this).data("type");
+
+						var newarray = {
+							type: parseInt($(this).data("type")), 
+							count: parseInt($(this).data("count")),
+							active: parseInt($(this).data("active")),
+							serial: $(this).data("serial")
+						};
+						if(i == 1) {
+							inventory.invent[index] = newarray;
+							$(`#grid-1 .dropbox`).remove();
+							if(length < count_max[1]) {
+								$('#grid-1').append(dropbox);
+							}
+						}
+						else if(i == 2) {
+							inventory.trunk[index] = newarray;
+							$(`#grid-2 .dropbox`).remove();
+							if(length < count_max[2]) {
+								$('#grid-2').append(dropbox);
+							}
+						}
+					});
+				}
+			}
+		}
+
+		function count() {
+
+			resave();
+			var cnt = {};
+			for (var i = 1; i <= 2; i++) {
+				var container = $('#grid-' + i);
+				var item__cnt = 0;
+				if ($('#grid-' + i).find(".item").length) {
+					
+					container.find(".item").each(function() {
+
+						$.each(this.attributes, function() {
+							if (this.specified && this.name == 'data-size') item__cnt = item__cnt + Number(this.value);
+						});
+						cnt[i] = item__cnt;
+					});
+					$('#grid-' + i + '-num').text(cnt[i] + '/' + count_max[i]);
+				} else {
+					$('#grid-' + i + '-num').text(item__cnt + '/' + count_max[i]);
+				}
+			}
+			$('#grid-1 .item').contextMenu(contextMenuHandler());
+		}
+
+		$(document).on('click', '#invent', function(e) {
+			var active = $(".unit__main .unit:visible");
+			var elem = $('.inventory');
+			var main = $(this);
+			if (active.length == 1) {
+				if (!active[0].classList.contains('inventory')) {
+					el(elem, true, main);
+				}
+			} else {
+				el(elem, true, main);
+			}
+		})
+
+		$(document).on('click', '#chart', function(e) {
+			var active = $(".unit__main .unit:visible");
+			var elem = $('.statistics');
+			var main = $(this);
+			if (active.length == 1) {
+				if (!active[0].classList.contains('statistics')) {
+					el(elem, false, main);
+				}
+			} else {
+				el(elem, false, main);
+			}
+		})
+
+		function dragg() {
+			$('.grid-1').dragsort("destroy");
+			$('.grid-2').dragsort("destroy");
+			var active = $(".unit__main .unit:visible .grid");
+			
+			if (active.length > 1) {
+				$(".grid-1, .grid-2").dragsort({
+					dragSelector: "div",
+					dragBetween: true,
+					dragEnd: count,
+					max_inventory: count_max[1],
+					max_trunk: count_max[2],
+					placeHolderTemplate: placeHolderTemplate
+				});
+			} else if (active.length == 1) {
+				$(active[0]).dragsort({
+					dragSelector: "div",
+					dragEnd: count,
+					dragBetween: false,
+					max_inventory: count_max[1],
+					max_trunk: count_max[2],
+					placeHolderTemplate: placeHolderTemplate
+				});
+			}
+		};
+
+		function el(elem, drag, main) {
+			if (elem.is(":hidden")) {
+				main.addClass('active');
+				elem.fadeIn(100).promise().done(function() {
+					dragg();
+				});
+			} else {
+				main.removeClass('active');
+				elem.fadeOut(100).promise().done(function() {
+					dragg();
+				});
+			}
+		};
+
+		(function($, window) {
+			$.fn.contextMenu = function(settings) {
+				
+				return this.each(function() {
+					// Open context menu
+
+					$(this).on("contextmenu", function(e) {
+						/*var $m = $(settings.menuSelector);
+						if ($m.is(":visible")) {
+							$m.hide(100);
+							var $invokedOn = $m.data("invokedOn");
+							var $selectedMenu = $(e.target);
+							return false;
+						}*/
+						// return native menu if pressing control
+
+						if (e.ctrlKey) return;
+						var itemIndex = $(e.target).index();	
+						var $menu = $(settings.menuSelector).data("invokedOn", $(e.target)).fadeIn(100).css({
+							position: "absolute",
+							left: getMenuPosition(e.clientX, 'width', 'scrollLeft'),
+							top: getMenuPosition(e.clientY, 'height', 'scrollTop')
+						}).off('click').on('click', 'a', function(e) {
+							$menu.fadeOut(100).promise().done(function() {
+								var $invokedOn = $menu.data("invokedOn");
+								var $selectedMenu = $(e.target);
+								
+								settings.menuSelected.call(this, $invokedOn, $selectedMenu, itemIndex);
+							});
+						});
+						return false;
+					});
+					//make sure menu closes on any click
+					$('body').click(function() {
+						$(settings.menuSelector).hide(100);
+					});
+				});
+
+				function getMenuPosition(mouse, direction, scrollDir) {
+					var win = $(window)[direction](),
+						scroll = $(window)[scrollDir](),
+						menu = $(settings.menuSelector)[direction](),
+						position = mouse + scroll;
+					// opening menu would pass the side of the page
+					if (mouse + menu > win && menu < mouse) position -= menu;
+					return position;
+				}
+			};
+
+			// Перемещение
+			$('.inventory-cell').droppable({
+
+				accept: ".inventroy-item",
+
+				over: function(event, ui)
+				{
+					
+					let old_storage = getItemStorage(ui.helper);
+					let old_cell = getItemCellId(ui.helper);
+					
+					let new_storage = getCellStorage(this);
+					let new_cell = getCellId(this);
+
+					if(old_storage == new_storage && old_cell == new_cell) return;
+					
+					if(isCellEmpty(new_storage, new_cell))
+					{
+						$(this).addClass('cell-empty-hover');
+					}
+					else
+					{
+						mp.trigger("checkInventoryItemsForStack", old_storage, parseInt(old_cell), new_storage, parseInt(new_cell));
+					}
+				},
+
+				out: function(event, ui)
+				{
+					let new_storage = getCellStorage(this);
+
+					let new_cell = getCellId(this);
+
+					if(getItemStorage(ui.helper) == new_storage &&  getItemCellId(ui.helper) == new_cell) return;
+
+					$(this).removeClass('cell-empty-hover');
+					$(this).removeClass('cell-stack-hover');
+				},
+
+				drop: function(event, ui)
+				{
+					
+					let new_storage = getCellStorage(this);
+					let new_cell = getCellId(this);
+
+					let old_storage = getItemStorage(ui.helper);
+					let old_cell = getItemCellId(ui.helper);
+					
+					if(isCellEmpty(new_storage, new_cell)) 
+					{
+						$(this).removeClass('cell-empty-hover');
+						mp.trigger("moveItemFromCellToCell", old_storage, parseInt(old_cell), new_storage, parseInt(new_cell));
+						$(this).append(ui.draggable);
+					}
+					else if($(this).hasClass('cell-stack-hover'))
+					{
+						$(this).removeClass('cell-stack-hover');
+						mp.trigger("stackInventoryItems", old_storage, parseInt(old_cell), new_storage, parseInt(new_cell));
+					}	
+				}
+			});
+
+		})(jQuery, window);
+
+		function contextMenuHandler() {
+			return {
+				menuSelector: "#contextMenu",
+				menuSelected: function(invokedOn, selectedMenu, elementIndex) {
+
+					if (selectedMenu.text() === 'Использовать') inventory.ContextHandler(0, elementIndex);
+					else if(selectedMenu.text() === 'Передать') inventory.ContextHandler(1, elementIndex);
+					else if(selectedMenu.text() === 'Выбросить') inventory.ContextHandler(2, elementIndex);
+				}
+			}
+		}
+
+		function clearItem(type)
+		{
+			$( `.${type} .inventory__box` ).empty();
+		}
+
+		function addItem(type, item)
+		{
+			var addinationClass = "";
+			if(inventory.items[item.type].type == "weapon") 
+			{
+				addinationClass += "prefixSerial";
+			}
+
+			var el = $(`<div class="selector item x1 rounding ${inventory.items[item.type].type}" data-size="1">
+					<div class="i_title ${addinationClass}">${item.serial}</div>
+					<img src="images/inventory/icons/Pistol.png">
+					<div class="i_name">${inventory.items[item.type].name}</div>
+				</div>`);
+
+			$( `.${type} .inventory__box` ).append(el);
+			el.data("type", item.type);
+			el.data("count", item.count);
+			el.data("active", item.active);
+			el.data("serial", item.serial);
+
+			$('#grid-1 .item').contextMenu(contextMenuHandler());
+			count();
+		}
+
+		function updateItem(type, index, item)
+		{
+			var el = $(`#grid-1 .rounding:eq(${index})`);
+			if(el.length)
+			{
+				console.log(el);
+				var newel = el.replaceWith(
+					`<div class="item x1 rounding ${inventory.items[item.type].type}" data-size="1">
+						<div class="i_title">${item.serial}</div>
+						<img src="images/inventory/icons/$icon.png">
+						<div class="i_name">${inventory.items[item.type].name}</div>
+					</div>`
+				);
+
+				el = $(`#grid-1 .rounding:eq(${index})`);
+				el.data("type", item.type);
+				el.data("count", item.count);
+				el.data("active", item.active);
+				el.data("serial", item.serial);
+
+				$('#grid-1 .item').contextMenu(contextMenuHandler());
+				count();
+			}
+			else addItem(type, item); 
+		}
+
+		$('#grid-1').append(dropbox);
+		$('#grid-2').append(dropbox);
+
+		dragg();
+		count();
+	</script>
+</body>

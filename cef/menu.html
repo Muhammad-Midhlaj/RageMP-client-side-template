@@ -1,0 +1,716 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Free Life RolePlay - Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            font-family: "Ubuntu", sans-serif;
+            margin: 0;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #555;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ddd;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&amp;subset=cyrillic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/dial.css">
+    <link rel="stylesheet" href="css/stock.css">
+    <link rel="stylesheet" href="css/pc.css">
+    <link rel="stylesheet" href="css/docs.css">
+    <link rel="stylesheet" href="css/input.css">
+    <link rel="stylesheet" href="css/joblist.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/atm.css">
+    <link rel="stylesheet" href="css/lift.css">
+    <link rel="stylesheet" href="css/petrol.css">
+    <link rel="stylesheet" href="css/fmenu.css">
+    <link rel="stylesheet" href="css/plist.css">
+    <link rel="stylesheet" href="css/mats.css">
+    <link rel="stylesheet" href="css/auto.css">
+	<link rel="stylesheet" href="css/pet.css">
+    <link rel="stylesheet" href="css/bsearch.css">
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="stylesheet" href="css/weapons.css">
+    <link rel="stylesheet" href="css/clothes.css">
+    <link rel="stylesheet" href="css/masks.css">
+    <link rel="stylesheet" href="css/infobox.css">
+    <link rel="stylesheet" href="css/donate.css">
+    <link rel="stylesheet" href="css/dialog.css">
+    <link rel="stylesheet" href="fonts/icons.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="js/vue.js"></script>
+</head>
+<body style="display:none">
+    <div class="dial">
+        <div class="img base"></div>
+        <div class="img num"></div>
+        <div class="img center"></div>
+    </div>
+    <div class="stock weapons">
+        <div class="center">
+            <div class="title">
+                <span id="L" class="left-arrow"></span>
+                <label>Label</label>
+                <span id="R" class="right-arrow"></span>
+            </div>
+            <div id="take" class="btn">Take</div>
+            <div id="put" class="btn">Put</div>
+            <div class="count">In stock: <span>1337</span></div>
+            <div id="exit" class="exit">Exit</div>
+        </div>
+    </div>
+    <div class="pc">
+        <div class="screen">
+            <div class="left">
+                <menu>
+                    <li id="1">Clear wanted</li>
+                    <li id="2">Punch numbers</li>
+                    <li id="3">Break through the base</li>
+                    <li id="4">Wanted list</li>
+                    <li id="5">Exit</li>
+                </menu>
+            </div>
+            <div class="right"><h1></h1><div class="elements"></div></div>
+            <div class="bottom"></div>
+        </div>
+    </div>
+    <div class="license" v-if="active">
+        <div id="exit" @click="hide"></div>
+        <p id="firstname">{{firstname}}</p>
+        <p id="lastname">{{lastname}}</p>
+        <p id="date">{{date}}</p>
+        <p id="gender">{{gender}}</p>
+        <p id="lics">{{lics}}</p>
+    </div>
+    <div class="passport" v-if="active">
+        <p id="number">{{number}}</p>
+        <p id="firstname">{{firstname}}</p>
+        <p id="lastname">{{lastname}}</p>
+        <p id="date">{{date}}</p>
+        <p id="gender">{{gender}}</p>
+        <p id="member">{{member}}</p>
+        <p id="work">{{work}}</p>
+        <div id="exit" @click="hide"></div>
+    </div>
+    <div class="dialog" v-if="active">
+        <div class="field_ques">
+            <div class="question">
+                <p>{{title}}</p>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="yes" @click="yes"><p>Yes</p></button>
+            <button class="no" @click="no"><p>No</p></button>
+        </div>
+    </div>
+    <div class="input" v-if="active">
+        <p>{{title}}</p>
+        <div>
+            <input :placeholder="plholder" :maxlength="len" v-model="input">
+            <button @click="send">Confirm</button>
+        </div>
+    </div>
+    <div class="menu">
+        <h1>Label</h1>
+        <div class="elements"></div>
+        <div class="buttons">
+            <div id="btn1" class="btn exit" style="display:none">Exit</div>
+            <div id="btn2" class="btn resign" style="display:none">Quit</div>
+            <div id="btn3" class="btn exit big" style="display:none">Exit</div>
+        </div>
+    </div>
+    <div class="atm" v-if="active">
+		<div class="left">
+			<div class="number">
+				<img src="https://imgur.com/H7YbMwE.png" class="png1">
+				<p class="lex">Account number</p>
+				<p id="number">{{number}}</p>
+			</div>
+			<div class="holder">
+				<img src="https://imgur.com/BmiRTBr.png" class="png1">
+				<p class="lex">Account owner</p>
+				<p id="holder">{{holder}}</p>
+			</div>
+			<div class="balance">
+				<img src="https://imgur.com/9ydBrMY.png" class="png1">
+				<p class="lex">In the bank</p>
+				<p id="balance">{{balance}}$</p>
+			</div>
+        </div>
+        <div class="right">
+            <div v-if="type == 1">
+				<div class="blintik">
+					<div @click="btn" id="0" class="block">
+						<img src="http://m99606v6.beget.tech/1/items/shared.png" class="png2">
+						<p id="0">Deposit funds</p>
+					</div>
+					<div @click="btn" id="1" class="block1">
+						<img src="http://m99606v6.beget.tech/1/items/received.png" class="png2">
+						<p id="1">Withdraw funds</p>
+					</div>
+					<div @click="btn" id="2" class="block2">
+						<img src="http://m99606v6.beget.tech/1/items/home.png" class="png2">
+						<p id="2">Pay home tax</p>
+					</div>
+					<div @click="btn" id="3" class="block3">
+						<img src="http://m99606v6.beget.tech/1/items/store.png" class="png2">
+						<p id="3">Submit business tax</p>
+					</div>
+					<div @click="btn" id="4" class="block4">
+						<img src="http://m99606v6.beget.tech/1/items/article.png" class="png2">
+						<p id="4">Transfer to another account</p>
+					</div>
+				</div>
+                <div @click="btn" id="-1" class="block5"><p id="-1" style="padding: 7px;font-size: 19px;">Exit</p></div>
+            </div>
+            <div v-if="type == 2">
+				<div class="blintik2">
+					<div class="gern">
+						<img src="http://m99606v6.beget.tech/1/items/dolla.png" class="png3">
+						<input :placeholder="plholder" v-model="value" maxlength="6">
+					</div>
+					<div class="gern2">
+						<div @click="next" id="next" class="block6"><p id="next">Next</p></div>
+						<div @click="prev" id="prev" class="block7"><p id="prev">Cancelation</p></div>
+					</div>
+				<p class="subinfo">{{subdata}}</p>
+				</div>
+			</div>
+            <div v-if="type == 3">
+                <div v-for="(b, i) in subdata">
+                    <div @click="btn" :id="i" class="block8">
+						<img src="http://m99606v6.beget.tech/1/items/store.png" class="png4">
+						<p :id="i" class="lex1">{{b}}</p>
+					</div>
+                </div>
+                <div @click="btn" id="-1" class="block5" style=""><p id="-1">Exit</p></div>
+            </div>
+        </div>
+    </div>
+    <div class="lift" v-if="active">
+        <h1>{{ floors[floor] }}</h1>
+        <div id="btn-down" @click="down"></div>
+        <div id="btn-up" @click="up"></div>
+        <div id="btn-stop" @click="stop"></div>
+        <div id="btn-start" @click="start"></div>
+    </div>
+    <div class="petrol" v-if="active">
+        <input placeholder="000" maxlength="3" v-model.number="input" onkeyup="this.value = this.value.replace (/[^0-9+]/, '')">
+        <div class="btns">
+            <div class="btn gov" @click="gov"></div>
+            <div class="btn full" @click="full"></div>
+            <div class="btn yes" @click="yes"></div>
+            <div class="btn no" @click="no"></div>
+        </div>
+    </div>
+    <div class="fmenu" v-if="active">
+        <div class="right" v-show="submenu">
+            <div class="info" v-if="menu == 1">
+                <p class="online">Online <span>{{oncounter}}</span></p>
+                <p class="offline">Offline <span>{{ofcounter}}</span></p>
+                <p class="all">All <span>{{counter}}</span></p>
+            </div>
+            <hr v-if="menu == 1">
+            <table v-if="menu == 1">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Level</th>
+                    <th>Rank</th>
+                </tr>
+                <tr v-for="member in members">
+                    <th>{{member[1]}}</th>
+                    <th v-bind:class="[ member[0] ? 'online' : 'offline' ]">{{member[2]}}</th>
+                    <th>{{member[3]}}</th>
+                    <th>{{member[4]}}</th>
+                </tr>
+            </table>
+            <h1 v-if="menu > 1">{{header[menu]}}</h1>
+            <input placeholder="Name_Surname" v-model="input" v-if="menu > 1">
+            <input placeholder="New Rank" v-model="rank" v-if="menu > 3">
+            <div @click="submit" class="btn-submit" v-if="menu > 1">{{btntext[menu]}}</div>
+        </div>
+        <div class="left">
+            <h1>Organization management</h1>
+            <div class="btns">
+                <div @click="btn(1,$event)" class="btn" v-bind:class="{active: btnactive[1]}">Organization members</div>
+                <div @click="btn(2,$event)" class="btn" v-bind:class="{active: btnactive[2]}">Admit to the organization</div>
+                <div @click="btn(3,$event)" class="btn" v-bind:class="{active: btnactive[3]}">Kick out of the organization</div>
+                <div @click="btn(4,$event)" class="btn" v-bind:class="{active: btnactive[4]}">Change rank</div>
+                <div @click="btn(0,$event)" class="btn">Exit</div>
+            </div>
+        </div>
+    </div>
+    <!--<div style="display: none;">
+        <div class="right" v-show="submenu">
+            <div class="info" v-if="menu == 1">
+                <p class="online" v-on:click="showonly = 1">В сети <span>{{oncounter}}</span></p>
+                <p class="offline" v-on:click="showonly = 0">Не в сети <span>{{ofcounter}}</span></p>
+                <p class="all" v-on:click="showonly = 2">Всего <span>{{counter}}</span></p>
+            </div>
+            <hr v-if="menu == 1">
+            <table v-if="menu == 1">
+                <tr>
+                    <th v-on:click="sortMembers(1)" v-bind:class="{selectedSort: playerssort == 1, reversedSort: sortrevert}">ID</th>
+                    <th v-on:click="sortMembers(2)" v-bind:class="{selectedSort: playerssort == 2, reversedSort: sortrevert}">NAME</th>
+                    <th v-on:click="sortMembers(3)" v-bind:class="{selectedSort: playerssort == 3, reversedSort: sortrevert}">LVL</th>
+                    <th v-on:click="sortMembers(4)" v-bind:class="{selectedSort: playerssort == 4, reversedSort: sortrevert}">RANK</th>
+                </tr>
+                <tr v-for="member in members" v-if="showonly == 2 ? true : showonly == member[0]">
+                    <th>{{member[1]}}</th>
+                    <th v-bind:class="[ member[0] ? 'online' : 'offline' ]">{{member[2]}}</th>
+                    <th>{{member[3]}}</th>
+                    <th>{{member[4]}}</th>
+                </tr>
+            </table>
+            <h1 v-if="menu > 1">{{header[menu]}}</h1>
+            <input placeholder="Имя_Фамилия" v-model="input" v-if="menu > 1">
+            <input placeholder="Новый ранг" v-model="rank" v-if="menu > 3">
+            <div @click="submit" class="btn-submit" v-if="menu > 1">{{btntext[menu]}}</div>
+        </div>
+        <div class="left">
+            <h1>Управление организацией</h1>
+            <div class="btns">
+                <div @click="btn(1,$event)" class="btn" v-bind:class="{active: btnactive[1]}">Члены организации</div>
+                <div @click="btn(2,$event)" class="btn" v-bind:class="{active: btnactive[2]}">Принять в организацию</div>
+                <div @click="btn(3,$event)" class="btn" v-bind:class="{active: btnactive[3]}">Выгнать из организации</div>
+                <div @click="btn(4,$event)" class="btn" v-bind:class="{active: btnactive[4]}">Изменить ранг</div>
+                <div @click="btn(0,$event)" class="btn">Выйти</div>
+            </div>
+        </div>
+    </div>-->
+    <div class="joblist" v-if="active">
+        <div class="adaptive">
+            <div class="boxtop">
+                <div class="box">
+                    <div class="header">
+                        <div v-on:click="closeJobMenu()" class="arrow"></div>
+                        <p class="txtheader">Apply for a job</p>
+                    </div>
+                    <div class="workbox">
+                        <div v-for="job in list" class="workboxes" v-bind:class="job.class">
+                            <div class="inkoslvl"> <p class="textlvl">LVL</p><p class="textlvl2">{{job.level}}</p></div>
+                            <div class="worktoptxt ">
+                                <p class="textboxwork"></p> {{job.name}}
+                                <div class="jobstatus" v-if="job.level <= level">
+                                    <img class="workimg" src="images/joblist/padlock-unlock.svg" alt="">
+                                    <p class="worktextopen">Open</p>
+                                </div>
+                                <div class="jobstatus" v-else>
+                                        <img class="workimg" src="images/joblist/lock.svg" alt="">
+                                    <p class="worktextopen">Closed</p>
+                                </div>
+                            </div>
+                            <div v-if="job.level <= level">
+                                <div v-if="job.jobid == jobid">
+                                    <div class="buttongetsettledred" v-on:click="selectJob(-1)">
+                                        <p сlass="buttontxtgetsettled">Quit</p>
+                                    </div>
+                                </div>
+                                <div v-else>
+                                    <div class="buttongetsettled" v-on:click="selectJob(job.jobid)">
+                                        <p сlass="buttontxtgetsettled">Settle down</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="plist" v-if="active">
+        <div class="head"><img src="images/hud/logo.png"><h1>Kingsland RolePlay</h1><span>Players: {{ online }}</span></div>
+        <div class="list">
+            <table>
+                <tr>
+                    <th v-on:click="sortPlayers(0)" v-bind:class="{selectedSort: playerssort == 0, reversedSort: sortrevert}">ID</th>
+                    <th v-on:click="sortPlayers(1)" v-bind:class="{selectedSort: playerssort == 1, reversedSort: sortrevert}">Nickname</th>
+                    <th v-on:click="sortPlayers(2)" v-bind:class="{selectedSort: playerssort == 2, reversedSort: sortrevert}">Level</th>
+                    <th v-on:click="sortPlayers(3)" v-bind:class="{selectedSort: playerssort == 3, reversedSort: sortrevert}">Ping</th>
+                </tr>
+                <tr v-for="item in items">
+                    <td>{{item[0]}}</td>
+                    <td>{{item[1]}}</td>
+                    <td>{{item[2]}}</td>
+                    <td>{{item[3]}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="mats" v-if="active">
+        <div v-if="isMed">
+            <div class="btns">
+                <div @click="load(4)" class="btn-succ">DOWNLOAD</div>
+                <div @click="unload(4)" class="btn-cancel">UNLODE</div>
+            </div>
+            <div class="img hkit"></div>
+        </div>
+        <div v-else>
+            <div v-if="isArmy">
+                <div class="btns">
+                    <div @click="load(1)" class="btn-succ">DOWNLOAD</div>
+                    <div @click="unload(1)" class="btn-cancel">UNLODE</div>
+                </div>
+                <div class="img army"></div>
+            </div>
+            <div v-if="!isArmy">
+                <div class="btns">
+                    <div @click="load(2)" class="btn-succ">DOWNLOAD</div>
+                    <div @click="unload(2)" class="btn-cancel">UNLODE</div>
+                </div>
+                <div class="img gang"></div>
+            </div>
+            <div v-if="!isArmy">
+                <div class="btns">
+                    <div @click="load(3)" class="btn-succ">DOWNLOAD</div>
+                    <div @click="unload(3)" class="btn-cancel">UNLODE</div>
+                </div>
+                <div class="img weed"></div>
+            </div>
+        </div>
+    </div>
+	<div class="auto" v-if="active">
+    <div class="grad"></div>
+      <h1>{{header}}</h1>
+	  <img src="https://imgur.com/l6r0dia.png">
+      <div class="items">
+        <p><font color="white">Car color</font></p>
+        <div class="list" style="width: 194px;"> <i @click="left(1)" class="fas fa-chevron-left"></i>
+          <div style="width: 110px;text-align: center;">{{colors[indexC]}}</div>
+          <i @click="right(1)" class="fas fa-chevron-right"></i> </div>
+        <p><font color="white">Car</font></p>
+        <div class="list1">
+          <ul>
+            <li v-for="(value, index) in models" :key="index">
+              <div v-on:click="auto(index)">{{models[index]}}</div>
+            </li>
+          </ul>
+        </div>
+        <div id="log"></div>
+      </div>
+      <div class="btns">
+        <div class="pr"><font color="white">Price: <span>{{prices[indexM]}}$</span></font></div>
+        <div @click="buy" class="btn buy">Buy</div>
+        <div @click="exit" class="btn exit">Exit</div>
+      </div>
+    </div>
+    <div class="bsearch" v-if="active">
+        <div @click="btn(0)" class="btn-close"></div>
+        <div class="list">
+            <p>Name Surname: {{ name }}</p>
+            <p>Weapon:</p>
+            <ul><li v-for="w in weapons">{{ w }}</li></ul>
+            <p>Inventory items:</p>
+            <ul><li v-for="i in items">{{ i }}</li></ul>
+        </div>
+        <div class="btns">
+            <div @click="btn(1)" class="btn">Licenses</div>
+            <div @click="btn(2)" class="btn">ID</div>
+        </div>
+    </div>
+    <div class="body" v-bind:class="{ tattoo: !isBarber, barber: isBarber }" v-if="active">
+        <div @click="close" class="exit"></div>
+        <div class="items" v-if="isBarber">
+            <!--Barber Shop-->
+            <bodylist id="hair" name="Прическа" color="true"></bodylist>
+            <bodylist id="beard" name="Борода" color="true"></bodylist>
+            <bodylist id="eyebrows" name="Брови" color="true"></bodylist>
+            <bodylist id="chesthair" name="Грудь" color="true"></bodylist>
+            <bodylist id="lenses" name="Линзы"></bodylist>
+            <bodylist id="lipstick" name="Помада" color="true"></bodylist>
+            <bodylist id="blush" name="Румянец" color="true"></bodylist>
+            <bodylist id="makeup" name="Тени"></bodylist>
+        </div>
+        <div class="items" v-if="!isBarber">
+            <!--Tattoo Shop-->
+            <bodylist id="torso" name="Торс"></bodylist>
+            <bodylist id="head" name="Голова"></bodylist>
+            <bodylist id="leftarm" name="Левая рука"></bodylist>
+            <bodylist id="rightarm" name="Правая рука"></bodylist>
+            <bodylist id="leftleg" name="Левая нога"></bodylist>
+            <bodylist id="rightleg" name="Правая нога"></bodylist>
+        </div>
+    </div>
+    <div class="weapons_buy" v-if="active">
+        <div class="left">
+            <div @click="btn(0,$event)" class="btn pistol" v-bind:class="{ active: btns[0] }"></div>
+            <div @click="btn(1,$event)" class="btn shot" v-bind:class="{ active: btns[1] }"></div>
+            <div @click="btn(2,$event)" class="btn smg" v-bind:class="{ active: btns[2] }"></div>
+            <div @click="btn(3,$event)" class="btn ammo" v-bind:class="{ active: btns[3] }"></div>
+        </div>
+        <div class="right">
+            <div class="head"></div>
+            <div class="elements">
+                <div class="block" v-for="(item, index) in items">
+                    <label>{{item[0]}}</label>
+                    <div @click="buy(index)" class="btn">Buy</div>
+                    <span>${{item[1]}}</span>
+                </div>
+                <div class="slider" v-for="(item, index) in sliders">
+                    <label>{{item[0]}}</label>
+                    <input :id="index" @input="range" type="range" :value="item[1]" step="1" :min="item[1]" :max="item[2]">
+                    <output @click="rangebuy" :id="'wbuyslider' + index">{{item[4]}}$</output>
+                </div>
+            </div>
+            <div class="buttons">
+                <div @click="exit" class="exit">Exit</div>
+            </div>
+        </div>
+    </div>
+    <div class="weapons_craft" v-if="active">
+        <div class="left">
+            <div @click="btn(0,$event)" class="btn pistol" v-bind:class="{ active: btns[0] }"></div>
+            <div @click="btn(1,$event)" class="btn shot" v-bind:class="{ active: btns[1] }"></div>
+            <div @click="btn(2,$event)" class="btn smg" v-bind:class="{ active: btns[2] }"></div>
+            <div @click="btn(3,$event)" class="btn rifles" v-bind:class="{ active: btns[3] }"></div>
+            <div @click="btn(4,$event)" class="btn ammo" v-bind:class="{ active: btns[4] }"></div>
+        </div>
+        <div class="right">
+            <div class="head"></div>
+            <div class="elements">
+                <div class="block" v-for="(item, index) in items">
+                    <label>{{item[0]}}</label>
+                    <div @click="buy(index)" class="btn">Создать</div>
+                    <span>{{item[1]}}M</span>
+                </div>
+                <div class="slider" v-for="(item, index) in sliders">
+                    <label>{{item[0]}}</label>
+                    <input :id="index" @input="range" type="range" :value="item[1]" step="1" :min="item[1]" :max="item[2]">
+                    <output @click="rangebuy" :id="'wcraftslider' + index">{{item[4]}}M</output>
+                </div>
+            </div>
+            <div class="buttons">
+                <div @click="exit" class="exit">Exit</div>
+            </div>
+        </div>
+    </div>
+    <div class="clothes" v-if="active">
+        <div class="right">
+            <h1><i class="name1 far fa-smile"></i> Uniqueness</h1>
+            <div class="block">
+				<p>Be unique, choose the color and pattern to your taste.</p>                
+                <div class="list1">Choose a style:<span><i @click="left(0)" class="fas fa-chevron-left"></i><div>{{styles[indexS]}}</div><i @click="right(0)" class="fas fa-chevron-right"></i></span></div>                
+                <div class="list">Choose colore:<span><i @click="left(1)" class="fas fa-chevron-left"></i><div>{{colors[indexC]}}</div><i @click="right(1)" class="fas fa-chevron-right"></i></span></div>
+                <p class="price">Цена: <span>${{prices[indexS]}}</span></p>
+                <div @click="buy" class="btn buy">Buy</div>             
+            </div>
+        </div>
+        <div class="left">
+			<div class="bg">
+				<h1 class="bg1"> Clothing store</h1>
+			</div>
+			<div @click="exit" class="btn exit"><i class="exit fas fa-long-arrow-alt-left"></i>Exit</div>
+            <div @click="btn(0,$event)" class="icon hat" v-bind:class="{ active: btns[0] }"><img src="res/hat.png"> Hat</div>
+            <div @click="btn(1,$event)" class="icon jacket" v-bind:class="{ active: btns[1] }"><img src="res/jacket.png">Outerwear</div>
+            <div @click="btn(2,$event)" class="icon shirt" v-bind:class="{ active: btns[2] }"><img src="res/shirt.png">T-shirts</div>
+            <div @click="btn(3,$event)" class="icon pants" v-bind:class="{ active: btns[3] }"><img src="res/pants.png">Trousers</div>
+            <div @click="btn(4,$event)" class="icon shoe" v-bind:class="{ active: btns[4] }"><img src="res/shoe.png">Footwear</div>
+            <div @click="btn(5,$event)" class="icon gloves" v-bind:class="{ active: btns[5] }"><img src="res/gloves.png">Gloves</div>
+            <div @click="btn(6,$event)" class="icon watches" v-bind:class="{ active: btns[6] }"><img src="res/watches.png">Clock</div>
+            <div @click="btn(7,$event)" class="icon glasses" v-bind:class="{ active: btns[7] }"><img src="res/glasses.png">Glasses</div>
+            <div @click="btn(8,$event)" class="icon jewerly" v-bind:class="{ active: btns[8] }"><img src="res/jewerly.png">Decorations</div>
+        </div>
+    </div>
+    <div class="masks" v-if="active">
+        <div class="right">
+            <h1><i class="fas fa-theater-masks"></i> Masks</h1>
+            <div class="block">
+				<p>Be unique, choose the color and pattern to your taste.</p>                
+                <div class="list1">Choose a style:<span><i @click="left(0)" class="fas fa-chevron-left"></i><div>{{styles[indexS]}}</div><i @click="right(0)" class="fas fa-chevron-right"></i></span></div>                
+                <div class="list">Choose colore:<span><i @click="left(1)" class="fas fa-chevron-left"></i><div>{{colors[indexC]}}</div><i @click="right(1)" class="fas fa-chevron-right"></i></span></div>
+                <p class="price">Price: <span>${{prices[indexS]}}</span></p>
+                <div @click="buy" class="btn buy">Buy</div>
+				<div @click="exit" class="btn exit"><i class="fas fa-times"></i></div>				
+            </div>
+        </div>
+        <div class="left">
+            <div @click="btn(0,$event)" class="icon mask" v-bind:class="{ active: btns[0] }"></div>
+        </div>
+    </div>
+	<div class="petshop" v-if="active">
+        <h1>{{header}}</h1>
+        <div class="items">
+            <p>Choose a pet:</p>
+            <div class="list">
+                <i @click="left(0)" class="left-arrow"></i>
+                <div>{{models[indexM]}}</div>
+                <i @click="right(0)" class="right-arrow"></i>
+            </div>
+        </div>
+        <div class="btns">
+            <div @click="buy" class="btn buy">Buy за ${{prices[indexM]}}</div>
+            <div @click="exit" class="btn exit">Exit</div>
+        </div>
+    </div>
+    <div class="infobox" v-if="active">
+        <div class="header"><i class="cancel" @click="exit"></i><h1>{{header}}</h1></div>
+        <div class="content" v-html="content"></div>
+    </div>
+    <div class="donate" v-if="active">
+        <div class="balance"><p>Coins: {{balance}}</p><div class="starbucks"></div></div>
+        <div class="center">
+            <div class="donate-display" v-if="menu == 0">
+                <div class="btns">
+                    <div class="btn" @click="open(1)">Change appearance</div>
+                    <div class="btn" @click="open(2)">Change name</div>
+                </div>
+                <div class="btns">
+                    <div class="btn" @click="open(3)">Convert Coins to game currency</div>
+                    <div class="btn" @click="open(4)">Buy VIP</div>
+                </div>
+                <div class="btns">
+                    <div class="btn" @click="open(9)">Remove warn</div>
+                </div> 
+                <div class="btns">
+                    <div class="btn" @click="open(10)">Top up your account</div>
+                </div>
+            </div>
+            <!--Смена внешности-->
+            <div class="donate-display" v-if="menu == 1">
+                <div class="btns">
+                    <div class="info">You will be directed to the character editor.</div>
+                </div>
+                <div class="btns">
+                    <div class="btn" @click="buy(0)">Change for <b>100 Coins</b></div>
+                    <div class="btn" @click="open(0)">Cancelation</div>
+                </div>
+            </div>
+            <!--Смена ника-->
+            <div class="donate-display" v-if="menu == 2">
+                <div class="btns" >
+                    <input @input="onInputName" v-model="fname" placeholder="Новое Имя" maxlength="30">
+                    <input @input="onInputName" v-model="lname" placeholder="Новая Фамилия" maxlength="30">
+                </div>
+                <div class="btns" >
+                    <div class="btn" @click="buy(1)">Change per <b>25 Coins</b></div>
+                    <div class="btn" @click="open(0)">Cancelation</div>
+                </div>
+            </div>
+            <!--Перевод-->
+            <div class="donate-display" v-if="menu == 3">
+                <div class="btns">
+                    <input @input="onInputTrans" v-model="totrans" placeholder="Кол-во для перевода" maxlength="6">
+                    <input v-model="aftertrans" placeholder="Будет зачислено" readonly>
+                </div>
+                <div class="btns">
+                    <div class="btn" @click="buy(2)">Convertation</b></div>
+                    <div class="btn" @click="open(0)">Cancelation</div>
+                </div>
+            </div>
+            <!--VIP-->
+            <div class="donate-display" v-if="menu == 4">
+                <div class="btns">
+                    <div class="btn" @click="open(5)">Bronze VIP</div>
+                    <div class="btn" @click="open(6)">Silver VIP</div>
+                </div>
+                <div class="btns">
+                    <div class="btn" @click="open(7)">Gold VIP</div>
+                    <div class="btn" @click="open(8)">Platinum VIP</div>
+                </div>
+                <div class="btns">
+                    <div class="btn" @click="open(0)">Cancelation</div>
+                </div>
+            </div>
+            <!--Bronze VIP-->
+            <div class="donate-display" v-if="menu == 5">
+                <div class="btns">
+                    <div class="info">Wage increases in factions and unemployment $200<br>No restrictions on help / report<br>Ability to leave the faction (/leave)<br>Double XP per hour.</div>
+                </div>
+                <div class="btns">
+                    <div class="btn" @click="buy(3)">Buy per <b>300 Coins</b></div>
+                    <div class="btn" @click="back">Back</div>
+                </div>
+            </div>
+            <!--Silver VIP-->
+            <div class="donate-display" v-if="menu == 6">
+                <div class="btns">
+                    <div class="info">Increase in salary for initial jobs at15%.<br>Увеличение зарплаты во фракциях и по безработице $400<br>Нет ограничений на help / report<br>Ability to leave the faction (/leave)<br>Double XP per hour.</div>
+                </div>
+                <div class="btns">
+                    <div class="btn" @click="buy(4)">Buy per <b>600 Coins</b></div>
+                    <div class="btn" @click="back">Back</div>
+                </div>
+            </div>
+            <!--Gold VIP-->
+            <div class="donate-display" v-if="menu == 7">
+                <div class="btns">
+                    <div class="info">Increase in salary for initial jobs salaries by 25%.<br>Wage increases in factions and unemployment $550<br>No restrictions on help / report<br>Ability to leave the faction (/leave)<br>Double XP per hour.</div>
+                </div>
+                <div class="btns">
+                    <div class="btn" @click="buy(5)">Buy per <b>800 Coins</b></div>
+                    <div class="btn" @click="back">Back</div>
+                </div>
+            </div>
+            <!--Platinum VIP-->
+            <div class="donate-display" v-if="menu == 8">
+                <div class="btns">
+                    <div class="info">Increase in salary for initial jobs salaries by  35%.<br>Wage increases in factions and unemployment $700<br>No restrictions on help / report<br>Ability to leave the faction (/leave)<br>Double XP per hour.</div>
+                </div>
+                <div class="btns">
+                    <div class="btn" @click="buy(6)">Buy per <b>1000 Coins</b></div>
+                    <div class="btn" @click="back">Back</div>
+                </div>
+            </div>
+            <!--Warn-->
+            <div class="donate-display" v-if="menu == 9">
+                <div class="btns">
+                    <div class="info">Removing warn<br></div>
+                </div>
+                <div class="btns">
+                    <div class="btn" @click="buy(7)">Buy per <b>250 Coins</b></div>
+                    <div class="btn" @click="back">Back</div>
+                </div>
+            </div>
+            <!-- unitpay -->
+            <div class="donate-display" v-if="menu == 10">
+                <div class="btns">
+                    <h2 class="coin-title">Enter the top-up amount 1 coin = 1 rub:</h2>
+                    <div><input type="number" name="coins" v-model="coins" placeholder="Количество 1coin = 1 rub" class="coin-input" step=100 min=0></div> 
+                    <div class="btn" @click="donate()">Proceed to checkout</b></div>
+                    <div class="btn" @click="open(0)">Cancelation</div>
+                </div>
+            </div>
+            <div class="msg">Exit the menu - F9</div>
+        </div>
+    </div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/dial.js"></script>
+    <script src="js/stock.js"></script>
+    <script src="js/pc.js"></script>
+    <script src="js/docs.js"></script>
+    <script src="js/input.js"></script>
+    <script src="js/joblist.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/atm.js"></script>
+    <script src="js/lift.js"></script>
+    <script src="js/petrol.js"></script>
+    <script src="js/fmenu.js"></script>
+    <script src="js/plist.js"></script>
+    <script src="js/mats.js"></script>
+    <script src="js/auto.js"></script>
+	<script src="js/pet.js"></script>
+    <script src="js/bsearch.js"></script>
+    <script src="js/body.js"></script>
+    <script src="js/weapons.js"></script>
+    <script src="js/clothes.js"></script>
+    <script src="js/masks.js"></script>
+    <script src="js/infobox.js"></script>
+    <script src="js/donate.js"></script>
+    <script src="js/dialog.js"></script>
+</body>
+</html>

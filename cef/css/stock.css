@@ -1,0 +1,60 @@
+.stock{
+    display: none;
+    background-size: contain;
+    position: absolute;
+    width: 512px;
+    height: 512px;
+    left: 50%;
+    top: 50%;
+    margin-left: -256px;
+    margin-top: -256px;
+}
+.stock .center{
+    margin-top: 200px;
+    margin-left: 15%;
+    text-align: center;
+    width: 370px;
+}
+.stock .title{
+    background-color: #ffffff;
+    margin: 5px;
+    padding: 10px;
+    font-size: 16pt;
+}
+.stock .count{
+    background-color: #ffffff;
+    margin: 5px;
+    padding: 10px;
+    font-size: 14pt;
+}
+.stock .exit{
+    color: white;
+    background-color: #f44336;
+    margin: 5px;
+    padding: 10px;
+    font-size: 14pt;
+    cursor: pointer;
+}
+.stock .title span{cursor: pointer}
+.stock .title #L{
+	float: left;
+	font-family: "icons"
+}
+.stock .title #R{
+	float: right;
+	font-family: "icons"
+}
+.stock .btn{
+    margin: 5px;
+    width: 151px;
+    display: inline-block;
+    padding: 10px;
+    font-size: 14pt;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+.stock.weaponsstock{background-image: url('../res/weapstock.png')}
+.stock.weapons{background-image: url('../res/weap.png')}
+.stock.weed{background-image: url('../res/weed.png')}
+.stock.healkit{background-image: url('../res/hkit.png')}
+.stock.cash{background-image: url('../res/cash.png')}

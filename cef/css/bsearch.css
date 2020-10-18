@@ -1,0 +1,46 @@
+.bsearch{
+    background-image: url('../res/bsearch.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    color: white;
+    height: 550px;
+    width: 380px;
+}
+.bsearch .list{
+    width: 348px;
+    height: 300px;
+    padding: 10px;
+    margin-top: 56px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.bsearch .btns{
+    padding: 10px;
+}
+.bsearch p{
+    margin-left: 20px;
+}
+.bsearch .btn{
+    background-color: rgba(0,0,0,0.5);
+    cursor: pointer;
+    font-size: 18pt;
+    padding: 10px;
+    margin: 10px;
+    width: 50%;
+}
+.bsearch .btn:hover{
+    background-color: rgba(0,0,0,0.7);
+}
+.bsearch .btn-close{
+    background-image: url('../res/exit.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: red;
+    background-size: 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    float: right;
+    height: 30px;
+    width: 30px;
+}

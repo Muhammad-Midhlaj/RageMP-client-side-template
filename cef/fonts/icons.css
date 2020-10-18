@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "icons";
+  src: url("./icons.eot");
+  src: url("./icons.eot?#iefix") format("embedded-opentype"),
+       url("./icons.woff") format("woff"),
+       url("./icons.ttf") format("truetype"),
+       url("./icons.svg#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "icons";
+    src: url("./icons.svg#icons") format("svg");
+  }
+}
+
+[class^="icons-"]:before, [class*=" icons-"]:before,
+[class^="icons-"]:after, [class*=" icons-"]:after {   
+  font-family: icons;
+font-style: normal;
+}
+
+.cancel:before { content: "\f100"; }
+.right-arrow:before { content: "\f101"; }
+.left-arrow:before { content: "\f102"; }

@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Kingsland RP - Board</title>
+    <link rel="stylesheet" href="css/grids-responsive-min.css">
+    <link rel="stylesheet" href="css/grids-min.css">
+    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/circle.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            font-family: "Ubuntu", sans-serif;
+        }
+    </style>
+</head>
+<body style="display: none">
+    <div class="board" v-if="active" @click.right.prevent="context" @click="hide">
+        <div class="outside" v-if="outside">
+            <h1>{{outHead}}</h1>
+            <div class="items">
+                <item
+                    v-for="(item, index) in outitems"
+                    :key="key"
+                    :id="item[0]"
+                    :index="index"
+                    :count="item[1]"
+					:subdata="item[3]"
+                    type="out" />
+            </div>
+        </div>
+		<div class="eq">
+			<h1>Charecter</h1>
+			<img src="https://i.imgur.com/xLRnfPw.png">
+			<div class="boost"></div>
+		</div>
+        <div class="inventory">
+            <h1>Inventory</h1>
+            <div class="items hum">
+                <item
+                    v-for="(item, index) in items"
+                    :key="key"
+                    :id="item[0]"
+                    :index="index"
+                    :count="item[1]"
+                    :isactive="item[2]"
+					:subdata="item[3]"
+                    type="inv" />
+            </div>
+        </div>
+        <div class="stats">
+			<div class="container">
+				<div class="email" onclick="this.classList.add('expand')">
+					<div class="from">
+						<div class="from-contents">
+							<div class="name">Statistic</div>
+						</div>
+					</div>
+					<div class="to">
+						<div class="to-contents">
+							<div class="top">
+							<h1>Statistic</h1>
+								<div class="x-touch" onclick="document.querySelector('.email').classList.remove('expand');event.stopPropagation();">
+									<div class="x">
+										<div class="line1"></div>
+										<div class="line2"></div>
+									</div>
+								</div>
+							</div>
+							<div class="bottom">
+								<ul>
+									<li>Level:<span>{{stats[0]}}</span></li>
+									<li>EXP:<span>{{stats[1]}}</span></li>
+									<li>Phone:<span>{{stats[2]}}</span></li>
+									<li>Status:<span>{{stats[3]}}</span></li>
+									<li>Gangs:<span>{{stats[4]}}</span></li>
+									<li>Warns:<span>{{stats[5]}}</span></li>
+									<li>Licenses:<span>{{stats[6]}}</span></li>     
+									<li>ID number:<span>{{stats[8]}}</span></li>
+									<li>Bank number:<span>{{stats[9]}}</span></li>
+									<li>Job:<span>{{stats[10]}}</span></li>
+									<li>Fraction:<span>{{stats[11]}}</span></li>
+									<li>Rang:<span>{{stats[12]}}</span></li>
+								</ul>        
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+    <nav class="context_menu" v-if="active" :style="style">
+        <ul>
+            <li v-if="type" @click="btn(1)">Use</li>
+            <li v-if="type" @click="btn(2)">Transfer</li>
+            <li v-if="!type" @click="btn(3)">Take</li>
+            <li v-if="type" @click="btn(4)">Throw away</li>
+        </ul>
+    </nav>
+    <!---->
+    <div class="circle" @mouseOut="out" v-show="active" style="opacity:0; height:80px; width:80px">
+        <div class="bg"></div>
+        <div id="8" class="center" @mouseOver="over" @click="btn">
+            <div id="8" class="text">{{description}}</div>
+        </div>
+        <ul>
+            <li id="0" @mouseOver="over">
+                <div id="0" class="contents" :class="icons[0]" @click="btn"></div>
+            </li>
+            <li id="1" @mouseOver="over">
+                <div id="1" class="contents" :class="icons[1]" @click="btn"></div>
+            </li>
+            <li id="2" @mouseOver="over">
+                <div id="2" class="contents" :class="icons[2]" @click="btn"></div>
+            </li>
+            <li id="3" @mouseOver="over">
+                <div id="3" class="contents" :class="icons[3]" @click="btn"></div>
+            </li>
+            <li id="4" @mouseOver="over">
+                <div id="4" class="contents" :class="icons[4]" @click="btn"></div>
+            </li>
+            <li id="5" @mouseOver="over">
+                <div id="5" class="contents" :class="icons[5]" @click="btn"></div>
+            </li>
+            <li id="6" @mouseOver="over">
+                <div id="6" class="contents" :class="icons[6]" @click="btn"></div>
+            </li>
+            <li id="7" @mouseOver="over">
+                <div id="7" class="contents" :class="icons[7]" @click="btn"></div>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src='js/vue.js'></script>
+<script src='js/board.js'></script>
+<script src="js/circle.js"></script>
+<script src="js/move.min.js"></script>
+<script>
+  window.onload = function() {
+    document.getElementsByTagName('body')[0].style.display = "block";
+  }
+</script>
+</html>

@@ -1,0 +1,212 @@
+.dn{display: none !important;}
+.mb-2px{margin-bottom: 2px;}
+
+.my-0-5, .mt-0-5{margin-top: 0.5em !important;}
+.my-1, .mt-1{margin-top: 1em !important;}
+.my-2, .mt-2{margin-top: 2em !important;}
+.my-1-5, .mt-1-5{margin-top: 1.5em !important;}
+.my-1, .mb-1{margin-bottom: 1em !important;}
+.my-2, .mb-2{margin-bottom: 2em !important;}
+
+.mx-1, .mr-1{margin-right: 1em !important;}
+.mx-0-5, .mr-0-5{margin-right: 0.5em !important;}
+.mx-a, .mr-a{margin-right: auto !important;}
+.mx-a, .ml-a{margin-left: auto !important;}
+
+.ai-start,.ai-end,.ai-center,.ai-baseline,.ai-stretch,
+.jc-start,.jc-end,.jc-center,.jc-between,.jc-around,.jc-evenly,
+.f-row, .flex-row, .f-rrow, .flex-row-reverse,
+.f-col, .f-rcol, .f-column, .f-rcolumn, .flex-column, .flex-column-reverse,
+.all-c, .df, .f-wrap
+{display: -webkit-flex !important;display: -moz-flex !important;display: -ms-flex !important;display: -o-flex !important;display: flex !important;}
+.db{display: block !important;}
+
+.ai-start{-ms-align-items: flex-start;align-items: flex-start;}
+.ai-end{-ms-align-items: flex-end; align-items: flex-end;}
+.all-c, .ai-center{-ms-align-items: center;align-items: center;}
+.ai-baseline{-ms-align-items: baseline;align-items: baseline;}
+.ai-stretch{-ms-align-items: stretch;align-items: stretch;}
+
+.jc-start{justify-content: flex-start;}
+.jc-end{justify-content: flex-end;}
+.all-c, .jc-center{justify-content: center;}
+.jc-between{justify-content: space-between;}
+.jc-around{justify-content: space-around;}
+.jc-evenly{justify-content: space-evenly;}
+
+.f-row, .flex-row{-webkit-flex-direction: row;-moz-flex-direction: row;-ms-flex-direction: row;-o-flex-direction: row;flex-direction: row;}
+.f-rrow, .flex-row-reverse{-webkit-flex-direction: row-reverse;-moz-flex-direction: row-reverse;-ms-flex-direction: row-reverse;-o-flex-direction: row-reverse;flex-direction: row-reverse;}
+.f-col, .f-column, .flex-column{-webkit-flex-direction: column;-moz-flex-direction: column;-ms-flex-direction: column;-o-flex-direction: column;flex-direction: column;}
+.f-rcol, .f-rcolumn, .flex-column-reverse{-webkit-flex-direction: column-reverse;-moz-flex-direction: column-reverse;-ms-flex-direction: column-reverse;-o-flex-direction: column-reverse;flex-direction: column-reverse;}
+.f-wrap{flex-wrap: wrap}
+
+.tac{text-align: center;}
+.bg\#fff{background: #FFFFFF !important}
+.truncate{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+
+.w-100p{width: 100% !important;}
+.w-90p{width: 90% !important;}
+.w-80p{width: 80% !important;}
+.w-70p{width: 70% !important;}
+.w-60p{width: 60% !important;}
+.w-50p{width: 50% !important;}
+.w-30p{width: 30% !important;}
+
+[font~='Arial']{font-family: 'Arial' !important}
+
+[font~='italic'], [font~='italic']::placeholder{font-style: italic !important}
+
+[font~='think'], [font~='think']::placeholder{font-weight: 100 !important}
+[font~='light'], [font~='light']::placeholder{font-weight: 300 !important}
+[font~='regular'], [font~='regular']::placeholder{font-weight: 400 !important}
+[font~='medium'], [font~='medium']::placeholder{font-weight: 500 !important}
+[font~='bold'], [font~='bold']::placeholder{font-weight: 700 !important}
+
+[font~='10/13'], [font~='10/13']::placeholder {font-size: 10px !important; line-height: 13px !important}
+[font~='12/16'], [font~='12/16']::placeholder {font-size: 12px !important; line-height: 16px !important}
+[font~='14/19'], [font~='14/19']::placeholder {font-size: 14px !important; line-height: 19px !important}
+[font~='16/21'], [font~='16/21']::placeholder {font-size: 16px !important; line-height: 21px !important}
+[font~='18/21'], [font~='18/21']::placeholder {font-size: 18px !important; line-height: 21px !important}
+[font~='18/24'], [font~='18/24']::placeholder {font-size: 18px !important; line-height: 24px !important}
+[font~='20/26'], [font~='20/26']::placeholder {font-size: 20px !important; line-height: 26px !important}
+[font~='24/32'], [font~='24/32']::placeholder {font-size: 24px !important; line-height: 32px !important}
+
+.h3{
+	margin: 8px;
+	font-size: 1.5vw;
+	font-weight: bold;
+	color: white;
+	text-align: left;
+}
+
+.noselect,
+.noselect *{
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+	user-drag: none;
+}
+
+.button{
+	background: linear-gradient(241.24deg, #9020F9 -2.66%, #166AE9 105.54%);
+	box-shadow: 0 0 15px #134bca;
+	padding: 1vh;
+	margin: 1vh auto;
+	font-size: 0.9vw;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+	min-height: 3vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.button.danger-btn{
+	/*background: linear-gradient(241.24deg, #a620f9 -2.66%, #e9166d 105.54%);*/
+	background: rgb(239, 67, 67);
+	box-shadow: unset;
+}
+.first-btn{
+	border: 1px solid #FFFFFF;
+	box-sizing: border-box;
+	border-radius: 7px;
+	padding: 10px 0 12px;
+	font-family: Montserrat, sans-serif;
+	font-style: normal;
+	font-weight: norma  l;
+	font-size: 24px;
+	line-height: 29px;
+	text-align: center;
+	width: 368px;
+}
+
+.btn-second{
+	border-radius: 6px;
+	margin: 0;
+
+	min-height: 3vh;
+	padding: 1vh 1vw;
+
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	align-items: center;
+
+	justify-content: center;
+	border: 1px solid #FFFFFF;
+	box-sizing: border-box;
+	border-radius: 6px;
+}
+
+a.disable{
+	pointer-events: none;
+}
+
+.window{
+	width: 28vw;
+	color: white;
+	background: rgb(33, 40, 50);
+	padding: 1em;
+	border-radius: 10px;
+}
+
+#console-debug{
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: black;
+	color: #fff;
+	width: 60vw	;
+	height: 30vh;
+	overflow: scroll;
+	padding: 20px;
+	box-sizing: border-box;
+	z-index: 1111111;
+}
+
+#console-debug span{
+	display: block;
+	width: 100%;
+	font-family: sans-serif;
+	font-weight: 100;
+	line-height: 1.5;
+}
+#console-debug span.first{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	cursor: pointer;
+}
+
+#console-debug-input{
+	position: fixed;
+	left: 0;
+	color: #fff;
+	width: 60vw	;
+	top: 31vh;
+	overflow: hidden;
+	padding: 0;
+	box-sizing: border-box;
+	min-height: 10vh;
+	border: 1px solid black;
+	z-index: 1111111;
+}
+
+#console-debug-input textarea{
+	width: 100%;
+	height: 10vh;
+	border: 0;
+}
+
+#console-debug.hide,
+#console-debug-input.hide{
+	opacity: 0.1;
+	width: 20vw;
+}

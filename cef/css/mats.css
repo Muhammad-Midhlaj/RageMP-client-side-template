@@ -1,0 +1,63 @@
+.mats{
+    /*background-color: grey;*/
+    margin-left: -300px;
+    margin-top: -250px;
+    position: absolute;
+    height: 500px;
+    width: 600px;
+    left: 50%;
+    top: 50%;
+}
+.mats .img{
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: -50px;
+    height: 250px;
+    width: 300px;
+}
+.mats .army{
+    background-image: url('../res/matsarmy.png');
+}
+.mats .gang{
+    background-image: url('../res/matsgang.png');
+}
+.mats .weed{
+    background-image: url('../res/weedgang.png');
+}
+.mats .hkit{
+    background-image: url('../res/hkit.png');
+}
+.mats .btns{
+    height: 50px;
+    width: 100%;
+}
+.mats .btn-succ{
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: #5cb85c;
+    cursor: pointer;
+    height: 100%;
+    float: left;
+    width: 50%;
+}
+.mats .btn-cancel{
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #b63f3f;
+    cursor: pointer;
+    height: 100%;
+    float: left;
+    width: 50%;
+}
+.mats .btn-cancel:hover{
+    background-color: #b83030;
+}
+.mats .btn-succ:hover{
+    background-color: #4bb44b;
+}
+.mats .btns div{
+    text-align: center;
+    padding-top: 5px;
+    font-size: 26pt;
+    color: white;
+}

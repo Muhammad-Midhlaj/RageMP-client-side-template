@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>redage.net - Character editor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300&amp;subset=cyrillic-ext" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/character.css" />
+    <link rel="stylesheet" type="text/css" href="fonts/phone.css">
+    <link rel="stylesheet" type="text/css" href="css/slider.css">
+    <style>
+        body {
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            font-family: "Ubuntu", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="editor" v-if="active">
+        <h1>Character Editor</h1>
+        <div class="element">
+            <label>Choose gender:</label>
+            <!--div id="gender" class="switch-field">
+                <input @click="genderSw(1)" type="radio" id="switch_left" name="switch_2" value="male" checked />
+                <label for="switch_left">Мужской</label>
+                <input @click="genderSw(0)" type="radio" id="switch_right" name="switch_2" value="female" />
+                <label for="switch_right">Женский</label>
+            </div-->
+            <div class="switch">
+                <div id="gendermale" class="btn on">Man</div>
+                <div id="genderfemale" class="btn">Woman</div>
+            </div>
+        </div>
+        <div class="element">
+            <label>Father:</label>
+            <list id="father" num=""></list>
+        </div>
+        <div class="element">
+            <label>Mother:</label>
+            <list id="mother" num=""></list>
+        </div>
+        <div class="element">
+            <label>Similarity:</label>
+            <!--list id="similar" num="true"></list-->
+            <div class="slider">
+                <input id="similar" type="range" value="0.5" step="0.1" min="0" max="1.0">
+            </div>
+            <output id="similar">0</output>
+        </div>
+        <div class="element">
+            <label>Skin color:</label>
+            <!--list id="skin" num="true"></list-->
+            <div class="slider">
+                <input id="skin" type="range" value="0.5" step="0.1" min="0" max="1">
+            </div>
+            <output id="skin">0</output>
+        </div>
+        <h3>Way</h3>
+        <div class="element">
+            <label>Nose width:</label>
+            <!--list id="noseWidth" num="true"></list-->
+            <div class="slider">
+                <input id="noseWidth" type="range" value="0" step="0.1" min="-1" max="1">
+            </div>
+            <output id="noseWidth">0</output>
+        </div>
+        <div class="element">
+            <label>Nose height:</label>
+            <!--list id="noseHeight" num="true"></list-->
+            <div class="slider">
+                <input id="noseHeight" type="range" value="0" step="0.1" min="-1" max="1">
+            </div>
+            <output id="noseHeight">0</output>
+        </div>
+        <div class="element">
+            <label>Tip length:</label>
+            <!--list id="noseTipLength" num="true"></list-->
+            <div class="slider">
+                <input id="noseTipLength" type="range" value="0" step="0.1" min="-1" max="1">
+            </div>
+            <output id="noseTipLength">0</output>
+        </div>
+        <div class="element">
+            <label>Nose bridge:</label>
+            <!--list id="noseDepth" num="true"></list-->
+            <div class="slider">
+                <input id="noseDepth" type="range" value="0" step="0.1" min="-1" max="1">
+            </div>
+            <output id="noseDepth">0</output>
+        </div>
+        <div class="element">
+            <label>Nose bridge height:</label>
+            <!--list id="noseTipHeight" num="true"></list-->
+            <div class="slider">
+                <input id="noseTipHeight" type="range" value="0" step="0.1" min="-1" max="1">
+            </div>
+            <output id="noseTipHeight">0</output>
+        </div>
+        <div class="element">
+            <label>Broken nose:</label>
+            <!--list id="noseBroke" num="true"></list-->
+            <div class="slider">
+                <input id="noseBroke" type="range" value="0" step="0.1" min="-1" max="1">
+            </div>
+            <output id="noseBroke">0</output>
+        </div>
+        <div class="element">
+            <label>Brow height:</label>
+            <!--list id="eyebrowHeight" num="true"></list-->
+            <div class="slider">
+                <input id="eyebrowHeight" type="range" value="0" step="0.1" min="-1" max="1">
+            </div>
+            <output id="eyebrowHeight">0</output>
+        </div>
+        <div class="element">
+            <label>Eyebrow depth:</label>
+            <!--list id="eyebrowDepth" num="true"></list-->
+            <div class="slider">
+                <input id="eyebrowDepth" type="range" value="0" step="0.1" min="-1" max="1">
+            </div>
+            <output id="eyebrowDepth">0</output>
+        </div>
+        <div class="element">
+            <label>Cheekbone height:</label>
+            <!--list id="cheekboneHeight" num="true"></list-->
+            <div class="slider">
+                <input id="cheekboneHeight" type="range" value="0" step="0.1" min="-1" max="1">
+            </div>
+            <output id="cheekboneHeight">0</output>
+        </div>
+        <div class="element">
+            <label>Cheekbone width:</label>
+            <!--list id="cheekboneWidth" num="true"></list-->
+            <div class="slider">
+                <input id="cheekboneWidth" type="range" value="0" step="0.1" min="-1" max="1">
+            </div>
+            <output id="cheekboneWidth">0</output>
+        </div>
+        <div class="element">
+            <label>Cheek depth:</label>
+            <!--list id="cheekDepth" num="true"></list-->
+            <div class="slider">
+                <input id="cheekDepth" type="range" value="0" step="0.1" min="-1" max="1">
+            </div>
+            <output id="cheekDepth">0</output>
+        </div>
+        <div class="element">
+            <label>Eye size:</label>
+            <!--list id="eyeScale" num="true"></list-->
+            <div class="slider">
+                <input id="eyeScale" type="range" value="0" step="0.1" min="-1" max="1">
+            </div>
+            <output id="eyeScale">0</output>
+        </div>
+        <div class="element">
+            <label>Lip thickness:</label>
+            <!--list id="lipThickness" num="true"></list-->
+            <div class="slider">
+                <input id="lipThickness" type="range" value="0" step="0.1" min="-1" max="1">
+            </div>
+            <output id="lipThickness">0</output>
+        </div>
+        <div class="element">
+            <label>Jaw width:</label>
+            <!--list id="jawWidth" num="true"></list-->
+            <div class="slider">
+                <input id="jawWidth" type="range" value="0" step="0.1" min="-1" max="1">
+            </div>
+            <output id="jawWidth">0</output>
+        </div>
+        <div class="element">
+            <label>Jaw shape:</label>
+            <!--list id="jawShape" num="true"></list-->
+            <div class="slider">
+                <input id="jawShape" type="range" value="0" step="0.1" min="-1" max="1">
+            </div>
+            <output id="jawShape">0</output>
+        </div>
+        <div class="element">
+            <label>Chin height:</label>
+            <!--list id="chinHeight" num="true"></list-->
+            <div class="slider">
+                <input id="chinHeight" type="range" value="0" step="0.1" min="-1" max="1">
+            </div>
+            <output id="chinHeight">0</output>
+        </div>
+        <div class="element">
+            <label>Chin depth:</label>
+            <!--list id="chinDepth" num="true"></list-->
+            <div class="slider">
+                <input id="chinDepth" type="range" value="0" step="0.1" min="-1" max="1">
+            </div>
+            <output id="chinDepth">0</output>
+        </div>
+        <div class="element">
+            <label>Chin width:</label>
+            <!--list id="chinHeight" num="true"></list-->
+            <div class="slider">
+                <input id="chinWidth" type="range" value="0" step="0.1" min="-1" max="1">
+            </div>
+            <output id="chinWidth">0</output>
+        </div>
+        <div class="element">
+            <label>Chin shape:</label>
+            <!--list id="chinIndent" num="true"></list-->
+            <div class="slider">
+                <input id="chinIndent" type="range" value="0" step="0.1" min="-1" max="1">
+            </div>
+            <output id="chinIndent">0</output>
+        </div>
+        <div class="element">
+            <label>Neck circumference:</label>
+            <!--list id="neck" num="true"></list-->
+            <div class="slider">
+                <input id="neck" type="range" value="0" step="0.1" min="-1" max="1">
+            </div>
+            <output id="neck">0</output>
+        </div>
+        <div v-if="!isSurgery">
+            <h3>Appearance</h3>
+            <div class="element">
+                <label>Hair:</label>
+                <list id="hairM" v-if="gender"></list>
+                <list id="hairF" v-if="!gender"></list>
+            </div>
+            <div class="element">
+                <label>Eyebrows:</label>
+                <list id="eyebrowsM" v-if="gender"></list>
+                <list id="eyebrowsF" v-if="!gender"></list>
+            </div>
+            <div class="element" v-if="gender">
+                <label>Beard:</label>
+                <list id="beard"></list>
+            </div>
+            <div class="element">
+                <label>Hair color:</label>
+                <list id="hairColor"></list>
+            </div>
+            <div class="element">
+                <label>Eye color:</label>
+                <list id="eyeColor"></list>
+            </div>
+        </div>
+        <div @click="save" class="button">Save</div>
+    </div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/rangeslider.min.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/character.js"></script>
+</body>
+</html>

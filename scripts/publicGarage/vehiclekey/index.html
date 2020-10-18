@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+<body id="VehicleSeat" неактивна="on">
+    <div class="car">
+        <div id="seat1" class="seat seat0"></div>
+        <div id="seat1" class="seat seat1"></div>
+        <div id="seat1" class="seat seat2"></div>
+        <div id="seatclose" class="back"><span>Не входить</span></div>
+    </div>
+
+    <div class="bus">
+        <div id="seat1" class="seat seat0"></div>
+        <div id="seat1" class="seat seat1"></div>
+        <div id="seat1" class="seat seat2"></div>
+        <div id="seat1" class="seat seat3"></div>
+        <div id="seat1" class="seat seat4"></div>
+        <div id="seat1" class="seat seat5"></div>
+        <div id="seat1" class="seat seat6"></div>
+        <div id="seat1" class="seat seat7"></div>
+        <div id="seat1" class="seat seat8"></div>
+        <div id="seat1" class="seat seat9"></div>
+        <div id="seat1" class="seat seat10"></div>
+        <div id="seatclose" class="back"><span>Не входить</span></div>
+    </div>
+	
+	<div class="ov">
+        <div id="seat1" class="seat seat0"></div>
+        <div id="seat1" class="seat seat1"></div>
+        <div id="seat1" class="seat seat2"></div>
+        <div id="seat1" class="seat seat3"></div>
+        <div id="seat1" class="seat seat4"></div>
+        <div id="seatclose" class="back"><span>Не входить</span></div>
+    </div>
+    <script type="text/javascript">
+
+        function showSeatSelection(availableSeats, remoteId) {
+            $(".car").hide();
+            $(".bus").hide();
+			$(".ov").hide();
+            $(".back").click(function () {
+			mp.trigger("closeSeatCef");
+            });
+
+            if (availableSeats > 8) {
+                $(".bus").show();
+            }
+            else if(availableSeats > 3){
+                $(".ov").show();
+            } else {
+			    $(".car").show();
+			}
+
+            for (let i = 0; i < 11; i++) {
+                if (availableSeats > i) {
+                    $(`.seat${i}`).show();
+                    $(`.seat${i}`).click(function () {
+						mp.trigger("takeSeat", i, remoteId);
+                    });
+                }
+                else {
+                    $(`.seat${i}`).hide();
+                }
+            }
+        }
+    </script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style rel="stylesheet" type="text/css">
+	#VehicleSeat {
+            background-color: transparent;
+        }
+
+        .back {
+            display: flex;
+            height: 40px;
+            width: 150px;
+            position: absolute;
+            font-weight: bolder;
+            color: black;
+            align-items: center;
+            text-align: center;
+        }
+
+            .back span {
+                width: 150px;
+                text-align: center;
+            }
+
+        .car .back {
+            top: 30px;
+            left: 100px;
+        }
+
+
+        .bus .back {
+            top: 40px;
+            left: 115px;
+        }
+		
+		.ov .back {
+            top: 40px;
+            left: 115px;
+        }
+
+        .car {
+            height: 730px;
+            width: 350px;
+            background-image: url(img/car.png);
+            display: block;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -365px;
+            margin-left: -175px;
+            opacity: 0.70;
+        }
+
+        .bus {
+            height: 800px;
+            width: 380px;
+            background-image: url(img/bus.png);
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -400px;
+            margin-left: -190px;
+            opacity: 0.70;
+        }
+		
+		.ov {
+            height: 800px;
+            width: 380px;
+            background-image: url(img/ov.png);
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -400px;
+            margin-left: -190px;
+            opacity: 0.70;
+        }
+
+        .seat {
+            height: 70px;
+            width: 70px;
+        }
+
+        .car .seat.seat0 {
+            position: relative;
+            top: 290px;
+            left: 210px;
+        }
+
+        .car .seat.seat1 {
+            position: relative;
+            top: 340px;
+            left: 60px;
+        }
+
+        .car .seat.seat2 {
+            position: relative;
+            top: 270px;
+            left: 210px;
+        }
+		
+		.ov .seat.seat0 {
+            position: relative;
+            top: 160px;
+            left: 225px;
+        }
+
+        .ov .seat.seat1 {
+            position: relative;
+            top: 180px;
+            left: 80px;
+        }
+
+        .ov .seat.seat2 {
+            position: relative;
+            top: 110px;
+            left: 225px;
+        }
+
+        .ov .seat.seat3 {
+            position: relative;
+            top: 130px;
+            left: 80px;
+        }
+
+        .ov .seat.seat4 {
+            position: relative;
+            top: 60px;
+            left: 225px;
+        }
+
+        .bus .seat.seat0 {
+            position: relative;
+            top: 160px;
+            left: 225px;
+        }
+
+        .bus .seat.seat1 {
+            position: relative;
+            top: 180px;
+            left: 80px;
+        }
+
+        .bus .seat.seat2 {
+            position: relative;
+            top: 110px;
+            left: 225px;
+        }
+
+        .bus .seat.seat3 {
+            position: relative;
+            top: 130px;
+            left: 80px;
+        }
+
+        .bus .seat.seat4 {
+            position: relative;
+            top: 60px;
+            left: 225px;
+        }
+
+        .bus .seat.seat5 {
+            position: relative;
+            top: 80px;
+            left: 80px;
+        }
+
+        .bus .seat.seat6 {
+            position: relative;
+            top: 10px;
+            left: 225px;
+        }
+
+        .bus .seat.seat7 {
+            position: relative;
+            top: 30px;
+            left: 80px;
+        }
+
+        .bus .seat.seat8 {
+            position: relative;
+            top: -40px;
+            left: 225px;
+        }
+
+        .bus .seat.seat9 {
+            position: relative;
+            top: -20px;
+            left: 80px;
+        }
+
+        .bus .seat.seat10 {
+            position: relative;
+            top: -90px;
+            left: 225px;
+        }
+	</style>
+</body>
+</html>

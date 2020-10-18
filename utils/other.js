@@ -1,0 +1,1 @@
+mp.game.audio.setAudioFlag("DisableFlightMusic", true); // Отключаем звук при полёте.
