@@ -1,3 +1,4 @@
-# Client-side
+# RageMP Client
 
-Клиентская часть проекта Redage
+It's a RageMp client side template . it created for a private project that abandoned so it's open source Now do whatever you Want
+# Team
